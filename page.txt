@@ -1,0 +1,3672 @@
+
+
+
+
+
+
+
+
+<script type="text/javascript">
+function doSearch() {
+	var frm = document.boardSearchFrm;
+	var str = frm.sw.value;
+	str = str.replace(/^\s*/,'').replace(/\s*$/,'');	// trim
+	
+	if(str == '') {
+		alert("검색어를 입력해 주세요.");
+		frm.sw.value = '';
+		frm.sw.focus();
+	}
+	else {
+		frm.sw.value = str;
+		frm.submit();
+	}
+}
+</script>
+
+<!--  global include -->
+
+	
+
+
+
+
+
+
+
+
+<html lang='ko'>
+<head>
+
+
+
+	
+		<title>삼성엔지니어링 : 네이버 금융</title>
+	
+	
+
+
+
+<meta http-equiv='Content-Type' content='text/html; charset=euc-kr'>
+<meta http-equiv="Content-Script-Type" content="text/javascript">
+<meta http-equiv="Content-Style-Type" content="text/css">
+
+
+
+	
+		<meta property="og:title" content="네이버 금융"/>
+		<meta property="og:image" content="http://static.naver.net/m/stock/im/2016/08/og_stock-200.png"/>
+		<meta property="og:url" content="http://finance.naver.com"/>
+		<meta property="og:description" content="국내 해외 증시 지수, 시장지표, 펀드, 뉴스, 증권사 리서치 등 제공"/>
+    
+    
+
+<meta property="og:type" content="article"/>
+<meta property="og:article:thumbnailUrl" content=""/> 
+<meta property="og:article:author" content="네이버금융"/>
+<meta property="og:article:author:url" content="http://FINANCE.NAVER.COM"/>
+
+
+
+
+
+<link rel='stylesheet' type='text/css' href='http://finance.naver.com/css/finance_header.css?20161027044035'>
+
+	
+	
+	
+	
+		<link rel="stylesheet" type="text/css" href="http://finance.naver.com/css/newstock.css?20161027044035">
+		<link rel="stylesheet" type="text/css" href="http://finance.naver.com/css/common.css?20161027044035">
+		<link rel="stylesheet" type="text/css" href="http://finance.naver.com/css/layout.css?20161027044035">
+		<link rel="stylesheet" type="text/css" href="http://finance.naver.com/css/main.css?20161027044035">
+		<link rel="stylesheet" type="text/css" href="http://finance.naver.com/css/newstock2.css?20161027044035">
+		<link rel="stylesheet" type="text/css" href="http://finance.naver.com/css/newstock3.css?20161027044035">
+		<link rel="stylesheet" type="text/css" href="http://finance.naver.com/css/world.css?20161027044035">
+		
+		
+		
+			<script type="text/javascript" src="/js/jindo.min.ns.1.5.3.euckr.js?20161027044035"></script>
+			
+			
+				<script type="text/javascript" src="/js/release/common.js?20161027044035"></script>
+			
+			
+			<script type="text/javascript" src="/js/jindoComponent/jindo.Component.1.0.3.js?20161027044035"></script>
+			<script type="text/javascript" src="/ac/nhn.autocomplete.stock.js?20161027044035"></script>
+		
+		
+	
+
+
+	<link rel="shortcut icon" href="http://www.naver.com/favicon.ico?20161027044035" type="image/x-icon">
+	
+	<script>
+    (function(){
+        var sUserAgent = navigator.userAgent;
+        if(/iPhone|iPad/.test(sUserAgent)){
+            document.write(
+                [
+                    '<link rel="apple-touch-icon-precomposed" href="http://static.naver.net/nfinance/ico/iOS6_57X57_iphone3.png"/>',
+                    '<link rel="apple-touch-icon-precomposed" sizes="72x72" href="http://static.naver.net/nfinance/ico/iOS6_72X72_ipad.png" />',
+                    '<link rel="apple-touch-icon-precomposed" sizes="76x76" href="http://static.naver.net/nfinance/ico/iOS7_76X76_ipad.png" />',
+                    '<link rel="apple-touch-icon-precomposed" sizes="114x114" href="http://static.naver.net/nfinance/ico/iOS6_114X114_iphone4.png" />',
+                    '<link rel="apple-touch-icon-precomposed" sizes="120x120" href="http://static.naver.net/nfinance/ico/iOS7_120X120_iphone.png" />',
+                    '<link rel="apple-touch-icon-precomposed" sizes="144x144" href="http://static.naver.net/nfinance/ico/iOS6_144X144_ipad_retina.png" />',
+                    '<link rel="apple-touch-icon-precomposed" sizes="152x152" href="http://static.naver.net/nfinance/ico/iOS7_152X152_ipad_retina.png" />'
+                ]
+                .join('\n')
+            );
+        }
+        
+        if(/Android/.test(sUserAgent)){
+            document.write('<link rel="apple-touch-icon-precomposed" sizes="192x192" href="http://static.naver.net/nfinance/ico/android_192x192_xxxhpdi.png"/>');
+        }
+    })();
+    </script>
+</head>
+
+
+
+
+<body onload="getGNB();">
+
+
+
+<script type='text/javascript'>
+	document.domain = 'naver.com';
+	var nclk_evt = 3;
+	nclk_do();
+</script>
+	
+
+<script type="text/javascript">
+
+
+
+
+
+
+
+var nsc="finance.stockend";
+
+
+var ccsrv="cc.naver.com";
+
+
+	
+	
+	var gnb_service='finance';
+	
+
+
+var gnb_logout=document.URL; //GNB에서 로그아웃 후 redirect 될 URL
+var gnb_template='gnb_common_euckr_quirk'; //사용하고 있는 템플릿 명
+var gnb_searchbox='off'; //미니 검색창을 on 할지 off 할지. default는 off
+var gnb_shortnick='off'; //닉네임 말줄임(10자)을 on할지 off 할지. default는 off.
+
+var gnb_naverme_layer_open_callback = function(){
+	   var naverLayerSize = gnbNaverMeLayer.getLayerSize();
+		
+		var me_layers = document.getElementById("me_layers"); 
+		me_layers.width=naverLayerSize.width;
+		me_layers.height=naverLayerSize.height;}; 
+
+var gnb_naverme_layer_close_callback = function(){
+		 
+			var me_layers = document.getElementById("me_layers"); 
+			me_layers.width="0";
+			me_layers.height="0";}; 
+</script>
+
+
+
+	
+		<div class="blind"><a href="#middle">메뉴건너뛰고 본문 바로가기</a></div>
+	
+	
+
+
+
+<div id="header">
+	<div class="snb_area">
+		<div class="snb_inner">
+			<div id="gnb_area">
+				<div id="gnb">
+					<script charset="EUC-KR" type="text/javascript">
+					var gnb_service = "gnbtest";
+					var gnb_template = "gnb_quirks_euckr";
+					var gnb_dark = false;
+					var gnb_brightness = 1;
+					var gnb_logout=encodeURIComponent(location.href);
+					var gnb_one_naver = 1;
+					</script>
+					<script type="text/javascript" src="http://static.gn.naver.net/template/gnb_quirks_euckr.nhn?20161101">
+					</script>
+				</div>
+			</div>
+	 
+			<div class="sta">
+				<h1 class="logo"> <a href="http://www.naver.com/" class="logo_naver" onClick="clickcr(this, 'STA.naver', '', '', event);"><span class="blind">네이버</span></a>
+				<a href="http://finance.naver.com/" class="logo_service" onClick="clickcr(this, 'STA.finance', '', '', event);"><span class="blind">금융</span></a> </h1>
+				<form name="search" action="http://finance.naver.com/search/search.nhn"  method="get"
+					onsubmit="return delayed_submit(this)" style="margin:0; padding:0;">
+				<fieldset>
+					<legend>검색</legend>
+					<div class="snb_search_box">
+						<div class="snb_search_box_sub">
+							<input id="stock_items" type="text" title="검색" name="query" value="종목명&middot;펀드명&middot;환율명&middot;원자재명 입력" accesskey="s" class="snb_search_text snb_default" autocomplete="off">
+							<a id="nautocomplete" href="#" onclick="return false" class="btn_arrow"><span class="blind">자동완성 펼치기</span></a>
+						</div>
+						<div class="auto_area">
+							<iframe id="autoFrame" src="http://finance.naver.com/ac/reatcmp.nhn?menu=stockend&submenu=" scrolling="no" height="0" frameborder="0" width="400" style="display: none;" marginheight="0" marginwidth="0" title="자동완성"></iframe>
+						</div>
+						<button type="submit" class="snb_search_btn" onclick="clickcr(this, 'STA.search', '', '', event);" alt="검색"><span class="blind">검색</span></button>
+						<a href="#" target="_blank" class="snb_search_btn-total" onclick="itegrationSearch();clickcr(this, 'STA.nx', '', '', event);return false;"><span class="blind">통합검색</span></a>
+					</div>
+				</fieldset>
+				</form>
+			</div>
+		</div>
+	</div>
+	<div class="lnb_area">
+		<div class="lnb_inner">
+			<div id="menu">
+				<ul class="menu">
+					<li class="m1 first "><a href="http://finance.naver.com/" onClick="clickcr(this, 'LNB.home', '', '', event);"><span class="tx"><span class="blind">금융 홈</span></span></a></li>
+					<li class="m2 on"><a href="http://finance.naver.com/sise/" onClick="clickcr(this, 'LNB.sise', '', '', event);"><span class="tx"><span class="blind">국내증시</span></span></a></li>
+					<li class="m3 "><a href="http://finance.naver.com/world/" onClick="clickcr(this, 'LNB.world', '', '', event);"><span class="tx"><span class="blind">해외증시</span></span></a></li>
+					<li class="m4 "><a href="http://info.finance.naver.com/marketindex/" onClick="clickcr(this, 'LNB.market', '', '', event);"><span class="tx"><span class="blind">시장지표</span></span></a></li>
+					<li class="m5 "><a href="http://info.finance.naver.com/fund/" onClick="clickcr(this, 'LNB.fund', '', '', event);"><span class="tx"><span class="blind">펀드</span></span></a>
+						
+					</li>
+					<li class="m6 "><a href="http://finance.naver.com/research/" onClick="clickcr(this, 'LNB.research', '', '', event);"><span class="tx"><span class="blind">투자전략</span></span></a></li>
+					<li class="m7 "><a href="http://finance.naver.com/news/"><span class="tx"><span class="blind">뉴스</span></span></a></li>
+					<li class="m8 "><a href="http://finance.naver.com/mystock/" onClick="clickcr(this, 'LNB.mystock', '', '', event);"><span class="tx"><span class="blind">MY금융</span></span></a></li>
+					<li class="m9 "><a href="http://finance.naver.com/recommendationItem" onClick="clickcr(this, 'LNB.rec', '', '', event);"><span class="tx"><span class="blind">추천종목</span></span></a></li>
+				</ul>
+			</div>
+			<div id="search">
+			
+				<div class="debate">
+					<ul>
+						
+						
+							
+								
+									
+									
+										<li><a href="http://finance.naver.com/news/news_read.nhn?mode=LSS2D&office_id=001&article_id=0008792253"  onClick="clickcr(this, 'rec.con1', '', '', event);">대내외 불안에 경계심리 커진 증시, '변동성 장세 불가피'</a></li>
+									
+								
+							
+						
+						
+						
+							
+								
+									
+									
+										<li><a href="http://finance.naver.com/news/news_read.nhn?mode=LSS2D&office_id=003&article_id=0007560146"  onClick="clickcr(this, 'rec.con2', '', '', event);">다시 꺾인 수출, 車파업·노트7 단종에 두달째 마이너스</a></li>
+									
+								
+							
+						
+						
+						
+							
+								
+									
+									
+										<li><a href="http://finance.naver.com/news/news_read.nhn?mode=LSS2D&office_id=421&article_id=0002366411"  onClick="clickcr(this, 'rec.con3', '', '', event);">'中, 세 살 버릇 여든까지, 당분간 긴축 불가피'</a></li>
+									
+								
+							
+						
+						
+					</ul>
+				</div>
+			
+			
+			
+			
+			</div>
+		</div>
+	</div>
+	
+	
+	
+	
+	
+	
+	<script type="text/JavaScript">
+		/* lcs 집계 */ 
+		lcs_do();
+		
+		/* 검색 자동완성 [ 인자1 : 검색input의 ID, 인자2 : iframe 태그 ID ]   */
+		// AutoComplete 생성
+		smartSearch = new nhn.Autocomplete(
+			// InputManager 생성
+			new nhn.AcInputManager(jindo.$("stock_items")),
+			// DataManager 생성
+			new nhn.AcDataManager("http://ac.finance.naver.com:11002/ac", "jsonp", "get", { 
+                    st: "111", 
+                    r_lt : "111", 
+                    q_enc : "euc-kr", 
+                    r_enc : "euc-kr", 
+                    frm: "stock"}), 
+			// ViewManager 생성
+			new nhn.AcStockViewManager(jindo.$("autoFrame"), jindo.$("nautocomplete"), {  
+                                        strMax: 200, 
+                                        listMax: [7, 2, 2], 
+                                        aRedirectUrl : [
+                            			"http://finance.naver.com",
+                            			"http://info.finance.naver.com",
+                            			"http://info.finance.naver.com"]}),
+			// Autocomplete Option 
+            {formId:"search", cookieDomain:"finance.naver.com", cookieName:"NaverCommonStock"});
+		
+			smartSearch.attach({ 
+	            onFocus: function () { 
+	                var weInput = jindo.$Element('stock_items'); 
+	                if (weInput && weInput.hasClass("snb_default")) { 
+	                        weInput.text(""); 
+	                        weInput.removeClass('snb_default'); 
+	                } 
+	            } 
+	        }); 
+
+		/* 통합검색  start ----->  */
+		document.domain = 'naver.com';
+		var sSearchHintText = '종목명·펀드명·환율명·원자재명 입력';
+		function itegrationSearch()
+		{
+			var query = escape(jindo.$('stock_items').value);
+			if ( query == ''  || query == escape(sSearchHintText))
+			{
+				alert ( '검색어를 입력해 주세요.' );
+				return;
+			} 
+			window.open('http://search.naver.com/search.naver?sm=sta_hty.finance&where=nexearch&query='+query,'','');
+			return false;
+		}
+					
+		function delayed_submit(object) {
+			if (navigator.userAgent.indexOf('MSIE') == -1) {
+				window.setTimeout(function() {stock_search(object)}, 300);
+			} else {
+				stock_search(object);
+			}
+			return false;
+		}
+		
+		function stock_search (object)
+		{
+			query = object.query.value.replace(/^\s*/,'').replace(/\s*$/,'');	// trim
+			object.query.value=query;
+			
+			if ( query == '' || query == sSearchHintText.replace(/^\s*/,'').replace(/\s*$/,''))
+			{
+				alert ( '검색어를 입력해 주세요.' );
+				return;
+			}
+			else {
+				object.submit();
+			}
+		}
+		/* <---------- 통합검색  end */
+		
+		function popup()
+		{
+			win = window.open('http://finance.naver.com/template/group_limit_pop.jsp','finan_popup','width=569 height=278 scrollbars=no status=no');
+			win.focus();
+		}
+	</script>
+	
+	<iframe id="me_layers" name="test" title="네이버미 영역" width="0" height="0" scrolling="no" frameborder="0" style="display:block;top: 22px; right: 209px; position: absolute; z-index: 15;"></iframe>   		
+</div>
+<div id="wrap"  >
+<!-- //  global include -->
+
+<script language="JavaScript">
+function mouseOver(obj){
+  obj.style.backgroundColor="#f6f4e5";
+}
+function mouseOut(obj){
+  obj.style.backgroundColor="#ffffff";
+}
+</script>
+
+	<!-- 종목 summary -->
+	
+		
+		
+	
+
+
+
+
+<script language=javascript src='http://finance.naver.com/js/recent_code.js?20161027044035'></script>
+<script language=javascript>addCode('028050');</script>
+<script language="JavaScript" src="http://finance.naver.com/js/flashObject.js?20161027044035"></script>
+<script language="JavaScript" src="http://finance.naver.com/js/summary.js?20161027044035"></script>
+
+<script language="JavaScript">fchartStatus.setChartStatus('off');</script>
+<style>
+
+.hide_chart {
+position: absolute;
+top: 0;
+left: -9999px;
+}
+</style>
+	<div id="middle" class="new_totalinfo">
+		
+
+		
+			
+			
+				
+			
+			
+		
+
+		
+			
+				
+				
+			
+			
+		
+
+																		
+        <dl class="blind"> 
+	        <dt>종목 시세 정보</dt> 
+	        <dd>2016년 11월 01일 13시 16분 기준 장중</dd> 
+	        <dd>종목명 삼성엔지니어링</dd> 
+	        <dd>종목코드 028050 코스피</dd> 
+	        <dd>현재가 9,250 전일대비 하락 220 마이너스 2.32 퍼센트</dd> 
+	        <dd>전일가 9,470</dd> 
+	        <dd>시가 9,420</dd> 
+	        <dd>고가 9,440</dd> 
+	        <dd>상한가 12,300</dd> 
+	        <dd>저가 9,160</dd> 
+	        <dd>하한가 6,630</dd> 
+	        <dd>거래량 1,806,983</dd> 
+	        <dd>거래대금 16,728백만</dd> 
+        </dl>
+         
+        
+		<div class="h_company">
+		 	<div class="wrap_company">
+				<h2><a href="#" onClick="clickcr(this, 'sop.title', '', '', event);window.location.reload();">삼성엔지니어링</a></h2>
+
+				<div class="description">
+					<span class="code">028050</span>
+					
+						<img src="http://imgstock.naver.net/item_renewal/btn_kospi.gif" width="33" height="16" alt="코스피" class="kospi">
+					
+					
+					
+					<span class="blind">날짜</span>
+					<span id="time">
+					
+						
+						
+							<em class="date">2016.11.01  13:16 <span>기준(장중)</span></em>
+						
+						
+					
+					</span>
+	
+					<em class="realtime">
+						<span class="blind">실시간</span> 
+					</em>
+					
+						
+						
+							
+							<em class="summary">
+						
+							<a href="#" onclick="togglePannel('summary_lyr'); return false;"></a>
+							
+							<span class="blind">기업개요</span>
+							<div id="summary_lyr" class="summary_lyr" style="display:none;top:22px;left:0">
+								<iframe id="summary_ifr" name="summary_ifr" width="410" height="" src="" scrolling="no" frameborder="0" style="position:absolute;left:0;top:-2;z-index:20"></iframe> 
+								<div id="summary_info" class="summary_info"> 
+									<h4>기업개요</h4>
+									
+										<p>1970년 설립된 삼성그룹에 속한 계열회사로서 플랜트 건설 및 산업기계 제작판매 공학, 기술서비스, 토건, 환경오염 방지시설, 가스시공, 에너지진단, 환경영향평가, 폐기물처리 등을 영위하고 있음</p>
+									    
+									
+										<p>타당성 검토에서부터 파이낸싱, 설계, 구매대행, 시공, 시운전, 운영 및 유지보수에 이르는 엔지니어링 전분야에서 사업을 영위하고 있으며 주 사업부문은 석유화학플랜트이며 크게 화공사업부와 비화공사업부로 나뉘어짐</p>
+									    
+				            		
+										<p>저유가로 어려운 시장 환경 속에서도 2016년 1월에는 세계 최대 규모의 바이오 의약품 플랜트(5,144억원)인 삼성바이오로직스 제 3공장을 수주함</p>
+									    
+									
+										<p>연구개발 담당조직은 환경기술센터이며, 기술개발파트, 기술지원파트 2개 파트로 나누어져 있으며 고옥탄 휘발유 제조공정 기술, 제지폐수 처리기술개발(SCORES) 등의 실적을 냄</p>
+									    
+									
+										<p>매출구성은 해외 플랜트 공사 69%, 국내 플랜트 공사 31% 등으로 구성</p>
+									    
+									<div class="txt_notice">출처 : 와이즈에프엔</div>
+										<div class="btn_area_top">
+											<a href="#" onclick="hidePannel('summary_lyr'); return false;"><img src="http://static.naver.net/nfinance/img/btn_close.gif" alt="닫기" width="11" height="11"></a>
+										</div>
+									<div class="bg_btm"></div>   
+								</div>
+								<span class="bg_lt"></span> 
+								<span class="bg_rt"></span> 
+								<div class="bu_arrow"></div> 
+							</div> 
+						</em>
+						
+						
+						
+						
+						
+					
+			</div>
+		</div>
+
+		<div class="quick">
+			<p>
+				<a href="#" class="snb_top1" onClick="clickcr(this,'sop.2','','',event);"><span class="blind">MY STOCK 추가</span></a>
+				<a href="javascript:quickorder('on')" class="snb_top3" onClick="clickcr(this,'sop.3','','',event);"><span class="blind">빠른주문</span></a>
+			</p>
+			
+			<div class="ly_lstmove blind NE=a:sop*m">
+				<span class="bg"></span>
+				<div class="txt _ly_group">
+					<div class="bx_sel scr_white2 _ly_group_list">
+						<ul></ul>
+					</div>
+					<div class="bx_sel _ly_group_blank" style="display:none;">
+						<p class="txt_inner type7">추가할 그룹이 없습니다.<br>그룹을 추가해주세요.</p>
+					</div>
+					<p class="rgt"><button type="button" class="btn_spr btn_groupadd2 NPI=a:add"><span class="blind">그룹추가</span></button></p>
+					<p>
+						<button type="button" class="btn_spr btn_cfm2 _btn_ok NPI=a:confirm"><span class="blind">확인</span></button>
+						<button type="button" class="btn_spr btn_clse2 _btn_cancel NPI=a:close"><span class="blind">닫기</span></button>
+					</p>
+				</div>
+				<div class="txt _ly_message" style="display:none;">
+				</div>
+			</div>
+			
+				
+	        
+            <div class="layer_quick_order" id="quickOrderArea" style="display:none">
+                <div class="content">
+                    <h5>네이버 주식거래연결<br>빠른 주문을 도와드립니다!</h5>
+                    <ul>
+                    <li>본 서비스는 고객님의 빠른 주문을 돕기 위해<br><span>증권사의 로그인을 연결</span>해드리고 있습니다.</li>
+                    <li>고객님이 보유하고 계신 증권사를 클릭한 후<br><span>증권사의 아이디, 비밀번호, 공인인증서로 주문</span>을<br>하실 수 있습니다. </li>
+                    <li>증권사 로그인 이후 시스템 문제가 발생하면,<br><span>증권사 고객센터로 직접 문의</span> 하시기 바랍니다.   </li>
+                    <li>네이버는 증권사 서비스의 시스템 장애에 따른<br>법적 책임을 지지 않습니다. </li>
+                    </ul>
+                    
+                    <div class="ci_area">
+                    	<div id="quickOrderCiBanner0"></div>
+                    	<div id="quickOrderCiBanner1"></div>
+                    	<div id="quickOrderCiBanner2"></div>
+                    	<div id="quickOrderCiBanner3"></div>
+                    	<div id="quickOrderCiBanner4"></div>
+                    </div>
+                    <div class="btn_area_btm"><a href="javascript:quickorder('off')"><img src="http://imgstock.naver.net/item_renewal/btn_close.gif" alt="닫기" width="38" height="20"></a></div>
+                    <div class="btn_area_top"><a href="javascript:quickorder('off')"><img src="http://imgstock.naver.net/item_renewal/btn_close_x.gif" alt="닫기" width="19" height="19"></a></div>
+                </div>
+            </div>
+            
+		</div>
+		
+		
+	</div>
+
+	<div id="content">
+
+		<div id="chart_area" class="spot spot_short"><!-- chart가 사라질때  <div class="spot spot_short">-->
+			<div class="rate_info">
+			
+				
+                <dl class="blind"> 
+                        <dt><strong>삼성엔지니어링</strong></dt> 
+                        <dd>오늘의시세 9,250 포인트</dd> 
+                        <dd>220 포인트 하락</dd> 
+                        <dd>2.32% 마이너스</dd> 
+                </dl>
+                
+                
+				<div class="today">
+					<p class="no_today">
+						
+							
+							
+								<em class="no_down">
+							
+							
+						
+							<span class="blind">9,250</span>
+							<span class="no9">9</span><span class="shim">,</span><span class="no2">2</span><span class="no5">5</span><span class="no0">0</span>
+						</em>
+					</p>
+					<p class="no_exday">
+						<span class="sptxt sp_txt1">전일대비</span>
+						
+							
+							
+							
+							
+								<em class="no_down">
+									<span class="ico down">하락</span>
+							
+							
+						
+							<span class="blind">220</span>
+							<span class="no2">2</span><span class="no2">2</span><span class="no0">0</span>
+						</em>
+						<span class="bar">l</span>
+						
+							
+							
+								<em class="no_down">
+									<span class="ico minus">-</span>
+							
+							
+						
+							<span class="blind">2.32</span>
+							<span class="no2">2</span><span class="jum">.</span><span class="no3">3</span><span class="no2">2</span>
+							<span class="per">%</span>
+						</em>
+					</p>
+				</div>
+				<table summary="주요 시세(전일종가, 시고저가, 거래량, 거래대금)을 제공합니다." class="no_info">
+				<caption>주요 시세</caption>
+				<colgroup><col><col width="214"><col width="157"></colgroup>
+				<tr>
+					<td class="first">
+						<span class="sptxt sp_txt2">전일</span>
+						<em>
+							<span class="blind">9,470</span>
+							<span class="no9">9</span><span class="shim">,</span><span class="no4">4</span><span class="no7">7</span><span class="no0">0</span>
+						</em>
+					</td>
+					<td>
+						<span class="sptxt sp_txt4">고가</span>
+						
+							
+							
+								
+									
+									
+									<em class="no_down">
+									
+								
+							
+						
+						
+							
+							<span class="blind">9,440</span><span class="no9">9</span><span class="shim">,</span><span class="no4">4</span><span class="no4">4</span><span class="no0">0</span>
+						
+						</em>
+						<span class="sptxt sp_txt6">(상한가</span>
+						<em class="no_cha">
+							
+								
+								<span class="blind">12,300</span><span class="no1">1</span><span class="no2">2</span><span class="shim">,</span><span class="no3">3</span><span class="no0">0</span><span class="no0">0</span>
+							
+						</em>
+						<span class="sptxt sp_txt8">)</span>
+					</td>
+					<td>
+						<span class="sptxt sp_txt9">거래량</span>
+						<em>
+							<span class="blind">1,806,983</span>
+							<span class="no1">1</span><span class="shim">,</span><span class="no8">8</span><span class="no0">0</span><span class="no6">6</span><span class="shim">,</span><span class="no9">9</span><span class="no8">8</span><span class="no3">3</span>
+						</em>
+					</td>
+				</tr>
+				<tr>
+					<td class="first">
+						<span class="sptxt sp_txt3">시가</span>
+						
+							
+							
+								
+									
+									
+									<em class="no_down">
+									
+								
+							
+						
+						
+							
+							<span class="blind">9,420</span><span class="no9">9</span><span class="shim">,</span><span class="no4">4</span><span class="no2">2</span><span class="no0">0</span>
+						
+						</em>
+					</td>
+					<td>
+						<span class="sptxt sp_txt5">저가</span>
+						
+							
+							
+								
+									
+									
+									<em class="no_down">
+									
+								
+							
+						
+						
+							
+							<span class="blind">9,160</span><span class="no9">9</span><span class="shim">,</span><span class="no1">1</span><span class="no6">6</span><span class="no0">0</span>
+						
+						</em>
+						<span class="sptxt sp_txt7">(하한가</span>
+						<em class="no_cha">
+							
+								
+								<span class="no6">6</span><span class="shim">,</span><span class="no6">6</span><span class="no3">3</span><span class="no0">0</span>
+							
+						</em>
+						<span class="sptxt sp_txt8">)</span>
+					</td>
+					<td>
+						<span class="sptxt sp_txt10">거래대금</span>
+						<em>
+						
+							
+								<span class="blind">16,728</span>
+								<span class="no1">1</span><span class="no6">6</span><span class="shim">,</span><span class="no7">7</span><span class="no2">2</span><span class="no8">8</span>
+							
+							
+						
+						</em>
+						<span class="sptxt sp_txt11">백만</span>
+					</td>
+				</tr>
+				</table>
+			</div>
+			<div class="chart">
+				<p class="blind">종목 시세 차트</p>
+				<div class="chart_da">
+					<div id="fs_chart" class="fs_chart">
+						
+					</div>
+					
+					<div class="pad_area"> 
+						<ul class="pad_tap"> 
+							<li class="tab_first _item_img_chart _day on" onclick="clickcr(this,'sic.1day','','',event); changeImgChart('day'); return false;"><a href="#">1일</a></li> 
+							<li class="_item_img_chart _day7" onclick="clickcr(this,'sic.1week','','',event); changeImgChart('day7'); return false;"><a href="#">1주</a></li> 
+							<li class="_item_img_chart _day90" onclick="clickcr(this,'sic.3month','','',event); changeImgChart('day90'); return false;"><a href="#">3개월</a></li> 
+							<li class="_item_img_chart _day365" onclick="clickcr(this,'sic.1year','','',event); changeImgChart('day365'); return false;"><a href="#">1년</a></li> 
+							<li class="_item_img_chart _day1095" onclick="clickcr(this,'sic.3year','','',event); changeImgChart('day1095'); return false;"><a href="#">3년</a></li> 
+						</ul> 
+						<h5 class="blind">이미지 차트</h5> 
+						<img id="img_cahrt_area" src="http://imgfinance.naver.net/chart/item/day/028050.png?sidcode=1477973780240" width="698" height="242" alt="이미지 차트"> 
+					</div> 
+					<!-- <div class="fs_da">
+							<div id="da_70046" name="da_70046"><iframe id="f70046" name="f70046" src="http://ad.naver.com/adshow?unit=758B" width="700" height="46" marginheight="0" marginwidth="0" scrolling="no" frameborder="0" align="center"></iframe></div>
+					</div> -->
+				</div>
+			</div>
+			<a href="javascript:fchartStatus.showChartArea('028050', '%BB%EF%BC%BA%BF%A3%C1%F6%B4%CF%BE%EE%B8%B5', 'false')" class="btn_close" onClick="clickcr(this,'sop.toggle','','',event);">
+				<div id="btn_close">
+					
+						
+						<img src="http://imgstock.naver.net/item_renewal/btn_lay_open.gif" alt="차트열기" width="45" height="11">
+					
+				</div>
+			</a>
+		</div>
+
+<script type="text/template" id="summaryTpl">
+	<div class="today">
+		<p class="no_today">
+			{if rf == 1 || rf == 2}
+				<em class="no_up">
+			{elseif rf == 4 || rf == 5}
+				<em class="no_down">
+			{else}
+				<em class="X">
+			{/if}
+			{js numberFont(changeNumberFormat(=nv))}
+			</em>
+		</p>
+		<p class="no_exday">
+			<span class="sptxt sp_txt1">전일대비</span>
+			{if rf == 1}
+					<em class="no_up">
+						<span class="ico up_price">상한가</span>
+			{elseif rf == 2}
+					<em class="no_up">
+						<span class="ico up">상승</span>
+			{elseif rf == 4}
+					<em class="no_down">
+						<span class="ico down_price">하한가</span>
+			{elseif rf == 5}
+					<em class="no_down">
+						<span class="ico down">하락</span>
+			{else}
+					<em class="X">
+						<span class="ico sam">보합</span>
+			{/if}
+			{js numberFont(changeNumberFormat(=cv))}
+			</em>
+
+			<span class="bar">l</span>
+			{if rf == 1 || rf == 2}
+					<em class="no_up">
+						<span class="ico plus">+</span>
+			{elseif rf == 4 || rf == 5}
+					<em class="no_down">
+						<span class="ico minus">-</span>
+			{else}
+					<em class="X">
+			{/if}
+			{js numberFont(changeNumberFormat(=cr.toFixed(2)))}
+				<span class="per">%</span>
+			</em>
+		</p>
+	</div>
+	<table summary="주요 시세(전일종가, 시고저가, 거래량, 거래대금)을 제공합니다." class="no_info">
+	<caption>주요 시세</caption>
+	<colgroup><col><col width="214"><col width="157"></colgroup>
+	<tr>
+		<td class="first">
+			<span class="sptxt sp_txt2">전일</span>
+			<em>
+                {if sv == 0}
+				{js numberFont(changeNumberFormat(=pcv))}
+                {else}
+				{js numberFont(changeNumberFormat(=sv))}
+                {/if}
+			</em>
+		</td>
+		<td>
+			<span class="sptxt sp_txt4">고가</span>
+			{if tyn == "Y"}
+				<em>
+			{else}
+				{if hv == 0}
+				<em>
+				{elseif pcv < hv}
+				<em class="no_up">
+				{elseif pcv > hv}
+				<em class="no_down">
+				{else}
+				<em>
+				{/if}
+			{/if}
+			{if ms == "PREOPEN"}
+				{js numberFont(0)}
+			{else}
+				{js numberFont(changeNumberFormat(=hv))}
+			{/if}
+			</em>
+			<span class="sptxt sp_txt6">(상한가</span>
+			<em class="no_cha">
+				{if ms == "PREOPEN"}
+					{js numberFont(0)}
+				{else}
+					{js numberFont(changeNumberFormat(=ul))}
+				{/if}
+			</em>
+			<span class="sptxt sp_txt8">)</span>
+		</td>
+		<td>
+			<span class="sptxt sp_txt9">거래량</span>
+			<em>
+				{js numberFont(changeNumberFormat(=aq))}
+			</em>
+		</td>
+	</tr>
+	<tr>
+		<td class="first">
+			<span class="sptxt sp_txt3">시가</span>
+			{if tyn == "Y"}
+				<em>
+			{else}
+				{if ov == 0}
+				<em>
+				{elseif pcv < ov}
+				<em class="no_up">
+				{elseif pcv > ov}
+				<em class="no_down">
+				{else}
+				<em>
+				{/if}
+			{/if}
+			{if ms == "PREOPEN"}
+				{js numberFont(0)}
+			{else}
+				{js numberFont(changeNumberFormat(=ov))}
+			{/if}
+			</em>
+		</td>
+		<td>
+			<span class="sptxt sp_txt5">저가</span>
+			{if tyn == "Y"}
+				<em>
+			{else}
+				{if lv == 0}
+				<em>
+				{elseif pcv < lv}
+				<em class="no_up">
+				{elseif pcv > lv}
+				<em class="no_down">
+				{else}
+				<em>
+				{/if}
+			{/if}
+			{if ms == "PREOPEN"}
+				{js numberFont(0)}
+			{else}
+				{js numberFont(changeNumberFormat(=lv))}
+			{/if}
+			</em>
+			<span class="sptxt sp_txt7">(하한가</span>
+			<em class="no_cha">
+				{if ms == "PREOPEN"}
+					{js numberFont(0)}
+				{else}
+					{js numberFont(changeNumberFormat(=ll))}
+				{/if}
+			</em>
+			<span class="sptxt sp_txt8">)</span>
+		</td>
+		<td>
+			<span class="sptxt sp_txt10">거래대금</span>
+			<em>
+				{js numberFont(changeNumberFormat((=aa/1000000).toFixed(0)))}
+			</em>
+			<span class="sptxt sp_txt11">백만</span>
+		</td>
+	</tr>
+	</table>
+</script>
+
+<script type="text/javascript">
+var pollingInterval = 2000;
+var timer = null;
+var pollingAjax = null;
+var itemcodes = '';
+
+var startTimer = function() {
+	clearTimer();
+	timer = setInterval('doPolling()', pollingInterval);
+}
+
+var clearTimer = function() {
+	if (pollingAjax) {
+		pollingAjax.abort();
+		pollingAjax = null;
+	}
+
+	timer = window.clearInterval(timer);
+}
+
+var doPolling = function() {
+	var pollingApiUrl = "http://polling.finance.naver.com/api/realtime.nhn?query=SERVICE_ITEM:" + "028050"
+
+	if (requestType == 'recent' && itemcodes != "") {
+		pollingApiUrl += "|" + "SERVICE_RECENT_ITEM:" + itemcodes;
+	} else if (requestType == 'mystock' && itemcodes != ""){
+		pollingApiUrl += "|" + "SERVICE_MYSTOCK_ITEM:" + itemcodes;
+	}
+
+	pollingAjax = jindo.$Ajax(pollingApiUrl, {
+		type : 'jsonp',
+		jsonp_charset : "euc-kr",
+		onload : function(response) {
+			if(response != null && response.readyState() == 4) {
+				refreshQuote(response.json());
+				startTimer();
+			}
+		},
+		timeout : 2,
+		ontimeout : function() {
+			startTimer();
+		},
+		async : true
+	});
+	pollingAjax.request();
+}
+
+function displayTime(ms, time) {
+	var result;
+
+	var utcDate = new Date(time);
+	utcDate.setMinutes(utcDate.getMinutes() + utcDate.getTimezoneOffset());
+	utcDate.setHours(utcDate.getHours() + 9);
+
+	var oDate = jindo.$Date(utcDate);
+
+	if (ms == "PREOPEN") {
+		closeDate = oDate.format('Y.m.d')
+		result = '<em class="date">' + oDate.format('Y.m.d') + ' <span>기준(개장전)</span></em> ';
+	} else if (ms == "CLOSE") {
+		result = '<em class="date">' + closeDate + ' <span>기준(장마감)</span></em> ';
+	} else {
+		closeDate = oDate.format('Y.m.d')
+		result = '<em class="date">' + oDate.format('Y.m.d H:i') + ' <span>기준(장중)</span></em> ';
+	}
+
+	return result;
+}
+
+/**
+ * 우측상단 투자정보 영역 중, NAV 값 갱신
+ */
+function refreshEtfNav(etfNav) {
+	var elEtfNav = jindo.$Element(jindo.$$.getSingle("#on_board_last_nav"));
+	if (elEtfNav != null) {
+		if (etfNav != null) {
+			elEtfNav.html("<em><strong>" + changeNumberFormat(etfNav.toFixed(0)) + "</strong></em>");
+		} else {
+			elEtfNav.html("<em><strong>N/A</strong></em>");
+		}
+	}
+}
+
+function refreshInvestmentSummary(nv) {
+	if (!(false && false && false)) {
+		return;
+	}
+
+	var averageBuyingPrice = 0;
+	var holdingShares = 0;
+	
+	var elEvaluationProfitAmount = jindo.$Element(jindo.$$.getSingle("#evaluation_profit_amount"));	
+	// 평가손익 = (nv - 평균매입가) * 보유수량 
+	var evaluationProfitAmount = (nv - 0) * 0;
+	// 평가수익률 = 평가손익 / (평균매입가 * 보유수량) * 100
+	var evaluationProfitRate = evaluationProfitAmount / (0 * 0) * 100;
+	
+	var sPointClass = "";	
+	var sSign = "";
+	if (evaluationProfitAmount > 0) {
+		sPointClass = "f_up";
+		sSign = "+";
+	} else {
+		sPointClass = "f_down";
+		sSign = "";
+	}
+	
+	var evaluationProfitAmoutText = ""
+	if (evaluationProfitAmount > 10000000000) {
+		var evaluationProfitAmountDivideBillion = evaluationProfitAmount / 100000000;
+		evaluationProfitAmountText = "<em>" + sSign + changeNumberFormat(evaluationProfitAmountDivideBillion.toFixed(0)) + "억</em>";
+	} else {
+		evaluationProfitAmountText = "<em>" + sSign + changeNumberFormat(evaluationProfitAmount) + "</em>";
+	}
+	
+	if (elEvaluationProfitAmount != null) {
+		elEvaluationProfitAmount.removeClass("f_up");
+		elEvaluationProfitAmount.removeClass("f_down");
+		elEvaluationProfitAmount.addClass(sPointClass);
+		elEvaluationProfitAmount.html(evaluationProfitAmountText);
+	}
+	
+	var elEvaluationProfitRate = jindo.$Element(jindo.$$.getSingle("#evaluation_profit_rate"));
+	if (elEvaluationProfitRate != null) {
+		
+		elEvaluationProfitRate.removeClass("f_up");
+		elEvaluationProfitRate.removeClass("f_down");
+		elEvaluationProfitRate.addClass(sPointClass);
+		
+		elEvaluationProfitRate.html("<em>" + sSign + changeNumberFormat(evaluationProfitRate.toFixed(2)) + "%</em>");
+	}
+}
+
+
+function refreshCompanyValue(json) {
+	var sPer = "N/A";
+	var sKrxPer = "N/A";
+	/* if ((json.per !== undefined) && (json.per !== null)) {
+		sPer = converToFixedPointNotation(json.per, 2);
+	}
+
+	jindo.$A(jindo.$$("#_per")).forEach(function(v) {
+		jindo.$Element(v).text(sPer);
+	}, this); */
+	
+	if ((json.eps !== undefined) && (json.eps !== null)) {
+		sPer = converToFixedPointNotation(json.nv / json.eps, 2);
+	}
+
+	jindo.$A(jindo.$$("#_per")).forEach(function(v) {
+		jindo.$Element(v).text(sPer);
+	}, this);
+	
+	if ((json.keps !== undefined) && (json.keps !== null)) {
+		sKrxPer = converToFixedPointNotation(json.nv / json.keps, 2);
+	}
+
+	jindo.$A(jindo.$$("#krx_per")).forEach(function(v) {
+		jindo.$Element(v).text(sKrxPer);
+	}, this);
+	
+	var sCnsPer = "N/A";
+	if ((json.cnsEps !== undefined) && (json.cnsEps !== null)) {
+		sCnsPer = converToFixedPointNotation(json.nv / json.cnsEps, 2);
+	}
+
+	jindo.$A(jindo.$$("#_cns_per")).forEach(function(v) {
+		jindo.$Element(v).text(sCnsPer);
+	}, this);
+
+	var sPbr = "N/A";
+	if ((json.bps !== undefined) && (json.bps !== null)) {
+		var bps = converToFixedPointNotation(json.bps, 0)
+		sPbr = converToFixedPointNotation(json.nv / bps, 2);
+	}
+
+	jindo.$A(jindo.$$("#_pbr")).forEach(function(v) {
+		jindo.$Element(v).text(sPbr);
+	}, this);
+}
+
+function refreshQuote(res) {
+	if(res != null && res.resultCode == 'success') {
+		pollingInterval = res.result.pollingInterval;
+
+		for (var index = 0 ; index < res.result.areas.length ; index++) {
+			if (res.result.areas[index].name == "SERVICE_ITEM") {
+				var ms = "NOT DEFINED";
+				ms = res.result.areas[index].datas[0].ms;
+				document.getElementById("time").innerHTML = displayTime(ms, res.result.time);
+
+				jindo.$Element(jindo.$$.getSingle("#chart_area .rate_info")).html(jindo.$Template("summaryTpl").process(res.result.areas[index].datas[0]));
+
+				refreshInvestmentSummary(res.result.areas[index].datas[0].nv);				
+				refreshEtfNav(res.result.areas[index].datas[0].nav);
+				refreshCompanyValue(res.result.areas[index].datas[0]);
+			} else if (res.result.areas[index].name == "SERVICE_RECENT_ITEM") {
+				renderRecentAreaRealtime("recent", res.result.areas[index]);
+			} else if (res.result.areas[index].name == "SERVICE_MYSTOCK_ITEM") {
+				renderRecentAreaRealtime("mystock", res.result.areas[index]);
+			}
+		}
+	}
+}
+
+function numberFont(value) {
+	value = value + "";
+	var result = "";
+
+	for (i = 0; i < value.length; i++) {
+		var tmpChar = value.charAt(i);
+
+		result += '<span class="';
+		if (tmpChar == ".") {
+			result += "jum";
+		} else if (tmpChar == ",") {
+			result += "shim";
+		} else {
+			result += "no" + tmpChar;
+		}
+		result += '">' + tmpChar + '</span>';
+	}
+
+	return result;
+}
+
+function changeNumberFormat(vNumber){
+	var sUnderNumber = "";
+	var sNumberString = vNumber || 0;
+	sNumberString = (typeof sNumberString != "String") ? String(sNumberString) : sNumberString;
+
+	if(sNumberString.indexOf(".") > -1){
+		var aNumber = sNumberString.split(".");
+		sNumberString = aNumber[0];
+		sUnderNumber = "." + aNumber[1];
+	}
+
+	return sNumberString.replace(/(\d)(?=(\d{3})+$)/igm, "$1,") + sUnderNumber;
+}
+
+function converToFixedPointNotation (nNumber, nDecimalLength){
+	return parseFloat(nNumber).toFixed(nDecimalLength || 0);
+}
+
+// 1분마다 정보 업데이트
+var updateInformationInterval = 60000;
+var informationTimer = null;
+var oUpdateAjax = null;
+
+var startInformationTimer = function() {
+	clearInformationTimer();
+	informationTimer = setInterval('doUpdateInformation()', updateInformationInterval);
+}
+
+var clearInformationTimer = function() {
+	if (oUpdateAjax) {
+		oUpdateAjax.abort();
+		oUpdateAjax = null;
+	}
+
+	informationTimer = window.clearInterval(informationTimer);
+}
+
+var doUpdateInformation = function() {
+	var sApiUrl = "http://api.finance.naver.com/service/itemSummary.nhn?itemcode=028050"
+
+	oUpdateAjax = jindo.$Ajax(sApiUrl, {
+		type : 'jsonp',
+		jsonp_charset : "utf-8",
+		onload : function(response) {
+			if(response != null && response.readyState() == 4) {
+				var json = response.json();
+				
+				if (json.now == undefined) {
+					startInformationTimer();
+					return;
+				}
+				
+				var sMarketSum = (json.marketSum + "");
+				sMarketSum = sMarketSum.substring(0, sMarketSum.length - 2);
+				sMarketSum = changeNumberFormat(sMarketSum);
+
+				var sPer = changeNumberFormat(json.per);
+				var sEps = changeNumberFormat(json.eps);
+				var sNowVal = changeNumberFormat(json.now);
+				var sDiff = changeNumberFormat(json.diff);
+				var sRate = changeNumberFormat(json.rate) + "%";
+				var sQuant = changeNumberFormat(json.quant);
+				var sAmount = changeNumberFormat(json.amount);
+				var sHigh = changeNumberFormat(json.high);
+				var sLow = changeNumberFormat(json.low);
+
+				if (sRate == "0%") {
+					sRate = "0.00%";
+				}
+
+				if (json.per == undefined) {
+					sPer = "N/A";
+				}
+				
+				if (json.eps == undefined) {
+					sEps = "N/A";
+				}
+				
+				jindo.$A(jindo.$$("#_sise_market_sum")).forEach(function(v) {
+					jindo.$Element(v).text(sMarketSum);
+				}, this);
+
+				jindo.$A(jindo.$$("#_sise_per")).forEach(function(v) {
+					jindo.$Element(v).text(sPer);
+				}, this);
+
+				jindo.$A(jindo.$$("#_sise_eps")).forEach(function(v) {
+					jindo.$Element(v).text(sEps);
+				}, this);
+
+				jindo.$A(jindo.$$("#_nowVal")).forEach(function(v) {
+					jindo.$Element(v).text(sNowVal);
+				}, this);
+
+				jindo.$A(jindo.$$("#_diff")).forEach(function(v) {
+					var sFormat = null;
+					var sDiffToDisplay = sDiff.replace("-", "");
+
+					if (json.risefall == 1) {
+						sFormat = "<em class=\"bu_p bu_pup2\" style=\"margin:0 4px 0 0\"><span class=\"blind\">상한</span></em><span class=\"tah p11 red01\">%s</span>";
+					} else if (json.risefall == 2) {
+						sFormat = "<em class=\"bu_p bu_pup\" style=\"margin:0 4px 0 0\"><span class=\"blind\">상승</span></em><span class=\"tah p11 red01\">%s</span>";
+					} else if (json.risefall == 3) {
+						sFormat = "<span class=\"tah p11\">%s</span>";
+					} else if (json.risefall == 4) {
+						sFormat = "<em class=\"bu_p bu_pdn2\" style=\"margin:0 4px 0 0\"><span class=\"blind\">하한</span></em><span class=\"tah p11 nv01\">%s</span>";
+					} else {
+						sFormat = "<em class=\"bu_p bu_pdn\" style=\"margin:0 4px 0 0\"><span class=\"blind\">하락</span></em><span class=\"tah p11 nv01\">%s</span>";
+					}
+
+					var sHtml = jindo.$S(sFormat).format(sDiffToDisplay);
+
+					jindo.$Element(v).html(sHtml);
+				}, this);
+
+				jindo.$A(jindo.$$("#_rate")).forEach(function(v) {
+					var sCss = "red01";
+					var sRateToDisplay = sRate;
+
+					if (sRate.indexOf("-") > -1) {
+						sCss = "nv01";
+					} else if (sRate.indexOf("0.00") > -1) {
+						sCss = "";
+					} else {
+						sRateToDisplay = "+" + sRateToDisplay;
+					}
+
+					var sHtml = "<span class=\"tah p11 " + sCss + "\">" + sRateToDisplay + "</span>";
+					jindo.$Element(v).html(sHtml);
+				}, this);
+
+				jindo.$A(jindo.$$("#_quant")).forEach(function(v) {
+					jindo.$Element(v).text(sQuant);
+				}, this);
+
+				jindo.$A(jindo.$$("#_amount")).forEach(function(v) {
+					jindo.$Element(v).text(sAmount);
+				}, this);
+
+				jindo.$A(jindo.$$("#_high")).forEach(function(v) {
+					jindo.$Element(v).text(sHigh);
+				}, this);
+
+				jindo.$A(jindo.$$("#_low")).forEach(function(v) {
+					jindo.$Element(v).text(sLow);
+				}, this);
+
+				startInformationTimer();
+			}
+		},
+		timeout : 2,
+		ontimeout : function() {
+			startInformationTimer();
+		},
+		async : true
+	});
+	oUpdateAjax.request();
+}
+
+var dateTime = "20161101131611";
+var closeDate = dateTime.substring(0,4) + "." + dateTime.substring(4,6) + "." + dateTime.substring(6,8);
+
+/**
+ * 플래시 지원여부 확인
+ */
+function isInstalledFlash() {
+	var aFlash = jindo.$Agent().flash();
+	var bResult = false;
+	
+	if (aFlash != null && aFlash.installed) {
+		bResult = true;
+	}
+	
+	return bResult;
+}
+
+/**
+ * 플래시 지원여부에 따라 차트 노출
+ */
+function initChartArea(flashAreaClassName, htmlAreaClassName) {
+	var eFlashChartArea = jindo.$Element(jindo.$$.getSingle("." + flashAreaClassName));
+	var eImgChartArea = jindo.$Element(jindo.$$.getSingle("." + htmlAreaClassName));
+
+	if (eFlashChartArea != null && eImgChartArea != null) {
+		if (isInstalledFlash()) {
+			eImgChartArea.hide();
+		} else {
+			eFlashChartArea.hide();
+		}
+	}
+}
+
+/**
+ * 선택한 타입(1일, 일주일, 3개월, 1년, 3년)에 따라 이미지 차트 변경
+ *
+ * @param chartType 차트종류(1일, 일주일, 3개월, 1년, 3년)
+ */
+function changeImgChart(chartType) {
+	eImgChartTab = jindo.$Element(jindo.$$.getSingle("._" + chartType));
+	
+	if (eImgChartTab != null && !eImgChartTab.hasClass("on")) {
+		jindo.$Element(jindo.$$.getSingle("#img_cahrt_area")).attr("src", "http://imgfinance.naver.net/chart/item/" + chartType + "/028050.png?sidcode=1477973780240");
+	}
+}
+
+jindo.$Element(jindo.$$.getSingle('.pad_tap')).delegate('click', 'li', function(oEvent) {
+	jindo.$Element(jindo.$$.getSingle('li._item_img_chart.on')).removeClass('on');
+	jindo.$Element(oEvent.element).addClass('on');
+});
+
+initChartArea('fs_chart', 'pad_area');
+</script>
+<script type="text/javascript">
+<!--
+jindo.$Fn(function() {
+	var itemAddLayer = new MyFinance.MyStock.ItemAddLayer(jindo.$$.getSingle('.ly_lstmove'), {
+		'LayerPosition': {
+			sPosition : "outside-bottom",
+			sAlign : "left",
+			nTop : 4,
+			nLeft : -96
+		}
+	});
+
+	jindo.$Fn(function(e) {
+		e.stopDefault();
+		itemAddLayer.open(['028050'], e.element);
+	}, this).attach(jindo.$$.getSingle('.snb_top1'), 'click');
+	
+	
+}, this).attach(document, 'domready');
+//-->
+</script>
+<script type="text/javascript" src="http://finance.naver.com/js/jindoComponent/jindo.Component.1.0.3.js?"></script>
+<script type="text/javascript" src="http://finance.naver.com/js/jindoComponent/jindo.UIComponent.1.0.1.js?"></script>
+<script type="text/javascript" src="http://finance.naver.com/js/jindoComponent/jindo.Timer.1.0.3.js?"></script>
+<script type="text/javascript" src="http://finance.naver.com/js/jindoComponent/jindo.LayerManager.1.0.1.js?"></script>
+<script type="text/javascript" src="http://finance.naver.com/js/jindoComponent/jindo.LayerPosition.1.0.1.js?"></script>
+<script type="text/javascript" src="http://finance.naver.com/js/myfinance/MyFinance.Core.js?"></script>
+<script type="text/javascript" src="http://finance.naver.com/js/myfinance/MyFinance.Util.js?"></script>
+<script type="text/javascript" src="http://finance.naver.com/js/myfinance/MyFinance.MyStock.ItemAddLayer.js?"></script>
+	<!-- //종목 summary -->
+	
+	<!-- 공통메뉴 영역 -->
+	
+
+
+
+
+
+
+
+	
+	
+		
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+							
+			
+			
+				
+			
+			
+			
+		
+		
+			
+			
+			
+				<ul class="tabs_submenu tab_total_submenu"> 
+					<li class=""><a href="/item/main.nhn?code=028050" class="tab1" onClick="clickcr(this,'sop.4','','',event);"><span>종합정보</span></a></li> 
+					<li class=""><a href="/item/sise.nhn?code=028050" class="tab2" onClick="clickcr(this,'sop.5','','',event);"><span>시세</span></a></li> 
+					<li class=""><a href="/item/fchart.nhn?code=028050" class="tab3" onClick="clickcr(this,'sop.6','','',event);"><span>차트</span></a></li> 
+					<li class=""><a href="/item/frgn.nhn?code=028050" class="tab4" onClick="clickcr(this,'sop.10','','',event);"><span>투자자별 매매동향</span></a></li> 
+					<li class=""><a href="/item/news.nhn?code=028050" class="tab5" onClick="clickcr(this,'sop.7','','',event);"><span>뉴스&middot;공시</span></a></li> 
+					<li class=""><a href="/item/coinfo.nhn?code=028050" class="tab6" onClick="clickcr(this,'sop.9','','',event);"><span>종목분석</span></a></li> 
+					<li class="tab_on"><a href="/item/board.nhn?code=028050" class="tab7" onClick="clickcr(this,'sop.11','','',event);"><span>종목토론실</span></a></li> 
+					<li class=""><a href="/item/dart.nhn?code=028050" class="tab8" onClick="clickcr(this,'sop.12','','',event);"><span>전자공시</span></a></li> 
+				</ul>
+			
+		
+	
+
+	<!-- // 공통메뉴 영역 -->
+	
+	<!-- Sub Contents -->
+	<div class="section inner_sub">
+		<div class="titlearea2">
+			
+				
+				
+				
+					
+					
+				
+				
+			
+			<h4><span class="red03">종목</span>토론실
+			<span class="nor"><img src="http://imgstock.naver.net/images5/bar_CCC.gif" width="1" height="11"><span class="p11"> 네티즌 투자의견 <span class="tah red01"><strong>3.67</strong> 매수</span></span></span></h4>
+			
+			<div>
+			<a href="/notice.nhn?permLink=/read/1100001004/10000000000020241916" class="caution" target="_blank"><img src="http://imgstock.naver.net/images5/ico_notice2.gif" alt="공지" width="27" height="14"> 토론실 활용 TIP과 운영원칙 안내</a> 
+			
+				
+				<a href="/item/board_write_edit.nhn?code=028050&mode=write"><img src="http://imgstock.naver.net/images5/btn_write.gif" width="66" height="23" alt="글쓰기"></a>
+			
+			</div> 
+		</div>
+		<table summary="종목 토론실의 게시판 글 목록입니다."  cellspacing="0" class="type2">
+		<caption>종목 토론실 게시판</caption>
+		<colgroup>
+			<col width="103">
+			<col width="*">
+			<col width="70">
+			<col width="65">
+			<col width="34">
+			<col width="34">
+			<col width="54">
+		</colgroup>
+		<tbody>
+		<tr>
+		<th>날짜</th>
+		<th>제목</th>
+		<th>투자의견</th>
+		<th>글쓴이</th>
+		<th>조회</th>
+		<th>공감</th>
+		<th>비공감</th>
+		</tr>
+		<tr><td colspan="7" height="8"></td></tr>
+				
+		<!--  -->
+		
+			
+				
+				
+				
+				
+				
+				
+					
+					
+				
+			
+			<tr onMouseOver="mouseOver(this)" onMouseOut="mouseOut(this)" align="center">
+			<td><span class="tah p10 gray03">2016.11.01 13:13</span></td>
+			<td class="title">
+				
+				
+				<a href="/item/board_read.nhn?code=028050&nid=54469131&st=&sw=&page=1" title="쓰레기 주주농락회사">쓰레기 주주농락회사
+				
+				<img src="http://imgstock.naver.net/images5/new.gif" width="10" height="10"></a></td>
+			<td class="tc"><span class="p11 ">의견없음</span></td>
+			<td class="p11">
+				side****
+				
+			</td>
+			<td><span class="tah p10 gray03">3</span></td>
+			
+			
+			
+			
+			<td><strong class="tah p10 gray03 ">0</strong></td>
+			<td><strong class="tah p10 gray03 ">0</strong></td>
+			</tr>
+			
+		
+			
+				
+				
+				
+				
+				
+				
+					
+					
+				
+			
+			<tr onMouseOver="mouseOver(this)" onMouseOut="mouseOut(this)" align="center">
+			<td><span class="tah p10 gray03">2016.11.01 13:10</span></td>
+			<td class="title">
+				
+				
+				<a href="/item/board_read.nhn?code=028050&nid=54468923&st=&sw=&page=1" title="아직멀었다. 적정가 6,000원때 무난하다">아직멀었다. 적정가 6,000원때 무난하...
+				
+				<img src="http://imgstock.naver.net/images5/new.gif" width="10" height="10"></a></td>
+			<td class="tc"><span class="p11 ">의견없음</span></td>
+			<td class="p11">
+				sa2d****
+				
+			</td>
+			<td><span class="tah p10 gray03">6</span></td>
+			
+			
+			
+			
+			<td><strong class="tah p10 red01">2</strong></td>
+			<td><strong class="tah p10 gray03 ">0</strong></td>
+			</tr>
+			
+		
+			
+				
+				
+				
+				
+				
+				
+					
+					
+				
+			
+			<tr onMouseOver="mouseOver(this)" onMouseOut="mouseOut(this)" align="center">
+			<td><span class="tah p10 gray03">2016.11.01 13:09</span></td>
+			<td class="title">
+				
+				
+				<a href="/item/board_read.nhn?code=028050&nid=54468768&st=&sw=&page=1" title="7천대  보이네 ㅡㅡㅡ">7천대  보이네 ㅡㅡㅡ
+				<span class="tah p9" style="color:#639933">[<b>1</b>]</span>
+				<img src="http://imgstock.naver.net/images5/new.gif" width="10" height="10"></a></td>
+			<td class="tc"><span class="p11 ">의견없음</span></td>
+			<td class="p11">
+				kdsk****
+				
+			</td>
+			<td><span class="tah p10 gray03">17</span></td>
+			
+			
+			
+			
+			<td><strong class="tah p10 red01">2</strong></td>
+			<td><strong class="tah p10 gray03 ">0</strong></td>
+			</tr>
+			
+		
+			
+				
+				
+				
+				
+				
+				
+					
+					
+				
+			
+			<tr onMouseOver="mouseOver(this)" onMouseOut="mouseOut(this)" align="center">
+			<td><span class="tah p10 gray03">2016.11.01 13:01</span></td>
+			<td class="title">
+				
+				
+				<a href="/item/board_read.nhn?code=028050&nid=54468173&st=&sw=&page=1" title="평단 9천원대에 8억어치산 할매요. 크게 오릅니다.">평단 9천원대에 8억어치산 할매요. 크게...
+				
+				<img src="http://imgstock.naver.net/images5/new.gif" width="10" height="10"></a></td>
+			<td class="tc"><span class="p11 ">의견없음</span></td>
+			<td class="p11">
+				soph****
+				
+			</td>
+			<td><span class="tah p10 gray03">71</span></td>
+			
+			
+			
+			
+			<td><strong class="tah p10 red01">4</strong></td>
+			<td><strong class="tah p10 gray03 ">0</strong></td>
+			</tr>
+			
+		
+			
+				
+				
+				
+				
+				
+				
+					
+					
+				
+			
+			<tr onMouseOver="mouseOver(this)" onMouseOut="mouseOut(this)" align="center">
+			<td><span class="tah p10 gray03">2016.11.01 12:45</span></td>
+			<td class="title">
+				
+				
+				<a href="/item/board_read.nhn?code=028050&nid=54466919&st=&sw=&page=1" title="실주주분들 보세요">실주주분들 보세요
+				<span class="tah p9" style="color:#639933">[<b>5</b>]</span>
+				<img src="http://imgstock.naver.net/images5/new.gif" width="10" height="10"></a></td>
+			<td class="tc"><span class="p11 ">의견없음</span></td>
+			<td class="p11">
+				han9****
+				
+			</td>
+			<td><span class="tah p10 gray03">178</span></td>
+			
+			
+			
+			
+			<td><strong class="tah p10 red01">3</strong></td>
+			<td><strong class="tah p10 gray03 ">0</strong></td>
+			</tr>
+			
+				<tr>
+				<td colspan="7" height="1" bgcolor="#e1e1e1"></td>
+				</tr>
+			
+		
+			
+				
+				
+				
+				
+				
+				
+					
+					
+				
+			
+			<tr onMouseOver="mouseOver(this)" onMouseOut="mouseOut(this)" align="center">
+			<td><span class="tah p10 gray03">2016.11.01 12:42</span></td>
+			<td class="title">
+				
+				
+				<a href="/item/board_read.nhn?code=028050&nid=54466681&st=&sw=&page=1" title="몇가지 들은게 있는데..">몇가지 들은게 있는데..
+				<span class="tah p9" style="color:#639933">[<b>5</b>]</span>
+				<img src="http://imgstock.naver.net/images5/new.gif" width="10" height="10"></a></td>
+			<td class="tc"><span class="p11 ">의견없음</span></td>
+			<td class="p11">
+				ftsq****
+				
+			</td>
+			<td><span class="tah p10 gray03">177</span></td>
+			
+			
+			
+			
+			<td><strong class="tah p10 red01">4</strong></td>
+			<td><strong class="tah p10 blue01">1</strong></td>
+			</tr>
+			
+		
+			
+				
+				
+				
+				
+				
+				
+					
+					
+				
+			
+			<tr onMouseOver="mouseOver(this)" onMouseOut="mouseOut(this)" align="center">
+			<td><span class="tah p10 gray03">2016.11.01 12:37</span></td>
+			<td class="title">
+				
+				
+				<a href="/item/board_read.nhn?code=028050&nid=54466292&st=&sw=&page=1" title="주주여러분 예비주주여러분..수준이하 안타들 꺼져라..">주주여러분 예비주주여러분..수준이하 안타...
+				
+				<img src="http://imgstock.naver.net/images5/new.gif" width="10" height="10"></a></td>
+			<td class="tc"><span class="p11 ">의견없음</span></td>
+			<td class="p11">
+				sam3****
+				
+			</td>
+			<td><span class="tah p10 gray03">101</span></td>
+			
+			
+			
+			
+			<td><strong class="tah p10 red01">4</strong></td>
+			<td><strong class="tah p10 gray03 ">0</strong></td>
+			</tr>
+			
+		
+			
+				
+				
+				
+				
+				
+				
+					
+					
+				
+			
+			<tr onMouseOver="mouseOver(this)" onMouseOut="mouseOut(this)" align="center">
+			<td><span class="tah p10 gray03">2016.11.01 12:34</span></td>
+			<td class="title">
+				
+				
+				<a href="/item/board_read.nhn?code=028050&nid=54466011&st=&sw=&page=1" title="재용이가 답이다">재용이가 답이다
+				
+				<img src="http://imgstock.naver.net/images5/new.gif" width="10" height="10"></a></td>
+			<td class="tc"><span class="p11 ">의견없음</span></td>
+			<td class="p11">
+				lms0****
+				
+			</td>
+			<td><span class="tah p10 gray03">79</span></td>
+			
+			
+			
+			
+			<td><strong class="tah p10 red01">2</strong></td>
+			<td><strong class="tah p10 gray03 ">0</strong></td>
+			</tr>
+			
+		
+			
+				
+				
+				
+				
+				
+				
+					
+					
+				
+			
+			<tr onMouseOver="mouseOver(this)" onMouseOut="mouseOut(this)" align="center">
+			<td><span class="tah p10 gray03">2016.11.01 12:32</span></td>
+			<td class="title">
+				
+				
+				<a href="/item/board_read.nhn?code=028050&nid=54465846&st=&sw=&page=1" title="그래도시원하게빠지니기분은안나쁘네">그래도시원하게빠지니기분은안나쁘네
+				
+				<img src="http://imgstock.naver.net/images5/new.gif" width="10" height="10"></a></td>
+			<td class="tc"><span class="p11 ">의견없음</span></td>
+			<td class="p11">
+				hong****
+				
+			</td>
+			<td><span class="tah p10 gray03">72</span></td>
+			
+			
+			
+			
+			<td><strong class="tah p10 red01">1</strong></td>
+			<td><strong class="tah p10 gray03 ">0</strong></td>
+			</tr>
+			
+		
+			
+				
+				
+				
+				
+				
+				
+					
+					
+				
+			
+			<tr onMouseOver="mouseOver(this)" onMouseOut="mouseOut(this)" align="center">
+			<td><span class="tah p10 gray03">2016.11.01 12:28</span></td>
+			<td class="title">
+				
+				
+				<a href="/item/board_read.nhn?code=028050&nid=54465586&st=&sw=&page=1" title="아직도 여기서/ 한진해운으로 오세요">아직도 여기서/ 한진해운으로 오세요
+				
+				<img src="http://imgstock.naver.net/images5/new.gif" width="10" height="10"></a></td>
+			<td class="tc"><span class="p11 ">의견없음</span></td>
+			<td class="p11">
+				jksl****
+				
+			</td>
+			<td><span class="tah p10 gray03">51</span></td>
+			
+			
+			
+			
+			<td><strong class="tah p10 red01">1</strong></td>
+			<td><strong class="tah p10 gray03 ">0</strong></td>
+			</tr>
+			
+				<tr>
+				<td colspan="7" height="1" bgcolor="#e1e1e1"></td>
+				</tr>
+			
+		
+			
+				
+				
+				
+				
+				
+				
+					
+					
+				
+			
+			<tr onMouseOver="mouseOver(this)" onMouseOut="mouseOut(this)" align="center">
+			<td><span class="tah p10 gray03">2016.11.01 12:26</span></td>
+			<td class="title">
+				
+				
+				<a href="/item/board_read.nhn?code=028050&nid=54465424&st=&sw=&page=1" title="★★ 8500원에 추매한다.">★★ 8500원에 추매한다.
+				
+				<img src="http://imgstock.naver.net/images5/new.gif" width="10" height="10"></a></td>
+			<td class="tc"><span class="p11 ">의견없음</span></td>
+			<td class="p11">
+				lead****
+				
+			</td>
+			<td><span class="tah p10 gray03">65</span></td>
+			
+			
+			
+			
+			<td><strong class="tah p10 red01">1</strong></td>
+			<td><strong class="tah p10 gray03 ">0</strong></td>
+			</tr>
+			
+		
+			
+				
+				
+				
+				
+				
+				
+					
+					
+				
+			
+			<tr onMouseOver="mouseOver(this)" onMouseOut="mouseOut(this)" align="center">
+			<td><span class="tah p10 gray03">2016.11.01 12:25</span></td>
+			<td class="title">
+				
+				
+				<a href="/item/board_read.nhn?code=028050&nid=54465356&st=&sw=&page=1" title="매수자가 누굴까?">매수자가 누굴까?
+				
+				<img src="http://imgstock.naver.net/images5/new.gif" width="10" height="10"></a></td>
+			<td class="tc"><span class="p11 ">의견없음</span></td>
+			<td class="p11">
+				lms0****
+				
+			</td>
+			<td><span class="tah p10 gray03">95</span></td>
+			
+			
+			
+			
+			<td><strong class="tah p10 red01">1</strong></td>
+			<td><strong class="tah p10 blue01">1</strong></td>
+			</tr>
+			
+		
+			
+				
+				
+				
+				
+				
+				
+					
+					
+				
+			
+			<tr onMouseOver="mouseOver(this)" onMouseOut="mouseOut(this)" align="center">
+			<td><span class="tah p10 gray03">2016.11.01 12:20</span></td>
+			<td class="title">
+				
+				
+				<a href="/item/board_read.nhn?code=028050&nid=54464941&st=&sw=&page=1" title="물리신 분들">물리신 분들
+				<span class="tah p9" style="color:#639933">[<b>8</b>]</span>
+				<img src="http://imgstock.naver.net/images5/new.gif" width="10" height="10"></a></td>
+			<td class="tc"><span class="p11 ">의견없음</span></td>
+			<td class="p11">
+				whjw****
+				
+			</td>
+			<td><span class="tah p10 gray03">158</span></td>
+			
+			
+			
+			
+			<td><strong class="tah p10 red01">1</strong></td>
+			<td><strong class="tah p10 blue01">1</strong></td>
+			</tr>
+			
+		
+			
+				
+				
+				
+				
+				
+				
+					
+					
+				
+			
+			<tr onMouseOver="mouseOver(this)" onMouseOut="mouseOut(this)" align="center">
+			<td><span class="tah p10 gray03">2016.11.01 12:18</span></td>
+			<td class="title">
+				
+				
+				<a href="/item/board_read.nhn?code=028050&nid=54464831&st=&sw=&page=1" title="진짜 썩어빠진 회사네">진짜 썩어빠진 회사네
+				
+				<img src="http://imgstock.naver.net/images5/new.gif" width="10" height="10"></a></td>
+			<td class="tc"><span class="p11 ">의견없음</span></td>
+			<td class="p11">
+				side****
+				
+			</td>
+			<td><span class="tah p10 gray03">80</span></td>
+			
+			
+			
+			
+			<td><strong class="tah p10 red01">1</strong></td>
+			<td><strong class="tah p10 gray03 ">0</strong></td>
+			</tr>
+			
+		
+			
+				
+				
+				
+				
+				
+				
+					
+					
+				
+			
+			<tr onMouseOver="mouseOver(this)" onMouseOut="mouseOut(this)" align="center">
+			<td><span class="tah p10 gray03">2016.11.01 12:09</span></td>
+			<td class="title">
+				
+				
+				<a href="/item/board_read.nhn?code=028050&nid=54464105&st=&sw=&page=1" title="내일은 더 심하게 빠질거임 ㅋㅋ">내일은 더 심하게 빠질거임 ㅋㅋ
+				
+				<img src="http://imgstock.naver.net/images5/new.gif" width="10" height="10"></a></td>
+			<td class="tc"><span class="p11 ">의견없음</span></td>
+			<td class="p11">
+				sape****
+				
+			</td>
+			<td><span class="tah p10 gray03">123</span></td>
+			
+			
+			
+			
+			<td><strong class="tah p10 red01">3</strong></td>
+			<td><strong class="tah p10 gray03 ">0</strong></td>
+			</tr>
+			
+				<tr>
+				<td colspan="7" height="1" bgcolor="#e1e1e1"></td>
+				</tr>
+			
+		
+			
+				
+				
+				
+				
+				
+				
+					
+					
+				
+			
+			<tr onMouseOver="mouseOver(this)" onMouseOut="mouseOut(this)" align="center">
+			<td><span class="tah p10 gray03">2016.11.01 12:02</span></td>
+			<td class="title">
+				
+				
+				<a href="/item/board_read.nhn?code=028050&nid=54463612&st=&sw=&page=1" title="삼성엔지니어링 1시 마감">삼성엔지니어링 1시 마감
+				<span class="tah p9" style="color:#639933">[<b>11</b>]</span>
+				<img src="http://imgstock.naver.net/images5/new.gif" width="10" height="10"></a></td>
+			<td class="tc"><span class="p11 ">의견없음</span></td>
+			<td class="p11">
+				ym67****
+				
+			</td>
+			<td><span class="tah p10 gray03">216</span></td>
+			
+			
+			
+			
+			<td><strong class="tah p10 red01">3</strong></td>
+			<td><strong class="tah p10 blue01">3</strong></td>
+			</tr>
+			
+		
+			
+				
+				
+				
+				
+				
+				
+					
+					
+				
+			
+			<tr onMouseOver="mouseOver(this)" onMouseOut="mouseOut(this)" align="center">
+			<td><span class="tah p10 gray03">2016.11.01 11:54</span></td>
+			<td class="title">
+				
+				
+				<a href="/item/board_read.nhn?code=028050&nid=54463135&st=&sw=&page=1" title="팔천원중반">팔천원중반
+				
+				<img src="http://imgstock.naver.net/images5/new.gif" width="10" height="10"></a></td>
+			<td class="tc"><span class="p11 ">의견없음</span></td>
+			<td class="p11">
+				kump****
+				
+			</td>
+			<td><span class="tah p10 gray03">140</span></td>
+			
+			
+			
+			
+			<td><strong class="tah p10 red01">3</strong></td>
+			<td><strong class="tah p10 blue01">1</strong></td>
+			</tr>
+			
+		
+			
+				
+				
+				
+				
+				
+					
+					
+				
+				
+			
+			<tr onMouseOver="mouseOver(this)" onMouseOut="mouseOut(this)" align="center">
+			<td><span class="tah p10 gray03">2016.11.01 11:49</span></td>
+			<td class="title">
+				
+				
+				<a href="/item/board_read.nhn?code=028050&nid=54462676&st=&sw=&page=1" title="10,600~10,700원">10,600~10,700원
+				
+				<img src="http://imgstock.naver.net/images5/new.gif" width="10" height="10"></a></td>
+			<td class="tc"><span class="p11 red01">강력매수</span></td>
+			<td class="p11">
+				kimd****
+				
+			</td>
+			<td><span class="tah p10 gray03">188</span></td>
+			
+			
+			
+			
+			<td><strong class="tah p10 red01">4</strong></td>
+			<td><strong class="tah p10 gray03 ">0</strong></td>
+			</tr>
+			
+		
+			
+				
+				
+				
+				
+				
+				
+					
+					
+				
+			
+			<tr onMouseOver="mouseOver(this)" onMouseOut="mouseOut(this)" align="center">
+			<td><span class="tah p10 gray03">2016.11.01 11:47</span></td>
+			<td class="title">
+				
+				
+				<a href="/item/board_read.nhn?code=028050&nid=54462527&st=&sw=&page=1" title="오늘은 후퇴~~">오늘은 후퇴~~
+				
+				<img src="http://imgstock.naver.net/images5/new.gif" width="10" height="10"></a></td>
+			<td class="tc"><span class="p11 ">의견없음</span></td>
+			<td class="p11">
+				ccc8****
+				
+			</td>
+			<td><span class="tah p10 gray03">111</span></td>
+			
+			
+			
+			
+			<td><strong class="tah p10 red01">2</strong></td>
+			<td><strong class="tah p10 gray03 ">0</strong></td>
+			</tr>
+			
+		
+			
+				
+				
+				
+				
+				
+				
+					
+					
+				
+			
+			<tr onMouseOver="mouseOver(this)" onMouseOut="mouseOut(this)" align="center">
+			<td><span class="tah p10 gray03">2016.11.01 11:43</span></td>
+			<td class="title">
+				
+				
+				<a href="/item/board_read.nhn?code=028050&nid=54462209&st=&sw=&page=1" title="개미가">개미가
+				
+				<img src="http://imgstock.naver.net/images5/new.gif" width="10" height="10"></a></td>
+			<td class="tc"><span class="p11 ">의견없음</span></td>
+			<td class="p11">
+				akyo****
+				
+			</td>
+			<td><span class="tah p10 gray03">125</span></td>
+			
+			
+			
+			
+			<td><strong class="tah p10 red01">1</strong></td>
+			<td><strong class="tah p10 blue01">1</strong></td>
+			</tr>
+			
+		
+		<tr><td colspan="7" height="5"></td></tr>
+		</tbody>
+		</table>
+		<!--- 종목뉴스 끝--->
+		
+		<!--- 페이지 네비게이션 시작--->
+		<table summary="게시판 옵션" cellpadding="0" cellspacing="0" width="680">
+		<caption>게시판 옵션</caption>
+		<tbody>
+		<tr>
+		
+		
+			
+		
+		<td align="left" style="padding: 10px 0 0 0;"><a href="javascript:login();"><img src="http://static.naver.net/finance/img/mysee_btn.gif" width="75" height="23" alt="내글보기" /></a></td>
+		<td align="center" width="100%">
+			<table summary="페이지 네비게이션 리스트" class="Nnavi">
+			<caption>페이지 네비게이션</caption>
+			<tbody>
+			<tr>
+				
+					
+	                
+	                <td class="on">
+				<a href="/item/board.nhn?code=028050&amp;page=1"  >1</a>
+				</td>
+<td>
+				<a href="/item/board.nhn?code=028050&amp;page=2"  >2</a>
+				</td>
+<td>
+				<a href="/item/board.nhn?code=028050&amp;page=3"  >3</a>
+				</td>
+<td>
+				<a href="/item/board.nhn?code=028050&amp;page=4"  >4</a>
+				</td>
+<td>
+				<a href="/item/board.nhn?code=028050&amp;page=5"  >5</a>
+				</td>
+<td>
+				<a href="/item/board.nhn?code=028050&amp;page=6"  >6</a>
+				</td>
+<td>
+				<a href="/item/board.nhn?code=028050&amp;page=7"  >7</a>
+				</td>
+<td>
+				<a href="/item/board.nhn?code=028050&amp;page=8"  >8</a>
+				</td>
+<td>
+				<a href="/item/board.nhn?code=028050&amp;page=9"  >9</a>
+				</td>
+<td>
+				<a href="/item/board.nhn?code=028050&amp;page=10"  >10</a>
+				</td>
+
+	                <td class="pgR">
+				<a href="/item/board.nhn?code=028050&amp;page=11"  >
+				다음<img src="http://static.naver.net/n/cmn/bu_pgarR.gif" width="3" height="5" alt="" border="0">
+				</a>
+				</td>
+
+	                <td class="pgRR">
+				<a href="/item/board.nhn?code=028050&amp;page=1376"  >맨뒤
+				<img src="http://static.naver.net/n/cmn/bu_pgarRR.gif" width="8" height="5" alt="" border="0">
+				</a>
+				</td>
+
+	            
+			</tr>
+			</tbody>
+			</table>
+		</td>
+		<td align="right" style="padding: 10px 0 0 0;">
+		<a href="/item/board_write_edit.nhn?code=028050&mode=write"><img src="http://imgstock.naver.net/images5/btn_write.gif" width="66" height="23" alt="글쓰기"></a>
+		</td>
+		</tbody>
+		</table>
+		<!--- 페이지 네비게이션 끝--->
+		
+		<table summary="글 검색" width="100%" cellpadding="0" cellspacing="0" style="margin-top: 16px;">
+		<caption>글 검색</caption>
+		<tbody>
+			<form name="boardSearchFrm" action="board.nhn" method="get">
+			<input type="hidden" name="code" value="028050" />
+			<tr>
+			<td align="center" height="19">
+				
+					
+					
+						
+						
+					
+				
+				
+				<input type="radio" id="b02" name="st" value="title" >제목</input>
+				
+				<input type="text" name="sw" value=""/>
+				<a href="javascript:doSearch();"><img src="http://imgstock.naver.net/images5/btn_search.gif" alt="검색" width="36" height="19" align="absmiddle"></a>				
+			</td>
+			</tr>
+			</form>
+		</tbody>
+		</table>
+
+		
+		<div class="text_da" id="da_div" name="da_div" style="display: none"><iframe title="광고영역" src="http://ad.naver.com/adshow?unit=758G" width="541" height="60" borderwidth="0" marginheight="0" scrolling="no" frameborder="0" id="da_iframe"></iframe></div>
+		
+
+		<table width="100%" cellpadding="0" cellspacing="0" style="padding: 26px 0 0 15px;">
+		<tbody>
+		<tr valign="top">
+		<td class="gray03 p11" style="line-height:18px;">
+		<p class="board_notice">
+		<span class="p12">※</span> 네티즌 투자의견은 최근3개월의 의견을 반영한 것이고 <span class="gray02">최근일 기준으로 1인 1개</span>의 의견만 반영합니다. <br>
+		<span class="p12">※</span> 금융 서비스 운영원칙에 맞지 않는 글은 운영자에 의해 삭제될 수 있습니다. <br>
+		<span class="p12">※</span> 종목토론실 게시글은 통합 일 50건의 글을 등록할 수 있고, 작성일로부터 1년간 보존됩니다.<br>					
+		<span class="p12">※</span> 불건전 게시물에 현혹되어 피해가 발생하지 않도록 주의해주세요. 불공정거래는 금융감독원과 한국거래소에 신고할 수 있습니다. <br>
+		<span style="margin-left: 12px;margin-right: 3px;">-</span>웹툰으로 살펴보는 불공정게시물의 특징과 사례: <a href="http://inc.krx.co.kr/attach/moc/sta/webtoon_1.pdf" target="_blank">http://inc.krx.co.kr/attach/moc/sta/webtoon_1.pdf</a><br>
+		<span style="margin-left: 12px;margin-right: 3px;">-</span>한국거래소 불공정거래 신고센터(Tel. 1577-3360): <a href="http://stockwatch.krx.co.kr/" target="_blank">http://stockwatch.krx.co.kr/</a><br> 
+		<span style="margin-left: 12px;margin-right: 3px;">-</span>금융감독원 증권불공정거래신고센터: <a href="http://www.fss.or.kr/fss/scop/main.jsp" target="_blank">http://www.fss.or.kr/fss/scop/main.jsp</a><br>
+		</tr>
+		</tbody>
+		</table>
+		</p>
+		
+		</div>
+	</div>
+	
+	
+
+
+
+
+<div id="aside">
+	<div class="bg_line"></div>
+	<div class="aside_invest_info">
+		<div id="tab_invest" class="tab tab_invest1">
+			<a href="javascript:showArea('tab_invest', 'tab tab_invest1', 'tab_con1', 'tab_con2')" onClick="clickcr(this, 'sop.18', '', '2', event)"><span>투자정보</span></a>
+			<a href="javascript:showArea('tab_invest', 'tab tab_invest2', 'tab_con2', 'tab_con1')" onClick="clickcr(this, 'sop.20', '', '2', event)"><span>호가10단계</span></a>		
+		</div>
+		
+		
+		<div id="tab_con1" class="tab_con1" style="display:block">
+		
+			
+			
+				
+					
+					
+						<h3 class="blind">투자정보</h3>
+						<div class="first">
+						<table summary="시가총액 정보">
+						<caption>시가총액</caption>
+						
+							
+								
+							
+							
+						
+						<tr class="strong">
+							<th scope="row">시가총액</th>
+							<td><em id="_market_sum">18,130</em>억원</td>
+						</tr>
+						
+							<tr><th scope="row">
+								
+									<a class="link_site" href="http://finance.naver.com/sise/sise_market_sum.nhn" class="link_site" onClick="clickcr(this, 'sop.19', '', '1', event)">시가총액순위</a>
+									
+								
+							</th><td>코스피 <em>108</em>위</td></tr>
+						
+						<tr>
+							<th scope="row">상장주식수</th>
+							<td><em>196,000,000</em></td>
+						</tr>
+						
+							<tr><th scope="row">액면가<span class="bar">l</span>매매단위</th>
+								<td>
+									<em>5,000</em>원
+									<span class="bar">l</span>
+									<em>1</em>주
+								</td>
+							</tr>
+						
+						
+							
+							<tr class="evote-none">
+								<th scope="row">주총일<span class="bar">l</span><a href="http://evote.ksd.or.kr" target="_blank" class="link_site strong" onClick="clickcr(this,'sop.genmeet','','',event);">전자투표</a><a href="javascript:togglePannel('helpPannel6');" onMouseOver="showPannel('helpPannel6');" onMouseOut="hidePannel('helpPannel6');"><img src="http://imgstock.naver.net/item_renewal/btn_help.gif" width="11" height="11" alt="전자투표 상세설명"></a>
+									<div id="helpPannel6" class="lyr_section" style="display:none">
+										<div class="tooltip_lyr evote_layer">
+											<strong>전자투표제란?</strong>
+											<p>전자투표제란 주주가 온라인을 통해 의결권등을 행사하는 투표방식을 말합니다.</p>
+											<p>주주총회 및 전자투표 정보제공 : 한국예탁결제원</p>
+											<span class="arrow"></span>
+										</div>
+									</div>
+								</th>
+								<td>
+									<em>2016.03.30</em>
+									<span class="bar">l</span>
+									<em>미도입</em>
+								</td>
+							</tr>
+						</table>
+						</div>
+						
+						
+							<div class="gray">
+							<table summary="외국인한도주식수 정보" class="lwidth">
+							<caption>외국인한도주식수</caption>
+							<tr>
+								<th scope="row">외국인한도주식수(A)</th>
+								<td><em>196,000,000</em></td>
+							</tr>
+							<tr>
+								<th scope="row">외국인보유주식수(B)</th>
+								<td><em>12,875,891</em></td>
+							</tr>
+							<tr class="strong">
+								<th scope="row"><strong>외국인소진율(B/A)</strong><a href="javascript:togglePannel('helpPannel0');" onMouseOver="showPannel('helpPannel0');" onMouseOut="hidePannel('helpPannel0');"><img src="http://imgstock.naver.net/item_renewal/btn_help.gif" width="11" height="11" alt="외국인소진율(B/A) 상세설명"></a>
+									<div class="lyr_section">
+		                                 <div id="helpPannel0" class="tooltip_lyr" style="display:none">
+		                                     <p>외국인(한도)소진율이란 외국인보유주식수를 외국인한도주식수으로 나눈 값입니다.</p>
+		                                     <p>일반적인 경우에는 외국인한도주식수와 상장주식수가 같아서 외국인 소진율과 보유율이 동일하지만, 국가 기간산업의 경우 한도주식수가 정해져 있어 두 비율이 달라질 수 있습니다.(Ex. 한국전력)</p>
+		                                     <span class="arrow"></span>
+		                                 </div>
+		                            </div>
+								</th>
+								<td><em>6.57%</em></td>
+							</tr>
+							</table>
+							</div>
+						
+						
+						<div>
+						<table summary="투자의견 정보" class="rwidth">
+						
+							<caption>투자의견</caption>
+							<tr><th scope="row" style="width:115px">투자의견<span class="bar">l</span>목표주가</th>
+							<td style="width:115px">
+							
+								
+								
+								
+									<span class="f_sam"><em>3.20</em>중립</span>
+								
+								
+								
+							
+							<span class="bar">l</span>
+							
+								
+								<em>12,133</em>
+							
+							</td></tr>
+						
+						<tr>
+							<th scope="row">52주최고<span class="bar">l</span>최저</th>
+							<td>
+								<em>19,500</em>
+								<span class="bar">l</span>
+								<em>8,990</em>
+							</td>
+						</tr>
+						</table>
+						</div>
+						
+						
+							<div>
+							<table summary="PER/EPS 정보" class="per_table">
+							<caption>PER/EPS</caption>
+							
+		                    <tbody>
+		                    <tr>
+	 							<th scope="row">
+	 								PER<span class="bar">l</span>EPS(WISEfn)<a href="javascript:togglePannel('helpPannel1');" onMouseOver="showPannel('helpPannel1');" onMouseOut="hidePannel('helpPannel1');"><img src="http://imgstock.naver.net/item_renewal/btn_help.gif" width="11" height="11" alt="추정PER EPS(WISEfn) 상세설명"></a>
+	 								<div class="help_rel">
+	 									<div id="helpPannel1" class="lay_helpinfo" style="display:none">
+	 										<p>
+	 											<strong>PER(WISEfn) = 현재가÷EPS(WISEfn)</strong>
+	 											EPS(WISEfn)은 지배기업귀속 당기순이익을 수정평균발행주식수로 나눈 값으로 와이즈에프엔((WISEfn)에서 제공합니다. 보통주와 우선주를 합산해서 계산합니다.
+	 										</p>
+	 									</div>
+	 								</div>
+	 							</th>
+								<td>
+									
+									
+										
+										<em id="_per">-0.45</em>배
+									
+									<span class="bar">l</span>
+									
+										
+										<em id="_eps">-20,337</em>원
+									
+	 							</td>
+ 						    </tr>
+		                    </tbody>	
+		                    <tr>
+		                    	<th scope="row">
+								    PER<span class="bar">l</span>EPS(KRX)<a href="javascript:togglePannel('helpPannel2');" onMouseOver="showPannel('helpPannel2');" onMouseOut="hidePannel('helpPannel2');"><img src="http://imgstock.naver.net/item_renewal/btn_help.gif" width="11" height="11" alt="PER EPS(KRX) 상세설명"></a>
+  								   <div class="help_rel">
+										<div id="helpPannel2" class="lay_helpinfo ly_help_per_02" style="display:none">
+											<p>
+												<strong>PER(KRX) = 현재가÷EPS(KRX)</strong>
+												EPS(KRX)은 지배기업귀속 보통주 당기순이익을 가중평균유통보통주로 나눈 값으로 한국거래소(KRX)에서 제공합니다. 우선주는 제외하고 계산합니다.
+		                    				</p>
+	 									</div>
+	 								</div>
+								</th>
+	 							<td>
+	 								
+										<em>N/A</em>
+										
+									
+									<span class="bar">l</span>
+									
+										<em>N/A</em>
+										
+									
+								</td>
+	 						</tr>
+		                    <tr>
+		                        <th scope="row">추정PER<span class="bar">l</span>EPS<a href="javascript:togglePannel('helpPannel3');" onMouseOver="showPannel('helpPannel3');" onMouseOut="hidePannel('helpPannel3');"><img src="http://imgstock.naver.net/item_renewal/btn_help.gif" width="11" height="11" alt="추정PER EPS 상세설명"></a>
+ 								<div class="help_rel">
+										<div id="helpPannel3" class="lay_helpinfo ly_help_per_03" style="display:none">
+											<p>
+												<strong>추정PER = 현재가÷추정EPS</strong>
+												추정EPS는 올해 예상EPS에 대한 증권사 추정 평균값(컨센서스)으로 와이즈에프엔에서 제공합니다. 추정 증권사가 3개 이상인 경우에만 제공합니다.
+											</p>
+										</div>
+									</div>
+								</th>
+								<td>
+									
+										
+										<em id="_cns_per">18.00</em>배
+										
+									<span class="bar">l</span>
+									
+										
+										<em id="_cns_eps">519</em>원
+									
+								</td>
+							</tr>
+							<tr>
+								<th scope="row">PBR<span class="bar">l</span>BPS(WISEfn)<a href="javascript:togglePannel('helpPannel4');" onMouseOver="showPannel('helpPannel4');" onMouseOut="hidePannel('helpPannel4');"><img src="http://imgstock.naver.net/item_renewal/btn_help.gif" width="11" height="11" alt="PBR | BPS 상세설명"></a>
+									<div class="help_rel">
+										<div id="helpPannel4" class="lay_helpinfo" style="display:none">
+											<p>
+												<strong>PBR(WISEfn) = 현재가÷BPS(WISEfn)</strong> 
+												BPS(WISEfn)은 지배기업귀속 자본총계를 수정기말유통주식수로 나눈 값으로 와이즈에프엔에서 제공합니다. 보통주와 우선주를 합산해서 계산합니다. 
+											</p>
+										</div>
+									</div>
+								</th>
+								<td>
+									
+										
+										<em id="_pbr">∞</em>배
+									
+									<span class="bar">l</span>
+									
+										
+										<em>-5,142</em>원
+									
+								</td>
+							</tr>
+							<tr>
+								<th scope="row">부채비율</th>
+								<td>
+									
+										
+										<em>-1,899.34%</em>
+										
+								</td>
+							</tr>
+							</table>
+							</div>
+							<div class="gray">
+							<table summary="동일업종 PER 정보">
+							<caption>동일업종 PER</caption>
+							<tr class="strong">
+								<th scope="row"><a class="link_site" href="http://finance.naver.com/sise/sise_group_detail.nhn?type=upjong&no=42" class="link_site" onClick="clickcr(this, 'sop.19', '', '2', event)">동일업종 PER</a></th>
+								<td>
+									
+										
+										<em>-17.48</em>배
+										
+								</td>
+							</tr>
+							<tr>
+								<th scope="row"><a class="link_site" href="http://finance.naver.com/sise/sise_group_detail.nhn?type=upjong&no=42" class="link_site" onClick="clickcr(this, 'sop.19', '', '3', event)">동일업종 등락률</a></th>
+								
+									
+									
+				<td class="f_down"><em>
+				-0.03%
+				</em></td>
+			
+								
+							</tr>
+							</table>
+							</div>
+						
+					
+				
+				
+			
+		</div>
+		
+		
+		<div id="tab_con2" class="tab_con2" style="display:none">
+			<h3 class="blind">호가 10단계</h3>
+			<table summary="호가10단계 정보">
+			<caption>호가 10단계</caption>
+			<tr>
+				<th scope="col">매도잔량</th>
+				<th scope="col">호가<span class="txt_color">(20분지연)</span></th>
+				<th scope="col" class="th_r">매수잔량</th>
+			</tr>
+			<tr><td colspan="3" class="space"></td></tr>
+			
+				<tr class="f_down">
+				<td>
+				
+					
+					1,710
+				
+				</td>
+				<td>
+				
+					
+					9,350
+				
+				</td>
+				<td class="td_r"></td>
+				</tr>
+			
+				<tr class="f_down">
+				<td>
+				
+					
+					1,196
+				
+				</td>
+				<td>
+				
+					
+					9,340
+				
+				</td>
+				<td class="td_r"></td>
+				</tr>
+			
+				<tr class="f_down">
+				<td>
+				
+					
+					766
+				
+				</td>
+				<td>
+				
+					
+					9,330
+				
+				</td>
+				<td class="td_r"></td>
+				</tr>
+			
+				<tr class="f_down">
+				<td>
+				
+					
+					2,300
+				
+				</td>
+				<td>
+				
+					
+					9,320
+				
+				</td>
+				<td class="td_r"></td>
+				</tr>
+			
+				<tr class="f_down">
+				<td>
+				
+					
+					8,934
+				
+				</td>
+				<td>
+				
+					
+					9,310
+				
+				</td>
+				<td class="td_r"></td>
+				</tr>
+			
+				<tr class="f_down">
+				<td>
+				
+					
+					12,612
+				
+				</td>
+				<td>
+				
+					
+					9,300
+				
+				</td>
+				<td class="td_r"></td>
+				</tr>
+			
+				<tr class="f_down">
+				<td>
+				
+					
+					2,848
+				
+				</td>
+				<td>
+				
+					
+					9,290
+				
+				</td>
+				<td class="td_r"></td>
+				</tr>
+			
+				<tr class="f_down">
+				<td>
+				
+					
+					4,775
+				
+				</td>
+				<td>
+				
+					
+					9,280
+				
+				</td>
+				<td class="td_r"></td>
+				</tr>
+			
+				<tr class="f_down">
+				<td>
+				
+					
+					3,220
+				
+				</td>
+				<td>
+				
+					
+					9,270
+				
+				</td>
+				<td class="td_r"></td>
+				</tr>
+			
+			<tr class="f_down strong">
+				<td>
+				
+					
+					6,225
+				
+				</td>
+				<td>
+				
+					
+					9,260
+				
+				</td>
+				<td class="td_r"></td>
+			</tr>
+			<tr><td colspan="3" class="line_dot"></td></tr>				
+			<tr class="f_up strong">
+				<td></td>				
+				<td>
+				
+					
+					9,250
+				
+				</td>
+				<td class="td_r">
+				
+					
+					12,398
+				
+				</td>
+			</tr>
+			
+				<tr class="f_up">
+				<td></td>
+				<td>
+				
+					
+					9,240
+				
+				</td>
+				<td class="td_r">
+				
+					
+					16,888
+				
+				</td>
+				</tr>
+			
+				<tr class="f_up">
+				<td></td>
+				<td>
+				
+					
+					9,230
+				
+				</td>
+				<td class="td_r">
+				
+					
+					6,307
+				
+				</td>
+				</tr>
+			
+				<tr class="f_up">
+				<td></td>
+				<td>
+				
+					
+					9,220
+				
+				</td>
+				<td class="td_r">
+				
+					
+					12,986
+				
+				</td>
+				</tr>
+			
+				<tr class="f_up">
+				<td></td>
+				<td>
+				
+					
+					9,210
+				
+				</td>
+				<td class="td_r">
+				
+					
+					21,431
+				
+				</td>
+				</tr>
+			
+				<tr class="f_up">
+				<td></td>
+				<td>
+				
+					
+					9,200
+				
+				</td>
+				<td class="td_r">
+				
+					
+					31,796
+				
+				</td>
+				</tr>
+			
+				<tr class="f_up">
+				<td></td>
+				<td>
+				
+					
+					9,190
+				
+				</td>
+				<td class="td_r">
+				
+					
+					10,894
+				
+				</td>
+				</tr>
+			
+				<tr class="f_up">
+				<td></td>
+				<td>
+				
+					
+					9,180
+				
+				</td>
+				<td class="td_r">
+				
+					
+					11,173
+				
+				</td>
+				</tr>
+			
+				<tr class="f_up">
+				<td></td>
+				<td>
+				
+					
+					9,170
+				
+				</td>
+				<td class="td_r">
+				
+					
+					6,994
+				
+				</td>
+				</tr>
+			
+				<tr class="f_up">
+				<td></td>
+				<td>
+				
+					
+					9,160
+				
+				</td>
+				<td class="td_r">
+				
+					
+					18,068
+				
+				</td>
+				</tr>
+			
+			<tr><td colspan="3" class="space"></td></tr>
+			<tr class="total">
+				<td class="f_down">
+					
+						
+						44,586
+					
+				</td>
+				<td>잔량합계</td>
+				<td class="f_up">
+					
+						
+						148,935
+					
+				</td>
+			</tr>
+			</table>
+		</div>
+	</div>
+
+	<!-- 종합정보 페이지 우측 영역 -->
+	
+		
+	
+
+
+
+
+
+<script language=javascript src="/js/item_main_right_area.js?20161027044035"></script>
+		
+		
+		<div class="aside_section cop_list">
+			
+				
+					<div id="tab_search" class="tab tab_search1">
+				
+				
+			
+			<a href="javascript:showRecent('tab_search', 'tab tab_search1', '028050', 'recent')" onClick="jindo.$Cookie().set('summary_item_type', 'recent', 30, 'finance.naver.com'); clickcr(this, 'rch.1', '', '', event);"><span>최근검색</span></a>
+			<a href="javascript:showRecent('tab_search', 'tab tab_search2', '028050', 'mystock')" onClick="jindo.$Cookie().set('summary_item_type', 'mystock', 30, 'finance.naver.com'); clickcr(this, 'rch.3', '', '', event);"><span>My stock</span></a>
+			<!-- [D] 활성화된 탭메뉴에 따라 blind text 변경해주세요 -->
+			<h2 class="blind" id="blind_text_tab_search">최근조회</h2>
+		</div>
+			
+		
+		<script type="text/template" id="recent_list_none">
+			<div class="no_result">
+				<img src="http://static.naver.net/nfinance/img/no_result_aside1_v2.gif" width="144" height="13" border="0" alt="최근 조회된 종목이 없습니다." class="noresult_txt1">
+			</div>
+		</script>
+		<script type="text/template" id="mystock_logout">
+			<div class="no_result">
+				<map name="no_result_aside2">
+				<area shape="rect" coords="6,38,107,52" href="javascript:naver_login()" alt="My stock 로그인">
+				</map>
+				<img src="http://imgstock.naver.net/item_renewal/no_result_aside2.gif" width="116" height="53" border="0" usemap="#no_result_aside2" title="" alt="로그인하시면 등록하신 종목의 시세가 제공됩니다." class="noresult_txt2">
+			</div>
+		</script>
+		<script type="text/template" id="mystock_list_none">
+			<div class="no_result">
+				<map name="no_result_aside3">
+				<area shape="rect" coords="11,38,125,52" href="http://finance.naver.com/mystock/" alt="My stock 바로가기">
+				</map>
+				<img src="http://imgstock.naver.net/item_renewal/no_result_aside3.gif" width="137" height="53" border="0" usemap="#no_result_aside3" title="" alt="My Stock에 관심종목을 등록하시면 시세가 제공됩니다." class="noresult_txt3">
+			</div>
+		</script>
+		<script type="text/template" id="recent_list_exist">
+			{if type == "recent"}
+				{set listNclicksId="rch.2"}
+				<table summary="최근조회 리스트" class="con_search1">
+				<caption>최근조회</caption>
+					<colgroup><col><col width="50"><col width="72"></colgroup>
+			{else}
+				{set listNclicksId="rch.4"}
+				<table summary="MY STOCK 리스트" class="con_search2">
+				<caption>MY STOCK</caption>
+					<colgroup><col><col width="60"><col width="60"></colgroup>
+			{/if}
+				<thead>
+				<tr>
+					<th>업체명</th>
+					<th scope="col">거래량</th>
+					<th scope="col">전일비</th>
+				</tr>
+				</thead>
+				{for index:itemList in item_list}
+					{if index == 5 || index == 10}
+						<tr><td colspan="3" class="line"></td></tr>
+					{/if}
+					<tr>
+						<th scope="row">
+						<a href="/item/main.nhn?code={=itemList.itemcode}" onClick="clickcr(this, '{=listNclicksId}', '{=itemList.itemcode}', '{=index + 1}', event);" target=_top>{=itemList.itemname}</a>
+						</th>
+						<td id="nowVal_td_{=index}">{=itemList.now_val}</td>
+						<td>
+							{if itemList.risefall == '1'}
+								<em class="f_up up_arrow" id="changeVal_em_{=index}"><span id="changeVal_span_{=index}">상한가</span>{=itemList.change_val}</em>
+							{elseif itemList.risefall == '2'}
+								<em class="f_up up" id="changeVal_em_{=index}"><span id="changeVal_span_{=index}">상향</span>{=itemList.change_val}</em>
+							{elseif itemList.risefall == '4'}
+								<em class="f_down down_arrow" id="changeVal_em_{=index}"><span id="changeVal_span_{=index}">하한가</span>{=itemList.change_val}</em>
+							{elseif itemList.risefall == '5'}
+								<em class="f_down down" id="changeVal_em_{=index}"><span id="changeVal_span_{=index}">하향</span>{=itemList.change_val}</em>
+							{else}
+								<em class="sam" id="changeVal_em_{=index}"><span id="changeVal_span_{=index}">보합</span></em>
+							{/if}
+							{if type == "recent"}
+								<a href="javascript:deleteCodeFromRecent('{=itemList.itemcode}', '{=code}', '{=type}', '{=page}')"><img src="http://imgstock.naver.net/item_renewal/btn_delete.gif" alt="삭제" width="11" height="11"></a>
+							{/if}
+						</td>
+					</tr>
+				{/for}
+			</table>
+		</script>
+		<div id="recent_area"></div>
+			
+		
+		<script type="text/template" id="recent_btn_tmpl">
+			<span>
+				{if prev_page != 0 || next_page != 0}
+				{if prev_page == 0}
+					<a href="#" onClick="clickcr(this, 'rch.5', '', '', event); return false;"><img src="http://static.naver.com/nfinance/btn_prev2.gif" width="17" height="15" alt="이전"></a>
+				{elseif prev_page > 0}
+					<a href="javascript:movePage('{=code}', '{=type}', '{=prev_page}');" onClick="clickcr(this, 'rch.5', '', '', event)"><img src="http://static.naver.com/nfinance/btn_prev2.gif" width="17" height="15" alt="이전"></a>
+				{/if}
+				{if next_page == 0}
+					<a href="#" onClick="clickcr(this, 'rch.6', '', '', event); return false;"><img src="http://static.naver.com/nfinance/btn_next2.gif" width="17" height="15" alt="다음"></a>
+				{elseif next_page > 0}
+					<a href="javascript:movePage('{=code}', '{=type}', '{=next_page}');" onClick="clickcr(this, 'rch.6', '', '', event)"><img src="http://static.naver.com/nfinance/btn_next2.gif" width="17" height="15" alt="다음"></a>
+				{/if}
+				{/if}
+			</span>
+			<a href="{if type == 'recent'}/mystock/recentSearchItemList.nhn{else}/mystock/{/if}" class="more" onClick="clickcr(this, 'rch.7', '', '', event)">더보기</a>
+		</script>
+		<div id="recent_button" class="more_info"></div>
+		
+		
+			<script type="text/javascript">
+			var comment_code = "028050";
+			var comment_type = "recent";
+			var comment_page = "1";
+				
+			  	jindo.$Fn(function() { 
+					movePage('028050', 'recent', '1'); 
+				}).attach(document,"domready");
+							
+			</script>
+	</div>
+	
+
+		
+	<div class="aside_section ad_banner"> 
+        <div id="da_240240" name="da_240240"> 
+        	<iframe id="f240240" title="광고영역" name="f240240" src="http://ad.naver.com/adshow?unit=758F" width="240" height="240" marginheight="0" marginwidth="0" scrolling="no" frameborder="0" align="center"></iframe> 
+    	</div> 
+    </div> 
+		
+		
+	
+	<div class="aside_section cop_list">
+		 <h2 class="h_sub sub_tit9"><span>인기검색종목</span></h2>
+		<div id="tab_fav" class="tab tab_fav1">
+			<a href="javascript:showArea('tab_fav', 'tab tab_fav1', 'fav_kospi', 'fav_kosdaq')" onClick="clickcr(this, 'pss.1', '', '', event);"><span>코스피</span></a>
+			<a href="javascript:showArea('tab_fav', 'tab tab_fav2', 'fav_kosdaq', 'fav_kospi')" onClick="clickcr(this, 'pss.3', '', '', event);"><span>코스닥</span></a>
+			<!-- [D] 활성화된 탭메뉴에 따라 blind text 변경해주세요 -->
+			<h3 class="blind" id="blind_text_tab_fav">코스피</h3>
+		</div>
+		
+		<div id="fav_kospi" style="display:block">
+		<table summary="코스피 인기검색종목 리스트" class="rank">
+		<caption>코스피 인기검색종목</caption>		
+		<colgroup><col><col width="60"><col width="86"></colgroup>
+		<thead>
+		<tr>
+			<th>업체명</th>
+			<th scope="col">거래량</th>
+			<th scope="col">전일비</th>
+		</tr>
+		</thead>
+		
+			
+			<tr>
+				<th scope="row" class="no1"><a href="/item/main.nhn?code=012450" target=_top onClick="clickcr(this, 'pss.2', '', '1', event);">한화테크윈</a></th>
+				<td>50,800</td>
+				<td>
+					
+				<em class="f_down down"><span>하향</span>
+				13,000
+				</em>
+			
+				</td>
+			</tr>
+		
+			
+			<tr>
+				<th scope="row" class="no2"><a href="/item/main.nhn?code=117930" target=_top onClick="clickcr(this, 'pss.2', '', '2', event);">한진해운</a></th>
+				<td>890</td>
+				<td>
+					
+				<em class="f_down down"><span>하향</span>
+				108
+				</em>
+			
+				</td>
+			</tr>
+		
+			
+			<tr>
+				<th scope="row" class="no3"><a href="/item/main.nhn?code=003520" target=_top onClick="clickcr(this, 'pss.2', '', '3', event);">영진약품</a></th>
+				<td>9,350</td>
+				<td>
+					
+				<em class="f_up up"><span>상향</span>
+				600
+				</em>
+			
+				</td>
+			</tr>
+		
+			
+			<tr>
+				<th scope="row" class="no4"><a href="/item/main.nhn?code=047810" target=_top onClick="clickcr(this, 'pss.2', '', '4', event);">한국항공우주</a></th>
+				<td>63,000</td>
+				<td>
+					
+				<em class="f_down down"><span>하향</span>
+				1,800
+				</em>
+			
+				</td>
+			</tr>
+		
+			
+			<tr>
+				<th scope="row" class="no5"><a href="/item/main.nhn?code=001140" target=_top onClick="clickcr(this, 'pss.2', '', '5', event);">국보</a></th>
+				<td>30,700</td>
+				<td>
+					
+				<em class="f_up up"><span>상향</span>
+				6,750
+				</em>
+			
+				</td>
+			</tr>
+		
+			
+				<tr><td colspan="3" class="line"></td></tr>
+			
+			<tr>
+				<th scope="row" class="no6"><a href="/item/main.nhn?code=128940" target=_top onClick="clickcr(this, 'pss.2', '', '6', event);">한미약품</a></th>
+				<td>357,500</td>
+				<td>
+					
+				<em class="f_down down"><span>하향</span>
+				4,500
+				</em>
+			
+				</td>
+			</tr>
+		
+			
+			<tr>
+				<th scope="row" class="no7"><a href="/item/main.nhn?code=028260" target=_top onClick="clickcr(this, 'pss.2', '', '7', event);">삼성물산</a></th>
+				<td>157,000</td>
+				<td>
+					
+				<em class="f_down down"><span>하향</span>
+				4,500
+				</em>
+			
+				</td>
+			</tr>
+		
+			
+			<tr>
+				<th scope="row" class="no8"><a href="/item/main.nhn?code=069730" target=_top onClick="clickcr(this, 'pss.2', '', '8', event);">DSR제강</a></th>
+				<td>8,070</td>
+				<td>
+					
+				<em class="f_down down"><span>하향</span>
+				410
+				</em>
+			
+				</td>
+			</tr>
+		
+			
+			<tr>
+				<th scope="row" class="no9"><a href="/item/main.nhn?code=234080" target=_top onClick="clickcr(this, 'pss.2', '', '9', event);">JW생명과학</a></th>
+				<td>32,950</td>
+				<td>
+					
+				<em class="f_down down"><span>하향</span>
+				1,550
+				</em>
+			
+				</td>
+			</tr>
+		
+			
+			<tr>
+				<th scope="row" class="no10"><a href="/item/main.nhn?code=005930" target=_top onClick="clickcr(this, 'pss.2', '', '10', event);">삼성전자</a></th>
+				<td>1,649,000</td>
+				<td>
+					
+				<em class="f_up up"><span>상향</span>
+				10,000
+				</em>
+			
+				</td>
+			</tr>
+		
+		</table>
+		</div>
+		<div id="fav_kosdaq" style="display:none">
+		<table summary="코스닥 인기검색종목 리스트" class="rank">
+		<caption>코스피 인기검색종목</caption>		
+		<colgroup><col><col width="50"><col width="86"></colgroup>
+		<thead>
+		<tr>
+			<th>업체명</th>
+			<th scope="col">거래량</th>
+			<th scope="col">전일비</th>
+		</tr>
+		</thead>
+		
+			
+			<tr>
+				<th scope="row" class="no1"><a href="/item/main.nhn?code=064240" target=_top onClick="clickcr(this, 'pss.4', '', '1', event);">홈캐스트</a></th>
+				<td>24,100</td>
+				<td>
+				<em class="f_up up_arrow"><span>상한가</span>
+				5,550
+				</em>
+			</td>
+			</tr>
+		
+			
+			<tr>
+				<th scope="row" class="no2"><a href="/item/main.nhn?code=067630" target=_top onClick="clickcr(this, 'pss.4', '', '2', event);">에이치엘비생..</a></th>
+				<td>7,970</td>
+				<td>
+				<em class="f_up up"><span>상향</span>
+				1,540
+				</em>
+			</td>
+			</tr>
+		
+			
+			<tr>
+				<th scope="row" class="no3"><a href="/item/main.nhn?code=049120" target=_top onClick="clickcr(this, 'pss.4', '', '3', event);">파인디앤씨</a></th>
+				<td>4,630</td>
+				<td>
+				<em class="f_up up"><span>상향</span>
+				890
+				</em>
+			</td>
+			</tr>
+		
+			
+			<tr>
+				<th scope="row" class="no4"><a href="/item/main.nhn?code=096690" target=_top onClick="clickcr(this, 'pss.4', '', '4', event);">제이스테판</a></th>
+				<td>969</td>
+				<td>
+				<em class="f_up up"><span>상향</span>
+				170
+				</em>
+			</td>
+			</tr>
+		
+			
+			<tr>
+				<th scope="row" class="no5"><a href="/item/main.nhn?code=900290" target=_top onClick="clickcr(this, 'pss.4', '', '5', event);">GRT</a></th>
+				<td>5,200</td>
+				<td>
+				<em class="f_down down"><span>하향</span>
+				450
+				</em>
+			</td>
+			</tr>
+		
+			
+				<tr><td colspan="3" class="line"></td></tr>
+			
+			<tr>
+				<th scope="row" class="no6"><a href="/item/main.nhn?code=068270" target=_top onClick="clickcr(this, 'pss.4', '', '6', event);">셀트리온</a></th>
+				<td>106,700</td>
+				<td>
+				<em class="f_up up"><span>상향</span>
+				500
+				</em>
+			</td>
+			</tr>
+		
+			
+			<tr>
+				<th scope="row" class="no7"><a href="/item/main.nhn?code=020180" target=_top onClick="clickcr(this, 'pss.4', '', '7', event);">대신정보통신</a></th>
+				<td>2,625</td>
+				<td>
+				<em class="f_up up"><span>상향</span>
+				70
+				</em>
+			</td>
+			</tr>
+		
+			
+			<tr>
+				<th scope="row" class="no8"><a href="/item/main.nhn?code=950140" target=_top onClick="clickcr(this, 'pss.4', '', '8', event);">잉글우드랩(Re..</a></th>
+				<td>15,150</td>
+				<td>
+				<em class="f_down down"><span>하향</span>
+				150
+				</em>
+			</td>
+			</tr>
+		
+			
+			<tr>
+				<th scope="row" class="no9"><a href="/item/main.nhn?code=109610" target=_top onClick="clickcr(this, 'pss.4', '', '9', event);">에스와이패널</a></th>
+				<td>32,900</td>
+				<td>
+				<em class="f_down down"><span>하향</span>
+				4,500
+				</em>
+			</td>
+			</tr>
+		
+			
+			<tr>
+				<th scope="row" class="no10"><a href="/item/main.nhn?code=065060" target=_top onClick="clickcr(this, 'pss.4', '', '10', event);">지엔코</a></th>
+				<td>4,935</td>
+				<td>
+				<em class="f_up up"><span>상향</span>
+				205
+				</em>
+			</td>
+			</tr>
+		
+		</table>
+		</div>
+	</div>
+	
+	
+	
+	<div class="aside_section rate">
+		<h2 class="h_sub sub_tit8"><span>시세정보바로가기</span></h2>
+		<p>
+			<a href="http://finance.naver.com/sise/sise_index.nhn?code=KOSPI" onClick="clickcr(this, 'quk.2', '', '', event);">코스피</a>
+			<a href="http://finance.naver.com/sise/sise_index.nhn?code=KOSDAQ" onClick="clickcr(this, 'quk.3', '', '', event);">코스닥</a>
+			<a href="http://finance.naver.com/sise/sise_index.nhn?code=FUT" onClick="clickcr(this, 'quk.4', '', '', event);">선물</a>
+			<a href="http://finance.naver.com/sise/konex.nhn" class="end" onClick="clickcr(this, 'quk.konex', '', '', event);">코넥스</a><br>
+			<a href="http://finance.naver.com/sise/sise_index.nhn?code=KPI200" onClick="clickcr(this, 'quk.30', '', '', event);">코스피200</a>
+			<a href="http://finance.naver.com/sise/etf.nhn" onClick="clickcr(this, 'quk.31', '', '', event);">ETF</a>
+			<a href="http://finance.naver.com/sise/sise_group.nhn?type=upjong" onClick="clickcr(this, 'quk.5', '', '', event);"><strong>업종별</strong></a>
+			<a href="http://finance.naver.com/sise/theme.nhn" class="end" onClick="clickcr(this, 'quk.6', '', '', event);">테마별</a><br>
+			<a href="http://finance.naver.com/sise/sise_upper.nhn" onClick="clickcr(this, 'quk.7', '', '', event);"><strong>상한가</strong></a>
+			<a href="http://finance.naver.com/sise/sise_lower.nhn" onClick="clickcr(this, 'quk.8', '', '', event);">하한가</a>
+			<a href="http://finance.naver.com/sise/sise_rise.nhn" onClick="clickcr(this, 'quk.9', '', '', event);">상승</a>
+			<a href="http://finance.naver.com/sise/sise_steady.nhn" onClick="clickcr(this, 'quk.10', '', '', event);">보합</a>
+			<a href="http://finance.naver.com/sise/sise_fall.nhn" class="end" onClick="clickcr(this, 'quk.11', '', '', event);">하락</a><br>
+			<a href="http://finance.naver.com/sise/sise_quant.nhn" onClick="clickcr(this, 'quk.12', '', '', event);">거래상위</a>
+			<a href="http://finance.naver.com/sise/sise_quant_high.nhn" onClick="clickcr(this, 'quk.13', '', '', event);"><strong>급증</strong></a>
+			<a href="http://finance.naver.com/sise/sise_quant_low.nhn" class="end" onClick="clickcr(this, 'quk.14', '', '', event);">급감</a><br>
+			<a href="http://finance.naver.com/sise/sise_high_down.nhn" onClick="clickcr(this, 'quk.15', '', '', event);">고가대비급락</a>
+			<a href="http://finance.naver.com/sise/sise_low_up.nhn" class="end" onClick="clickcr(this, 'quk.16', '', '', event);">저가대비급등</a>
+		</p>
+		<p>
+			<a href="http://finance.naver.com/sise/sise_market_sum.nhn" onClick="clickcr(this, 'quk.17', '', '', event);"><strong>시가총액상위</strong></a>
+			<a href="http://finance.naver.com/sise/sise_foreign_hold.nhn" class="end" onClick="clickcr(this, 'quk.18', '', '', event);">외국인보유현황</a><br>
+			<a href="http://finance.naver.com/sise/sise_deal_rank.nhn" onClick="clickcr(this, 'quk.19', '', '', event);">외국인매매</a>
+			<a href="http://finance.naver.com/sise/sise_deal_rank.nhn?investor_gubun=1000" onClick="clickcr(this, 'quk.19-1', '', '', event);">기관매매</a>
+			<a href="http://finance.naver.com/sise/sise_program.nhn" class="end" onClick="clickcr(this, 'quk.20', '', '', event);">프로그램매매</a><br>
+			<a href="http://finance.naver.com/sise/management.nhn" onClick="clickcr(this, 'quk.21', '', '', event);">관리·감리종목</a>
+			<a href="http://finance.naver.com/sise/sise_new_stock.nhn" class="end" onClick="clickcr(this, 'quk.22', '', '', event);">신규상장종목</a><br>
+			<a href="http://finance.naver.com/sise/sise_deposit.nhn" onClick="clickcr(this, 'quk.23', '', '', event);">증시자금동향</a>
+			<a href="http://finance.naver.com/sise/sise_trans_style.nhn" class="end" onClick="clickcr(this, 'quk.24', '', '', event);">투자자별매매동향</a>
+		</p>
+		<p>
+			<a href="http://finance.naver.com/sise/item_gap.nhn" onClick="clickcr(this, 'quk.25', '', '', event);">갭상승 종목</a>
+			<a href="http://finance.naver.com/sise/item_gold.nhn" class="end" onClick="clickcr(this, 'quk.26', '', '', event);">골든크로스 종목</a><br>
+			<a href="http://finance.naver.com/sise/item_igyuk.nhn" onClick="clickcr(this, 'quk.27', '', '', event);">이격도과열종목</a>
+			<a href="http://finance.naver.com/sise/item_overheating_1.nhn" class="end" onClick="clickcr(this, 'quk.28', '', '', event);">투자심리과열종목</a><br>
+			<a href="http://finance.naver.com/sise/item_overheating_2.nhn" class="end" onClick="clickcr(this, 'quk.29', '', '', event);">상대강도과열종목</a>
+		</p>
+		<a href="http://finance.naver.com/sise/" class="more" onClick="clickcr(this, 'quk.1', '', '', event);">더보기</a>
+		<div class="hidden_line"></div>
+	</div>
+	
+	
+	
+		
+		
+	
+	<div class="aside_section notice">
+		<h2 class="h_sub sub_tit10"><span>공지사항</span></h2>
+		<ul>
+			
+				<li><a href="http://finance.naver.com/notice.nhn?permLink=/read/1100001004/10000000000030645032"  onClick="clickcr(this, 'ice.2', 'http://finance.naver.com/notice.nhn?permLink=/read/1100001004/10000000000030645032', '1', event)">미국/유럽 서머타임 해제에 따른 ...</a></li>
+			
+				<li><a href=""  onClick="clickcr(this, 'ice.2', '', '2', event)"></a></li>
+			
+				<li><a href=""  onClick="clickcr(this, 'ice.2', '', '3', event)"></a></li>
+			
+				<li><a href=""  onClick="clickcr(this, 'ice.2', '', '4', event)"></a></li>
+			
+				<li><a href=""  onClick="clickcr(this, 'ice.2', '', '5', event)"></a></li>
+			
+		</ul>
+		<a href="http://finance.naver.com/notice.nhn" class="more" onClick="clickcr(this, 'ice.1', '', '', event);">더보기</a>
+	</div>
+	
+
+	<!-- // 종합정보 페이지 우측 영역 -->
+	
+	</div>
+</div>
+
+
+
+
+
+
+		
+
+
+
+
+
+
+	<div id="footer">
+		<ul>
+			<li class="first">
+				<a href="http://www.naver.com/rules/service.html" onClick="clickcr(this, 'fot.service', '', '', event);" target="_blank">이용약관</a>
+			</li>
+			<li>
+				<a href="http://finance.naver.com/rules.nhn" onClick="clickcr(this, 'fot.policy', '', '', event);" target="_blank">금융게시판 운영원칙</a>
+			</li>
+			<li>
+				<a href="http://www.naver.com/rules/privacy.html" onClick="clickcr(this, 'fot.privacy', '', '', event);" target="_blank"><strong>개인정보처리방침</strong></a>
+			</li>
+			<li>
+				<a href="http://www.naver.com/rules/disclaimer.html" onClick="clickcr(this, 'fot.limit', '', '', event);" target="_blank">책임의 한계와 법적고지</a>
+			</li>
+			<li>
+				<a href="https://help.naver.com/support/service/main.nhn?serviceNo=745" onclick="clickcr(this, 'fot.help', '', '', event);" target="_blank">금융 고객센터</a>
+			</li>
+		</ul>
+		<p class="desc">네이버(주)에서 제공하는 금융정보는 각 컨텐츠 제공업체<a href="javascript:togglePannel('footerPanel0');" onMouseOver="showPannel('footerPanel0');" onMouseOut="hidePannel('footerPanel0');" class="desc_help"><img src="http://imgstock.naver.net/item_renewal/btn_help.gif" width="11" height="11" alt="제공업체 상세설명"></a>부터 받는 정보로 투자 참고 사항이며, 오류가 발생할 수 있고 지연될 수<br>있습니다. 네이버(주)는 제공된 정보에 의한 투자결과에 대한 법적인 책임을 지지 않습니다. 게시된 정보를 무단으로 배포할 수 없습니다.</p>
+		<div id="footerPanel0" class="provider_layer" style="display:none">
+			<strong class="provider_layer__tit">컨텐츠 제공업체</strong>
+			<div class="provider_layer__txt">
+				<p><span>코스콤 : </span>실시간 주가정보 및 국내시세정보</p>
+				<p><span>와이즈에프엔 : </span>기업 및 재무정보</p>
+				<p><span>이데일리 : </span>해외 시세 및 시장지표 정보</p>
+				<p><span>제로인 : </span>펀드정보</p>
+				<p><span>한국예탁결제원 : </span>주주총회일 및 전자투표 정보</p>
+			</div>
+			<span class="arrow"></span>
+		</div>
+		<address>
+			<a href="http://www.navercorp.com/" target="_blank" class="logo" onClick="clickcr(this, 'fot.nhn', '', '', event);"><img src="http://static.naver.net/common/footer/ci_naver.gif" width="63" height="11" alt="NAVER" /></a>
+			<em>Copyright &copy;</em>
+			<a href="http://www.navercorp.com/" target="_blank" onClick="clickcr(this, 'fot.nhn', '', '', event);">NAVER Corp.</a>
+			<span>All Rights Reserved.</span>
+		</address>
+		
+		
+		
+	</div>
+
+
+
+<script type="text/javascript">
+function isVisible(obj) {
+    if (obj == document) return true
+ 
+    if (!obj) return false
+    if (!obj.parentNode) return false
+    if (obj.style) {
+        if (obj.style.display == 'none') return false
+        if (obj.style.visibility == 'hidden') return false
+    }
+ 
+    if (window.getComputedStyle) {
+        var style = window.getComputedStyle(obj, "")
+        if (style.display == 'none') return false
+        if (style.visibility == 'hidden') return false
+    }
+ 
+    var style = obj.currentStyle
+    if (style) {
+        if (style['display'] == 'none') return false
+        if (style['visibility'] == 'hidden') return false
+    }
+ 
+    return isVisible(obj.parentNode)
+}
+
+function isChildOf(myobj, containerObj) {
+	while(myobj != undefined) {
+		if (myobj == document.body) {
+			break;
+		} 
+		if (myobj == containerObj) {
+			return true;
+		}
+		myobj = myobj.parentElement;
+	}
+	return false;	
+}
+
+function gnbLayerClose(e){
+	var target = e.target ? e.target : e.srcElement;
+	if (isVisible(document.getElementById('gnb_service_lyr')) || isVisible(document.getElementById('gnb_notice_lyr')) ||isVisible(document.getElementById('gnb_my_lyr')) ) {
+		if (!isChildOf(target, document.getElementById('gnb'))) {
+			gnbAllLayerClose();
+		}
+	}	
+}
+
+var isIE = (navigator.userAgent.toLowerCase().indexOf("msie")!=-1 && window.document.all) ? true:false;
+if (isIE) {
+	document.attachEvent('onmousedown', gnbLayerClose);
+} else {
+	window.addEventListener('mousedown', gnbLayerClose);
+}
+
+function showPannel(layerId){
+	var layer = jindo.$(layerId);
+	layer.style.display='block';
+	
+	if (layerId == "summary_lyr") {
+		var layerHeight = jindo.$Element(layer).height();
+		jindo.$Element("summary_ifr").height(layerHeight);
+	}
+}
+
+function hidePannel(layerId){
+	var layer = jindo.$(layerId);
+	layer.style.display='none';
+}
+</script>
+</div>
+
+<!-- Dimming용 BG레이어 -->
+<div id="dim" class="ly_bg" style="display: none"></div>
+<!-- 101026 수정 -->
+<div id="myWriteLayer" class="ly_writing" style="left:100px; display:none">
+	<a href="javascript:closeMyWriteLayer();" class="btn_lclose"><span class="blind">닫기</span></a>
+	<div class="ifr_wrap">
+		<iframe title="빈프레임" id="myWrite" width="100%" height="100%" frameborder="0" marginheight="0" marginwidth="0" topmargin="0" bottommargin="0" scrolling="no" ></iframe>
+	</div>
+</div>
+<script type="text/javascript">
+function layerResize() {
+    var dimLayer = document.getElementById("dim");
+    var myWriteLayer = document.getElementById("myWriteLayer");
+
+    if(dimLayer && myWriteLayer) {
+                    var clientSize = jindo.$Document().clientSize();
+                    var scrollSize = jindo.$Document().scrollSize();
+                    dimLayer.style.width = clientSize.width;
+                    dimLayer.style.height = scrollSize.height;
+                    dimLayer.style.display = "block";
+
+                    if (clientSize.width > 960) {
+                            myWriteLayer.style.left = (clientSize.width - 960) / 2;
+                    } else {
+                            myWriteLayer.style.left = -2;
+                    }
+    }
+}
+
+function login() {
+	location.href = "https://nid.naver.com/nidlogin.login?mode=form&template=&url=" + encodeURIComponent(location.href);
+}
+
+function openMyWriteLayer() {
+    var dimLayer = document.getElementById("dim");
+    var myWriteLayer = document.getElementById("myWriteLayer");
+
+    if(dimLayer && myWriteLayer) {
+            var clientSize = jindo.$Document().clientSize();
+            var scrollSize = jindo.$Document().scrollSize();
+            
+            dimLayer.style.width = clientSize.width;
+            dimLayer.style.height = scrollSize.height;
+            dimLayer.style.display = "block";
+
+            if (clientSize.width > 960) {
+                    myWriteLayer.style.left = (clientSize.width - 960) / 2;
+            } else {
+                    myWriteLayer.style.left = -2;
+            }
+            myWriteLayer.style.display = 'block';
+            myWriteLayer.focus();
+
+            window.onresize=layerResize;
+
+            //document.getElementById("myWrite").src="/item/boardMyList.nhn?parentCode=028050";
+            document.getElementById("myWrite").src="/item/boardMyList.nhn?parentCode=028050";
+    }
+}
+
+function closeMyWriteLayer() {
+	var dimLayer = document.getElementById("dim");
+	var myWriteLayer = document.getElementById("myWriteLayer");
+	
+	if(dimLayer && myWriteLayer) {
+		dimLayer.style.display = "none";
+		myWriteLayer.style.display = 'none';
+		
+		window.onresize = null;
+	}
+}
+</script>
+</body>
+</html>
