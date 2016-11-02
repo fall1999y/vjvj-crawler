@@ -16,7 +16,9 @@ class CommonCrawlerPipeline(object):
     #     return item
 
     def __init__(self):
+        pass
 
+    def open_spider(self, spider):
         # if not os.path.isfile(os.getcwd() + '/finance_crawler/naver.json'):
         #     with open(os.getcwd() + '/finance_crawler/naver.json', 'w') as f:
         #         pass
@@ -25,9 +27,12 @@ class CommonCrawlerPipeline(object):
         # if os.path.isdir(os.path.join(os.path.abspath('.'), 'vjvj_crawler')):
         #     path_store = os.path.join(os.path.abspath("."), 'vjvj_crawler', 'result.json')
         # else:
-        path_store = os.path.join(os.path.abspath("."), 'result.json')
-
+        path_store = os.path.join(os.path.abspath("."), 'result/'+spider.result_file)
         self.file = codecs.open(path_store, 'a', encoding='utf-8')
+
+
+    def close_spider(self, spider):
+        self.file.close()
 
     def process_item(self, item, spider):
         # Item 을 한줄씩 구성
@@ -36,7 +41,4 @@ class CommonCrawlerPipeline(object):
         self.file.write(line)
         return item
 
-    def spider_closed(self, spider):
-        # 파일 CLOSE
-        self.file.close()
 

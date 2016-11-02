@@ -16,7 +16,10 @@ class CommonSpider(scrapy.Spider):
     # allowed_domains = ["naver.com"]
     # start_urls = []
 
-    def __init__(self, section):
+    def __init__(self, section, *args, **kwargs):
+
+        super(CommonSpider, self).__init__(*args, **kwargs)
+
         # self.base_source_path = os.path.abspath('vjvj_crawler')
         # if not os.path.exists(self.base_source_path):
         self.base_source_path = os.path.abspath('.')
@@ -38,6 +41,7 @@ class CommonSpider(scrapy.Spider):
         self.regex_article = str(config.get(section, 'regex_article'))
         self.regex_title = str(config.get(section, 'regex_title'))
         self.regex_seq = str(config.get(section, 'regex_seq'))
+        self.result_file = str(config.get(section, 'result_file'))
         self.acc = 0
         self.items = []
 

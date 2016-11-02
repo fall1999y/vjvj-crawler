@@ -201,7 +201,7 @@ var gnb_naverme_layer_close_callback = function(){
 					var gnb_logout=encodeURIComponent(location.href);
 					var gnb_one_naver = 1;
 					</script>
-					<script type="text/javascript" src="http://static.gn.naver.net/template/gnb_quirks_euckr.nhn?20161101">
+					<script type="text/javascript" src="http://static.gn.naver.net/template/gnb_quirks_euckr.nhn?20161103">
 					</script>
 				</div>
 			</div>
@@ -256,7 +256,7 @@ var gnb_naverme_layer_close_callback = function(){
 								
 									
 									
-										<li><a href="http://finance.naver.com/news/news_read.nhn?mode=LSS2D&office_id=001&article_id=0008792253"  onClick="clickcr(this, 'rec.con1', '', '', event);">대내외 불안에 경계심리 커진 증시, '변동성 장세 불가피'</a></li>
+										<li><a href="http://finance.naver.com/news/news_read.nhn?mode=LSS2D&office_id=001&article_id=0008794963"  onClick="clickcr(this, 'rec.con1', '', '', event);">구조조정 '칼잡이' 임종룡, 한국경제號 키 잡는다</a></li>
 									
 								
 							
@@ -267,7 +267,7 @@ var gnb_naverme_layer_close_callback = function(){
 								
 									
 									
-										<li><a href="http://finance.naver.com/news/news_read.nhn?mode=LSS2D&office_id=003&article_id=0007560146"  onClick="clickcr(this, 'rec.con2', '', '', event);">다시 꺾인 수출, 車파업·노트7 단종에 두달째 마이너스</a></li>
+										<li><a href="http://finance.naver.com/news/news_read.nhn?mode=LSS2D&office_id=025&article_id=0002656066"  onClick="clickcr(this, 'rec.con2', '', '', event);">내수 이어 수출도 두달 연속 감소…'경제 정책, 동력 살려라'</a></li>
 									
 								
 							
@@ -278,7 +278,7 @@ var gnb_naverme_layer_close_callback = function(){
 								
 									
 									
-										<li><a href="http://finance.naver.com/news/news_read.nhn?mode=LSS2D&office_id=421&article_id=0002366411"  onClick="clickcr(this, 'rec.con3', '', '', event);">'中, 세 살 버릇 여든까지, 당분간 긴축 불가피'</a></li>
+										<li><a href="http://finance.naver.com/news/news_read.nhn?mode=LSS2D&office_id=008&article_id=0003766699"  onClick="clickcr(this, 'rec.con3', '', '', event);">美 금리인상 임박…신흥시장 '방어벽' 높아졌다</a></li>
 									
 								
 							
@@ -426,8 +426,8 @@ left: -9999px;
 		
 			
 			
-				
 			
+				
 			
 		
 
@@ -442,18 +442,18 @@ left: -9999px;
 																		
         <dl class="blind"> 
 	        <dt>종목 시세 정보</dt> 
-	        <dd>2016년 11월 01일 13시 16분 기준 장중</dd> 
+	        <dd>2016년 11월 02일 16시 10분 기준 장마감</dd> 
 	        <dd>종목명 삼성엔지니어링</dd> 
 	        <dd>종목코드 028050 코스피</dd> 
-	        <dd>현재가 9,250 전일대비 하락 220 마이너스 2.32 퍼센트</dd> 
-	        <dd>전일가 9,470</dd> 
-	        <dd>시가 9,420</dd> 
-	        <dd>고가 9,440</dd> 
-	        <dd>상한가 12,300</dd> 
-	        <dd>저가 9,160</dd> 
-	        <dd>하한가 6,630</dd> 
-	        <dd>거래량 1,806,983</dd> 
-	        <dd>거래대금 16,728백만</dd> 
+	        <dd>현재가 9,250 전일대비 상승 50 플러스 0.54 퍼센트</dd> 
+	        <dd>전일가 9,200</dd> 
+	        <dd>시가 9,020</dd> 
+	        <dd>고가 9,400</dd> 
+	        <dd>상한가 11,950</dd> 
+	        <dd>저가 9,020</dd> 
+	        <dd>하한가 6,440</dd> 
+	        <dd>거래량 1,726,299</dd> 
+	        <dd>거래대금 15,990백만</dd> 
         </dl>
          
         
@@ -473,8 +473,8 @@ left: -9999px;
 					
 						
 						
-							<em class="date">2016.11.01  13:16 <span>기준(장중)</span></em>
 						
+							<em class="date">2016.11.02 <span>기준(장마감)</span></em>
 						
 					
 					</span>
@@ -593,8 +593,8 @@ left: -9999px;
                 <dl class="blind"> 
                         <dt><strong>삼성엔지니어링</strong></dt> 
                         <dd>오늘의시세 9,250 포인트</dd> 
-                        <dd>220 포인트 하락</dd> 
-                        <dd>2.32% 마이너스</dd> 
+                        <dd>50 포인트 상승</dd> 
+                        <dd>0.54% 플러스</dd> 
                 </dl>
                 
                 
@@ -602,8 +602,8 @@ left: -9999px;
 					<p class="no_today">
 						
 							
+								<em class="no_up">
 							
-								<em class="no_down">
 							
 							
 						
@@ -616,27 +616,27 @@ left: -9999px;
 						
 							
 							
+								<em class="no_up">
+									<span class="ico up">상승</span>
 							
 							
-								<em class="no_down">
-									<span class="ico down">하락</span>
 							
 							
 						
-							<span class="blind">220</span>
-							<span class="no2">2</span><span class="no2">2</span><span class="no0">0</span>
+							<span class="blind">50</span>
+							<span class="no5">5</span><span class="no0">0</span>
 						</em>
 						<span class="bar">l</span>
 						
 							
+								<em class="no_up">
+									<span class="ico plus">+</span>
 							
-								<em class="no_down">
-									<span class="ico minus">-</span>
 							
 							
 						
-							<span class="blind">2.32</span>
-							<span class="no2">2</span><span class="jum">.</span><span class="no3">3</span><span class="no2">2</span>
+							<span class="blind">0.54</span>
+							<span class="no0">0</span><span class="jum">.</span><span class="no5">5</span><span class="no4">4</span>
 							<span class="per">%</span>
 						</em>
 					</p>
@@ -648,8 +648,8 @@ left: -9999px;
 					<td class="first">
 						<span class="sptxt sp_txt2">전일</span>
 						<em>
-							<span class="blind">9,470</span>
-							<span class="no9">9</span><span class="shim">,</span><span class="no4">4</span><span class="no7">7</span><span class="no0">0</span>
+							<span class="blind">9,200</span>
+							<span class="no9">9</span><span class="shim">,</span><span class="no2">2</span><span class="no0">0</span><span class="no0">0</span>
 						</em>
 					</td>
 					<td>
@@ -659,22 +659,22 @@ left: -9999px;
 							
 								
 									
+									<em class="no_up">
 									
-									<em class="no_down">
 									
 								
 							
 						
 						
 							
-							<span class="blind">9,440</span><span class="no9">9</span><span class="shim">,</span><span class="no4">4</span><span class="no4">4</span><span class="no0">0</span>
+							<span class="blind">9,400</span><span class="no9">9</span><span class="shim">,</span><span class="no4">4</span><span class="no0">0</span><span class="no0">0</span>
 						
 						</em>
 						<span class="sptxt sp_txt6">(상한가</span>
 						<em class="no_cha">
 							
 								
-								<span class="blind">12,300</span><span class="no1">1</span><span class="no2">2</span><span class="shim">,</span><span class="no3">3</span><span class="no0">0</span><span class="no0">0</span>
+								<span class="blind">11,950</span><span class="no1">1</span><span class="no1">1</span><span class="shim">,</span><span class="no9">9</span><span class="no5">5</span><span class="no0">0</span>
 							
 						</em>
 						<span class="sptxt sp_txt8">)</span>
@@ -682,8 +682,8 @@ left: -9999px;
 					<td>
 						<span class="sptxt sp_txt9">거래량</span>
 						<em>
-							<span class="blind">1,806,983</span>
-							<span class="no1">1</span><span class="shim">,</span><span class="no8">8</span><span class="no0">0</span><span class="no6">6</span><span class="shim">,</span><span class="no9">9</span><span class="no8">8</span><span class="no3">3</span>
+							<span class="blind">1,726,299</span>
+							<span class="no1">1</span><span class="shim">,</span><span class="no7">7</span><span class="no2">2</span><span class="no6">6</span><span class="shim">,</span><span class="no2">2</span><span class="no9">9</span><span class="no9">9</span>
 						</em>
 					</td>
 				</tr>
@@ -703,7 +703,7 @@ left: -9999px;
 						
 						
 							
-							<span class="blind">9,420</span><span class="no9">9</span><span class="shim">,</span><span class="no4">4</span><span class="no2">2</span><span class="no0">0</span>
+							<span class="blind">9,020</span><span class="no9">9</span><span class="shim">,</span><span class="no0">0</span><span class="no2">2</span><span class="no0">0</span>
 						
 						</em>
 					</td>
@@ -722,14 +722,14 @@ left: -9999px;
 						
 						
 							
-							<span class="blind">9,160</span><span class="no9">9</span><span class="shim">,</span><span class="no1">1</span><span class="no6">6</span><span class="no0">0</span>
+							<span class="blind">9,020</span><span class="no9">9</span><span class="shim">,</span><span class="no0">0</span><span class="no2">2</span><span class="no0">0</span>
 						
 						</em>
 						<span class="sptxt sp_txt7">(하한가</span>
 						<em class="no_cha">
 							
 								
-								<span class="no6">6</span><span class="shim">,</span><span class="no6">6</span><span class="no3">3</span><span class="no0">0</span>
+								<span class="no6">6</span><span class="shim">,</span><span class="no4">4</span><span class="no4">4</span><span class="no0">0</span>
 							
 						</em>
 						<span class="sptxt sp_txt8">)</span>
@@ -739,8 +739,8 @@ left: -9999px;
 						<em>
 						
 							
-								<span class="blind">16,728</span>
-								<span class="no1">1</span><span class="no6">6</span><span class="shim">,</span><span class="no7">7</span><span class="no2">2</span><span class="no8">8</span>
+								<span class="blind">15,990</span>
+								<span class="no1">1</span><span class="no5">5</span><span class="shim">,</span><span class="no9">9</span><span class="no9">9</span><span class="no0">0</span>
 							
 							
 						
@@ -766,7 +766,7 @@ left: -9999px;
 							<li class="_item_img_chart _day1095" onclick="clickcr(this,'sic.3year','','',event); changeImgChart('day1095'); return false;"><a href="#">3년</a></li> 
 						</ul> 
 						<h5 class="blind">이미지 차트</h5> 
-						<img id="img_cahrt_area" src="http://imgfinance.naver.net/chart/item/day/028050.png?sidcode=1477973780240" width="698" height="242" alt="이미지 차트"> 
+						<img id="img_cahrt_area" src="http://imgfinance.naver.net/chart/item/day/028050.png?sidcode=1478124510288" width="698" height="242" alt="이미지 차트"> 
 					</div> 
 					<!-- <div class="fs_da">
 							<div id="da_70046" name="da_70046"><iframe id="f70046" name="f70046" src="http://ad.naver.com/adshow?unit=758B" width="700" height="46" marginheight="0" marginwidth="0" scrolling="no" frameborder="0" align="center"></iframe></div>
@@ -1334,7 +1334,7 @@ var doUpdateInformation = function() {
 	oUpdateAjax.request();
 }
 
-var dateTime = "20161101131611";
+var dateTime = "20161102161045";
 var closeDate = dateTime.substring(0,4) + "." + dateTime.substring(4,6) + "." + dateTime.substring(6,8);
 
 /**
@@ -1376,7 +1376,7 @@ function changeImgChart(chartType) {
 	eImgChartTab = jindo.$Element(jindo.$$.getSingle("._" + chartType));
 	
 	if (eImgChartTab != null && !eImgChartTab.hasClass("on")) {
-		jindo.$Element(jindo.$$.getSingle("#img_cahrt_area")).attr("src", "http://imgfinance.naver.net/chart/item/" + chartType + "/028050.png?sidcode=1477973780240");
+		jindo.$Element(jindo.$$.getSingle("#img_cahrt_area")).attr("src", "http://imgfinance.naver.net/chart/item/" + chartType + "/028050.png?sidcode=1478124510288");
 	}
 }
 
@@ -1481,7 +1481,7 @@ jindo.$Fn(function() {
 				
 			
 			<h4><span class="red03">종목</span>토론실
-			<span class="nor"><img src="http://imgstock.naver.net/images5/bar_CCC.gif" width="1" height="11"><span class="p11"> 네티즌 투자의견 <span class="tah red01"><strong>3.67</strong> 매수</span></span></span></h4>
+			<span class="nor"><img src="http://imgstock.naver.net/images5/bar_CCC.gif" width="1" height="11"><span class="p11"> 네티즌 투자의견 <span class="tah red01"><strong>3.75</strong> 매수</span></span></span></h4>
 			
 			<div>
 			<a href="/notice.nhn?permLink=/read/1100001004/10000000000020241916" class="caution" target="_blank"><img src="http://imgstock.naver.net/images5/ico_notice2.gif" alt="공지" width="27" height="14"> 토론실 활용 TIP과 운영원칙 안내</a> 
@@ -1528,25 +1528,25 @@ jindo.$Fn(function() {
 				
 			
 			<tr onMouseOver="mouseOver(this)" onMouseOut="mouseOut(this)" align="center">
-			<td><span class="tah p10 gray03">2016.11.01 13:13</span></td>
+			<td><span class="tah p10 gray03">2016.11.02 23:58</span></td>
 			<td class="title">
 				
 				
-				<a href="/item/board_read.nhn?code=028050&nid=54469131&st=&sw=&page=1" title="쓰레기 주주농락회사">쓰레기 주주농락회사
-				
+				<a href="/item/board_read.nhn?code=028050&nid=54569396&st=&sw=&page=1" title="어차피 9000원 깨진다!!!">어차피 9000원 깨진다!!!
+				<span class="tah p9" style="color:#639933">[<b>2</b>]</span>
 				<img src="http://imgstock.naver.net/images5/new.gif" width="10" height="10"></a></td>
 			<td class="tc"><span class="p11 ">의견없음</span></td>
 			<td class="p11">
-				side****
+				bds3****
 				
 			</td>
-			<td><span class="tah p10 gray03">3</span></td>
+			<td><span class="tah p10 gray03">259</span></td>
 			
 			
 			
 			
-			<td><strong class="tah p10 gray03 ">0</strong></td>
-			<td><strong class="tah p10 gray03 ">0</strong></td>
+			<td><strong class="tah p10 red01">2</strong></td>
+			<td><strong class="tah p10 blue01">2</strong></td>
 			</tr>
 			
 		
@@ -1562,19 +1562,19 @@ jindo.$Fn(function() {
 				
 			
 			<tr onMouseOver="mouseOver(this)" onMouseOut="mouseOut(this)" align="center">
-			<td><span class="tah p10 gray03">2016.11.01 13:10</span></td>
+			<td><span class="tah p10 gray03">2016.11.02 23:45</span></td>
 			<td class="title">
 				
 				
-				<a href="/item/board_read.nhn?code=028050&nid=54468923&st=&sw=&page=1" title="아직멀었다. 적정가 6,000원때 무난하다">아직멀었다. 적정가 6,000원때 무난하...
+				<a href="/item/board_read.nhn?code=028050&nid=54569240&st=&sw=&page=1" title="2,147,483,647">2,147,483,647
 				
 				<img src="http://imgstock.naver.net/images5/new.gif" width="10" height="10"></a></td>
 			<td class="tc"><span class="p11 ">의견없음</span></td>
 			<td class="p11">
-				sa2d****
+				cccc****
 				
 			</td>
-			<td><span class="tah p10 gray03">6</span></td>
+			<td><span class="tah p10 gray03">267</span></td>
 			
 			
 			
@@ -1596,130 +1596,130 @@ jindo.$Fn(function() {
 				
 			
 			<tr onMouseOver="mouseOver(this)" onMouseOut="mouseOut(this)" align="center">
-			<td><span class="tah p10 gray03">2016.11.01 13:09</span></td>
+			<td><span class="tah p10 gray03">2016.11.02 23:01</span></td>
 			<td class="title">
 				
 				
-				<a href="/item/board_read.nhn?code=028050&nid=54468768&st=&sw=&page=1" title="7천대  보이네 ㅡㅡㅡ">7천대  보이네 ㅡㅡㅡ
+				<a href="/item/board_read.nhn?code=028050&nid=54568514&st=&sw=&page=1" title="내년에도 거저 먹겠네.">내년에도 거저 먹겠네.
+				<span class="tah p9" style="color:#639933">[<b>2</b>]</span>
+				<img src="http://imgstock.naver.net/images5/new.gif" width="10" height="10"></a></td>
+			<td class="tc"><span class="p11 ">의견없음</span></td>
+			<td class="p11">
+				muji****
+				
+			</td>
+			<td><span class="tah p10 gray03">312</span></td>
+			
+			
+			
+			
+			<td><strong class="tah p10 red01">4</strong></td>
+			<td><strong class="tah p10 blue01">1</strong></td>
+			</tr>
+			
+		
+			
+				
+				
+				
+				
+				
+				
+					
+					
+				
+			
+			<tr onMouseOver="mouseOver(this)" onMouseOut="mouseOut(this)" align="center">
+			<td><span class="tah p10 gray03">2016.11.02 22:58</span></td>
+			<td class="title">
+				
+				
+				<a href="/item/board_read.nhn?code=028050&nid=54568442&st=&sw=&page=1" title="오늘에일기">오늘에일기
+				<span class="tah p9" style="color:#639933">[<b>3</b>]</span>
+				<img src="http://imgstock.naver.net/images5/new.gif" width="10" height="10"></a></td>
+			<td class="tc"><span class="p11 ">의견없음</span></td>
+			<td class="p11">
+				mcit****
+				
+			</td>
+			<td><span class="tah p10 gray03">279</span></td>
+			
+			
+			
+			
+			<td><strong class="tah p10 gray03 ">0</strong></td>
+			<td><strong class="tah p10 gray03 ">0</strong></td>
+			</tr>
+			
+		
+			
+				
+				
+				
+				
+				
+				
+					
+					
+				
+			
+			<tr onMouseOver="mouseOver(this)" onMouseOut="mouseOut(this)" align="center">
+			<td><span class="tah p10 gray03">2016.11.02 22:52</span></td>
+			<td class="title">
+				
+				
+				<a href="/item/board_read.nhn?code=028050&nid=54568265&st=&sw=&page=1" title="삼성전자에서 1조 투자 한다네">삼성전자에서 1조 투자 한다네
+				<span class="tah p9" style="color:#639933">[<b>5</b>]</span>
+				<img src="http://imgstock.naver.net/images5/new.gif" width="10" height="10"></a></td>
+			<td class="tc"><span class="p11 ">의견없음</span></td>
+			<td class="p11">
+				vict****
+				
+			</td>
+			<td><span class="tah p10 gray03">344</span></td>
+			
+			
+			
+			
+			<td><strong class="tah p10 red01">4</strong></td>
+			<td><strong class="tah p10 blue01">1</strong></td>
+			</tr>
+			
+				<tr>
+				<td colspan="7" height="1" bgcolor="#e1e1e1"></td>
+				</tr>
+			
+		
+			
+				
+				
+				
+				
+				
+				
+					
+					
+				
+			
+			<tr onMouseOver="mouseOver(this)" onMouseOut="mouseOut(this)" align="center">
+			<td><span class="tah p10 gray03">2016.11.02 22:31</span></td>
+			<td class="title">
+				
+				
+				<a href="/item/board_read.nhn?code=028050&nid=54567807&st=&sw=&page=1" title="11.300원만 오게 해주세요 ㅠㅠㅠㅠㅠ">11.300원만 오게 해주세요 ㅠㅠㅠㅠㅠ
 				<span class="tah p9" style="color:#639933">[<b>1</b>]</span>
 				<img src="http://imgstock.naver.net/images5/new.gif" width="10" height="10"></a></td>
 			<td class="tc"><span class="p11 ">의견없음</span></td>
 			<td class="p11">
-				kdsk****
+				1985****
 				
 			</td>
-			<td><span class="tah p10 gray03">17</span></td>
-			
-			
-			
-			
-			<td><strong class="tah p10 red01">2</strong></td>
-			<td><strong class="tah p10 gray03 ">0</strong></td>
-			</tr>
-			
-		
-			
-				
-				
-				
-				
-				
-				
-					
-					
-				
-			
-			<tr onMouseOver="mouseOver(this)" onMouseOut="mouseOut(this)" align="center">
-			<td><span class="tah p10 gray03">2016.11.01 13:01</span></td>
-			<td class="title">
-				
-				
-				<a href="/item/board_read.nhn?code=028050&nid=54468173&st=&sw=&page=1" title="평단 9천원대에 8억어치산 할매요. 크게 오릅니다.">평단 9천원대에 8억어치산 할매요. 크게...
-				
-				<img src="http://imgstock.naver.net/images5/new.gif" width="10" height="10"></a></td>
-			<td class="tc"><span class="p11 ">의견없음</span></td>
-			<td class="p11">
-				soph****
-				
-			</td>
-			<td><span class="tah p10 gray03">71</span></td>
-			
-			
-			
-			
-			<td><strong class="tah p10 red01">4</strong></td>
-			<td><strong class="tah p10 gray03 ">0</strong></td>
-			</tr>
-			
-		
-			
-				
-				
-				
-				
-				
-				
-					
-					
-				
-			
-			<tr onMouseOver="mouseOver(this)" onMouseOut="mouseOut(this)" align="center">
-			<td><span class="tah p10 gray03">2016.11.01 12:45</span></td>
-			<td class="title">
-				
-				
-				<a href="/item/board_read.nhn?code=028050&nid=54466919&st=&sw=&page=1" title="실주주분들 보세요">실주주분들 보세요
-				<span class="tah p9" style="color:#639933">[<b>5</b>]</span>
-				<img src="http://imgstock.naver.net/images5/new.gif" width="10" height="10"></a></td>
-			<td class="tc"><span class="p11 ">의견없음</span></td>
-			<td class="p11">
-				han9****
-				
-			</td>
-			<td><span class="tah p10 gray03">178</span></td>
+			<td><span class="tah p10 gray03">299</span></td>
 			
 			
 			
 			
 			<td><strong class="tah p10 red01">3</strong></td>
-			<td><strong class="tah p10 gray03 ">0</strong></td>
-			</tr>
-			
-				<tr>
-				<td colspan="7" height="1" bgcolor="#e1e1e1"></td>
-				</tr>
-			
-		
-			
-				
-				
-				
-				
-				
-				
-					
-					
-				
-			
-			<tr onMouseOver="mouseOver(this)" onMouseOut="mouseOut(this)" align="center">
-			<td><span class="tah p10 gray03">2016.11.01 12:42</span></td>
-			<td class="title">
-				
-				
-				<a href="/item/board_read.nhn?code=028050&nid=54466681&st=&sw=&page=1" title="몇가지 들은게 있는데..">몇가지 들은게 있는데..
-				<span class="tah p9" style="color:#639933">[<b>5</b>]</span>
-				<img src="http://imgstock.naver.net/images5/new.gif" width="10" height="10"></a></td>
-			<td class="tc"><span class="p11 ">의견없음</span></td>
-			<td class="p11">
-				ftsq****
-				
-			</td>
-			<td><span class="tah p10 gray03">177</span></td>
-			
-			
-			
-			
-			<td><strong class="tah p10 red01">4</strong></td>
 			<td><strong class="tah p10 blue01">1</strong></td>
 			</tr>
 			
@@ -1736,59 +1736,25 @@ jindo.$Fn(function() {
 				
 			
 			<tr onMouseOver="mouseOver(this)" onMouseOut="mouseOut(this)" align="center">
-			<td><span class="tah p10 gray03">2016.11.01 12:37</span></td>
+			<td><span class="tah p10 gray03">2016.11.02 22:01</span></td>
 			<td class="title">
 				
 				
-				<a href="/item/board_read.nhn?code=028050&nid=54466292&st=&sw=&page=1" title="주주여러분 예비주주여러분..수준이하 안타들 꺼져라..">주주여러분 예비주주여러분..수준이하 안타...
-				
+				<a href="/item/board_read.nhn?code=028050&nid=54567158&st=&sw=&page=1" title="주주님들 제가 틀렸습니다...">주주님들 제가 틀렸습니다...
+				<span class="tah p9" style="color:#639933">[<b>4</b>]</span>
 				<img src="http://imgstock.naver.net/images5/new.gif" width="10" height="10"></a></td>
 			<td class="tc"><span class="p11 ">의견없음</span></td>
 			<td class="p11">
-				sam3****
+				dudx****
 				
 			</td>
-			<td><span class="tah p10 gray03">101</span></td>
-			
-			
-			
-			
-			<td><strong class="tah p10 red01">4</strong></td>
-			<td><strong class="tah p10 gray03 ">0</strong></td>
-			</tr>
-			
-		
-			
-				
-				
-				
-				
-				
-				
-					
-					
-				
-			
-			<tr onMouseOver="mouseOver(this)" onMouseOut="mouseOut(this)" align="center">
-			<td><span class="tah p10 gray03">2016.11.01 12:34</span></td>
-			<td class="title">
-				
-				
-				<a href="/item/board_read.nhn?code=028050&nid=54466011&st=&sw=&page=1" title="재용이가 답이다">재용이가 답이다
-				
-				<img src="http://imgstock.naver.net/images5/new.gif" width="10" height="10"></a></td>
-			<td class="tc"><span class="p11 ">의견없음</span></td>
-			<td class="p11">
-				lms0****
-				
-			</td>
-			<td><span class="tah p10 gray03">79</span></td>
+			<td><span class="tah p10 gray03">318</span></td>
 			
 			
 			
 			
 			<td><strong class="tah p10 red01">2</strong></td>
-			<td><strong class="tah p10 gray03 ">0</strong></td>
+			<td><strong class="tah p10 blue01">4</strong></td>
 			</tr>
 			
 		
@@ -1804,265 +1770,19 @@ jindo.$Fn(function() {
 				
 			
 			<tr onMouseOver="mouseOver(this)" onMouseOut="mouseOut(this)" align="center">
-			<td><span class="tah p10 gray03">2016.11.01 12:32</span></td>
+			<td><span class="tah p10 gray03">2016.11.02 20:01</span></td>
 			<td class="title">
 				
 				
-				<a href="/item/board_read.nhn?code=028050&nid=54465846&st=&sw=&page=1" title="그래도시원하게빠지니기분은안나쁘네">그래도시원하게빠지니기분은안나쁘네
-				
+				<a href="/item/board_read.nhn?code=028050&nid=54564062&st=&sw=&page=1" title="나라꼬라지나 대표기업인 삼성꼬라지나.">나라꼬라지나 대표기업인 삼성꼬라지나.
+				<span class="tah p9" style="color:#639933">[<b>2</b>]</span>
 				<img src="http://imgstock.naver.net/images5/new.gif" width="10" height="10"></a></td>
 			<td class="tc"><span class="p11 ">의견없음</span></td>
 			<td class="p11">
-				hong****
+				soby****
 				
 			</td>
-			<td><span class="tah p10 gray03">72</span></td>
-			
-			
-			
-			
-			<td><strong class="tah p10 red01">1</strong></td>
-			<td><strong class="tah p10 gray03 ">0</strong></td>
-			</tr>
-			
-		
-			
-				
-				
-				
-				
-				
-				
-					
-					
-				
-			
-			<tr onMouseOver="mouseOver(this)" onMouseOut="mouseOut(this)" align="center">
-			<td><span class="tah p10 gray03">2016.11.01 12:28</span></td>
-			<td class="title">
-				
-				
-				<a href="/item/board_read.nhn?code=028050&nid=54465586&st=&sw=&page=1" title="아직도 여기서/ 한진해운으로 오세요">아직도 여기서/ 한진해운으로 오세요
-				
-				<img src="http://imgstock.naver.net/images5/new.gif" width="10" height="10"></a></td>
-			<td class="tc"><span class="p11 ">의견없음</span></td>
-			<td class="p11">
-				jksl****
-				
-			</td>
-			<td><span class="tah p10 gray03">51</span></td>
-			
-			
-			
-			
-			<td><strong class="tah p10 red01">1</strong></td>
-			<td><strong class="tah p10 gray03 ">0</strong></td>
-			</tr>
-			
-				<tr>
-				<td colspan="7" height="1" bgcolor="#e1e1e1"></td>
-				</tr>
-			
-		
-			
-				
-				
-				
-				
-				
-				
-					
-					
-				
-			
-			<tr onMouseOver="mouseOver(this)" onMouseOut="mouseOut(this)" align="center">
-			<td><span class="tah p10 gray03">2016.11.01 12:26</span></td>
-			<td class="title">
-				
-				
-				<a href="/item/board_read.nhn?code=028050&nid=54465424&st=&sw=&page=1" title="★★ 8500원에 추매한다.">★★ 8500원에 추매한다.
-				
-				<img src="http://imgstock.naver.net/images5/new.gif" width="10" height="10"></a></td>
-			<td class="tc"><span class="p11 ">의견없음</span></td>
-			<td class="p11">
-				lead****
-				
-			</td>
-			<td><span class="tah p10 gray03">65</span></td>
-			
-			
-			
-			
-			<td><strong class="tah p10 red01">1</strong></td>
-			<td><strong class="tah p10 gray03 ">0</strong></td>
-			</tr>
-			
-		
-			
-				
-				
-				
-				
-				
-				
-					
-					
-				
-			
-			<tr onMouseOver="mouseOver(this)" onMouseOut="mouseOut(this)" align="center">
-			<td><span class="tah p10 gray03">2016.11.01 12:25</span></td>
-			<td class="title">
-				
-				
-				<a href="/item/board_read.nhn?code=028050&nid=54465356&st=&sw=&page=1" title="매수자가 누굴까?">매수자가 누굴까?
-				
-				<img src="http://imgstock.naver.net/images5/new.gif" width="10" height="10"></a></td>
-			<td class="tc"><span class="p11 ">의견없음</span></td>
-			<td class="p11">
-				lms0****
-				
-			</td>
-			<td><span class="tah p10 gray03">95</span></td>
-			
-			
-			
-			
-			<td><strong class="tah p10 red01">1</strong></td>
-			<td><strong class="tah p10 blue01">1</strong></td>
-			</tr>
-			
-		
-			
-				
-				
-				
-				
-				
-				
-					
-					
-				
-			
-			<tr onMouseOver="mouseOver(this)" onMouseOut="mouseOut(this)" align="center">
-			<td><span class="tah p10 gray03">2016.11.01 12:20</span></td>
-			<td class="title">
-				
-				
-				<a href="/item/board_read.nhn?code=028050&nid=54464941&st=&sw=&page=1" title="물리신 분들">물리신 분들
-				<span class="tah p9" style="color:#639933">[<b>8</b>]</span>
-				<img src="http://imgstock.naver.net/images5/new.gif" width="10" height="10"></a></td>
-			<td class="tc"><span class="p11 ">의견없음</span></td>
-			<td class="p11">
-				whjw****
-				
-			</td>
-			<td><span class="tah p10 gray03">158</span></td>
-			
-			
-			
-			
-			<td><strong class="tah p10 red01">1</strong></td>
-			<td><strong class="tah p10 blue01">1</strong></td>
-			</tr>
-			
-		
-			
-				
-				
-				
-				
-				
-				
-					
-					
-				
-			
-			<tr onMouseOver="mouseOver(this)" onMouseOut="mouseOut(this)" align="center">
-			<td><span class="tah p10 gray03">2016.11.01 12:18</span></td>
-			<td class="title">
-				
-				
-				<a href="/item/board_read.nhn?code=028050&nid=54464831&st=&sw=&page=1" title="진짜 썩어빠진 회사네">진짜 썩어빠진 회사네
-				
-				<img src="http://imgstock.naver.net/images5/new.gif" width="10" height="10"></a></td>
-			<td class="tc"><span class="p11 ">의견없음</span></td>
-			<td class="p11">
-				side****
-				
-			</td>
-			<td><span class="tah p10 gray03">80</span></td>
-			
-			
-			
-			
-			<td><strong class="tah p10 red01">1</strong></td>
-			<td><strong class="tah p10 gray03 ">0</strong></td>
-			</tr>
-			
-		
-			
-				
-				
-				
-				
-				
-				
-					
-					
-				
-			
-			<tr onMouseOver="mouseOver(this)" onMouseOut="mouseOut(this)" align="center">
-			<td><span class="tah p10 gray03">2016.11.01 12:09</span></td>
-			<td class="title">
-				
-				
-				<a href="/item/board_read.nhn?code=028050&nid=54464105&st=&sw=&page=1" title="내일은 더 심하게 빠질거임 ㅋㅋ">내일은 더 심하게 빠질거임 ㅋㅋ
-				
-				<img src="http://imgstock.naver.net/images5/new.gif" width="10" height="10"></a></td>
-			<td class="tc"><span class="p11 ">의견없음</span></td>
-			<td class="p11">
-				sape****
-				
-			</td>
-			<td><span class="tah p10 gray03">123</span></td>
-			
-			
-			
-			
-			<td><strong class="tah p10 red01">3</strong></td>
-			<td><strong class="tah p10 gray03 ">0</strong></td>
-			</tr>
-			
-				<tr>
-				<td colspan="7" height="1" bgcolor="#e1e1e1"></td>
-				</tr>
-			
-		
-			
-				
-				
-				
-				
-				
-				
-					
-					
-				
-			
-			<tr onMouseOver="mouseOver(this)" onMouseOut="mouseOut(this)" align="center">
-			<td><span class="tah p10 gray03">2016.11.01 12:02</span></td>
-			<td class="title">
-				
-				
-				<a href="/item/board_read.nhn?code=028050&nid=54463612&st=&sw=&page=1" title="삼성엔지니어링 1시 마감">삼성엔지니어링 1시 마감
-				<span class="tah p9" style="color:#639933">[<b>11</b>]</span>
-				<img src="http://imgstock.naver.net/images5/new.gif" width="10" height="10"></a></td>
-			<td class="tc"><span class="p11 ">의견없음</span></td>
-			<td class="p11">
-				ym67****
-				
-			</td>
-			<td><span class="tah p10 gray03">216</span></td>
+			<td><span class="tah p10 gray03">374</span></td>
 			
 			
 			
@@ -2084,127 +1804,407 @@ jindo.$Fn(function() {
 				
 			
 			<tr onMouseOver="mouseOver(this)" onMouseOut="mouseOut(this)" align="center">
-			<td><span class="tah p10 gray03">2016.11.01 11:54</span></td>
+			<td><span class="tah p10 gray03">2016.11.02 19:36</span></td>
 			<td class="title">
 				
 				
-				<a href="/item/board_read.nhn?code=028050&nid=54463135&st=&sw=&page=1" title="팔천원중반">팔천원중반
-				
+				<a href="/item/board_read.nhn?code=028050&nid=54563534&st=&sw=&page=1" title="개미들은">개미들은
+				<span class="tah p9" style="color:#639933">[<b>2</b>]</span>
 				<img src="http://imgstock.naver.net/images5/new.gif" width="10" height="10"></a></td>
 			<td class="tc"><span class="p11 ">의견없음</span></td>
 			<td class="p11">
-				kump****
+				your****
 				
 			</td>
-			<td><span class="tah p10 gray03">140</span></td>
-			
-			
-			
-			
-			<td><strong class="tah p10 red01">3</strong></td>
-			<td><strong class="tah p10 blue01">1</strong></td>
-			</tr>
-			
-		
-			
-				
-				
-				
-				
-				
-					
-					
-				
-				
-			
-			<tr onMouseOver="mouseOver(this)" onMouseOut="mouseOut(this)" align="center">
-			<td><span class="tah p10 gray03">2016.11.01 11:49</span></td>
-			<td class="title">
-				
-				
-				<a href="/item/board_read.nhn?code=028050&nid=54462676&st=&sw=&page=1" title="10,600~10,700원">10,600~10,700원
-				
-				<img src="http://imgstock.naver.net/images5/new.gif" width="10" height="10"></a></td>
-			<td class="tc"><span class="p11 red01">강력매수</span></td>
-			<td class="p11">
-				kimd****
-				
-			</td>
-			<td><span class="tah p10 gray03">188</span></td>
-			
-			
-			
-			
-			<td><strong class="tah p10 red01">4</strong></td>
-			<td><strong class="tah p10 gray03 ">0</strong></td>
-			</tr>
-			
-		
-			
-				
-				
-				
-				
-				
-				
-					
-					
-				
-			
-			<tr onMouseOver="mouseOver(this)" onMouseOut="mouseOut(this)" align="center">
-			<td><span class="tah p10 gray03">2016.11.01 11:47</span></td>
-			<td class="title">
-				
-				
-				<a href="/item/board_read.nhn?code=028050&nid=54462527&st=&sw=&page=1" title="오늘은 후퇴~~">오늘은 후퇴~~
-				
-				<img src="http://imgstock.naver.net/images5/new.gif" width="10" height="10"></a></td>
-			<td class="tc"><span class="p11 ">의견없음</span></td>
-			<td class="p11">
-				ccc8****
-				
-			</td>
-			<td><span class="tah p10 gray03">111</span></td>
-			
-			
-			
-			
-			<td><strong class="tah p10 red01">2</strong></td>
-			<td><strong class="tah p10 gray03 ">0</strong></td>
-			</tr>
-			
-		
-			
-				
-				
-				
-				
-				
-				
-					
-					
-				
-			
-			<tr onMouseOver="mouseOver(this)" onMouseOut="mouseOut(this)" align="center">
-			<td><span class="tah p10 gray03">2016.11.01 11:43</span></td>
-			<td class="title">
-				
-				
-				<a href="/item/board_read.nhn?code=028050&nid=54462209&st=&sw=&page=1" title="개미가">개미가
-				
-				<img src="http://imgstock.naver.net/images5/new.gif" width="10" height="10"></a></td>
-			<td class="tc"><span class="p11 ">의견없음</span></td>
-			<td class="p11">
-				akyo****
-				
-			</td>
-			<td><span class="tah p10 gray03">125</span></td>
+			<td><span class="tah p10 gray03">457</span></td>
 			
 			
 			
 			
 			<td><strong class="tah p10 red01">1</strong></td>
-			<td><strong class="tah p10 blue01">1</strong></td>
+			<td><strong class="tah p10 blue01">2</strong></td>
+			</tr>
+			
+		
+			
+				
+				
+				
+				
+				
+				
+					
+					
+				
+			
+			<tr onMouseOver="mouseOver(this)" onMouseOut="mouseOut(this)" align="center">
+			<td><span class="tah p10 gray03">2016.11.02 19:06</span></td>
+			<td class="title">
+				
+				
+				<a href="/item/board_read.nhn?code=028050&nid=54562651&st=&sw=&page=1" title="올해 배당금 주당 2000원 검토">올해 배당금 주당 2000원 검토
+				<span class="tah p9" style="color:#639933">[<b>2</b>]</span>
+				<img src="http://imgstock.naver.net/images5/new.gif" width="10" height="10"></a></td>
+			<td class="tc"><span class="p11 ">의견없음</span></td>
+			<td class="p11">
+				ro21****
+				
+			</td>
+			<td><span class="tah p10 gray03">551</span></td>
+			
+			
+			
+			
+			<td><strong class="tah p10 red01">2</strong></td>
+			<td><strong class="tah p10 blue01">3</strong></td>
+			</tr>
+			
+				<tr>
+				<td colspan="7" height="1" bgcolor="#e1e1e1"></td>
+				</tr>
+			
+		
+			
+				
+				
+				
+				
+				
+				
+					
+					
+				
+			
+			<tr onMouseOver="mouseOver(this)" onMouseOut="mouseOut(this)" align="center">
+			<td><span class="tah p10 gray03">2016.11.02 18:49</span></td>
+			<td class="title">
+				
+				
+				<a href="/item/board_read.nhn?code=028050&nid=54562195&st=&sw=&page=1" title="외국인">외국인
+				<span class="tah p9" style="color:#639933">[<b>1</b>]</span>
+				<img src="http://imgstock.naver.net/images5/new.gif" width="10" height="10"></a></td>
+			<td class="tc"><span class="p11 ">의견없음</span></td>
+			<td class="p11">
+				fofo****
+				
+			</td>
+			<td><span class="tah p10 gray03">495</span></td>
+			
+			
+			
+			
+			<td><strong class="tah p10 red01">1</strong></td>
+			<td><strong class="tah p10 gray03 ">0</strong></td>
+			</tr>
+			
+		
+			
+				
+				
+				
+				
+				
+				
+					
+					
+				
+			
+			<tr onMouseOver="mouseOver(this)" onMouseOut="mouseOut(this)" align="center">
+			<td><span class="tah p10 gray03">2016.11.02 18:01</span></td>
+			<td class="title">
+				
+				
+				<a href="/item/board_read.nhn?code=028050&nid=54560629&st=&sw=&page=1" title="오늘 매수주체">오늘 매수주체
+				<span class="tah p9" style="color:#639933">[<b>3</b>]</span>
+				<img src="http://imgstock.naver.net/images5/new.gif" width="10" height="10"></a></td>
+			<td class="tc"><span class="p11 ">의견없음</span></td>
+			<td class="p11">
+				kcse****
+				
+			</td>
+			<td><span class="tah p10 gray03">536</span></td>
+			
+			
+			
+			
+			<td><strong class="tah p10 red01">6</strong></td>
+			<td><strong class="tah p10 blue01">3</strong></td>
+			</tr>
+			
+		
+			
+				
+				
+				
+				
+				
+				
+					
+					
+				
+			
+			<tr onMouseOver="mouseOver(this)" onMouseOut="mouseOut(this)" align="center">
+			<td><span class="tah p10 gray03">2016.11.02 17:48</span></td>
+			<td class="title">
+				
+				
+				<a href="/item/board_read.nhn?code=028050&nid=54560029&st=&sw=&page=1" title="삼성이란  간판  때매  고평가  유지  중">삼성이란  간판  때매  고평가  유지 ...
+				<span class="tah p9" style="color:#639933">[<b>5</b>]</span>
+				<img src="http://imgstock.naver.net/images5/new.gif" width="10" height="10"></a></td>
+			<td class="tc"><span class="p11 ">의견없음</span></td>
+			<td class="p11">
+				qwan****
+				
+			</td>
+			<td><span class="tah p10 gray03">453</span></td>
+			
+			
+			
+			
+			<td><strong class="tah p10 red01">4</strong></td>
+			<td><strong class="tah p10 blue01">5</strong></td>
+			</tr>
+			
+		
+			
+				
+				
+				
+				
+				
+				
+					
+					
+				
+			
+			<tr onMouseOver="mouseOver(this)" onMouseOut="mouseOut(this)" align="center">
+			<td><span class="tah p10 gray03">2016.11.02 17:21</span></td>
+			<td class="title">
+				
+				
+				<a href="/item/board_read.nhn?code=028050&nid=54558801&st=&sw=&page=1" title="혹시">혹시
+				<span class="tah p9" style="color:#639933">[<b>3</b>]</span>
+				<img src="http://imgstock.naver.net/images5/new.gif" width="10" height="10"></a></td>
+			<td class="tc"><span class="p11 ">의견없음</span></td>
+			<td class="p11">
+				star****
+				
+			</td>
+			<td><span class="tah p10 gray03">537</span></td>
+			
+			
+			
+			
+			<td><strong class="tah p10 red01">1</strong></td>
+			<td><strong class="tah p10 gray03 ">0</strong></td>
+			</tr>
+			
+		
+			
+				
+				
+				
+				
+				
+				
+					
+					
+				
+			
+			<tr onMouseOver="mouseOver(this)" onMouseOut="mouseOut(this)" align="center">
+			<td><span class="tah p10 gray03">2016.11.02 16:56</span></td>
+			<td class="title">
+				
+				
+				<a href="/item/board_read.nhn?code=028050&nid=54557595&st=&sw=&page=1" title="다매수하셨쥬??">다매수하셨쥬??
+				<span class="tah p9" style="color:#639933">[<b>4</b>]</span>
+				<img src="http://imgstock.naver.net/images5/new.gif" width="10" height="10"></a></td>
+			<td class="tc"><span class="p11 ">의견없음</span></td>
+			<td class="p11">
+				hong****
+				
+			</td>
+			<td><span class="tah p10 gray03">505</span></td>
+			
+			
+			
+			
+			<td><strong class="tah p10 red01">2</strong></td>
+			<td><strong class="tah p10 blue01">5</strong></td>
+			</tr>
+			
+				<tr>
+				<td colspan="7" height="1" bgcolor="#e1e1e1"></td>
+				</tr>
+			
+		
+			
+				
+				
+				
+				
+				
+				
+					
+					
+				
+			
+			<tr onMouseOver="mouseOver(this)" onMouseOut="mouseOut(this)" align="center">
+			<td><span class="tah p10 gray03">2016.11.02 16:29</span></td>
+			<td class="title">
+				
+				
+				<a href="/item/board_read.nhn?code=028050&nid=54556051&st=&sw=&page=1" title="ㅋㅋㅋㅋㅋ">ㅋㅋㅋㅋㅋ
+				<span class="tah p9" style="color:#639933">[<b>1</b>]</span>
+				<img src="http://imgstock.naver.net/images5/new.gif" width="10" height="10"></a></td>
+			<td class="tc"><span class="p11 ">의견없음</span></td>
+			<td class="p11">
+				soby****
+				
+			</td>
+			<td><span class="tah p10 gray03">518</span></td>
+			
+			
+			
+			
+			<td><strong class="tah p10 gray03 ">0</strong></td>
+			<td><strong class="tah p10 blue01">2</strong></td>
+			</tr>
+			
+		
+			
+				
+				
+				
+				
+				
+				
+					
+					
+				
+			
+			<tr onMouseOver="mouseOver(this)" onMouseOut="mouseOut(this)" align="center">
+			<td><span class="tah p10 gray03">2016.11.02 15:53</span></td>
+			<td class="title">
+				
+				
+				<a href="/item/board_read.nhn?code=028050&nid=54553294&st=&sw=&page=1" title="대우조선이 저렇게 될 줄 알았습니까?">대우조선이 저렇게 될 줄 알았습니까?
+				<span class="tah p9" style="color:#639933">[<b>5</b>]</span>
+				<img src="http://imgstock.naver.net/images5/new.gif" width="10" height="10"></a></td>
+			<td class="tc"><span class="p11 ">의견없음</span></td>
+			<td class="p11">
+				dudx****
+				
+			</td>
+			<td><span class="tah p10 gray03">597</span></td>
+			
+			
+			
+			
+			<td><strong class="tah p10 red01">2</strong></td>
+			<td><strong class="tah p10 blue01">12</strong></td>
+			</tr>
+			
+		
+			
+				
+				
+				
+				
+				
+				
+					
+					
+				
+			
+			<tr onMouseOver="mouseOver(this)" onMouseOut="mouseOut(this)" align="center">
+			<td><span class="tah p10 gray03">2016.11.02 15:39</span></td>
+			<td class="title">
+				
+				
+				<a href="/item/board_read.nhn?code=028050&nid=54551755&st=&sw=&page=1" title="차트 보니.....">차트 보니.....
+				<span class="tah p9" style="color:#639933">[<b>4</b>]</span>
+				<img src="http://imgstock.naver.net/images5/new.gif" width="10" height="10"></a></td>
+			<td class="tc"><span class="p11 ">의견없음</span></td>
+			<td class="p11">
+				ljc8****
+				
+			</td>
+			<td><span class="tah p10 gray03">592</span></td>
+			
+			
+			
+			
+			<td><strong class="tah p10 red01">4</strong></td>
+			<td><strong class="tah p10 blue01">5</strong></td>
+			</tr>
+			
+		
+			
+				
+				
+				
+				
+				
+				
+					
+					
+				
+			
+			<tr onMouseOver="mouseOver(this)" onMouseOut="mouseOut(this)" align="center">
+			<td><span class="tah p10 gray03">2016.11.02 15:39</span></td>
+			<td class="title">
+				
+				
+				<a href="/item/board_read.nhn?code=028050&nid=54551685&st=&sw=&page=1" title="주주님들 마음 충분히 이해합니다.....">주주님들 마음 충분히 이해합니다.....
+				<span class="tah p9" style="color:#639933">[<b>1</b>]</span>
+				<img src="http://imgstock.naver.net/images5/new.gif" width="10" height="10"></a></td>
+			<td class="tc"><span class="p11 ">의견없음</span></td>
+			<td class="p11">
+				dudx****
+				
+			</td>
+			<td><span class="tah p10 gray03">533</span></td>
+			
+			
+			
+			
+			<td><strong class="tah p10 red01">2</strong></td>
+			<td><strong class="tah p10 blue01">9</strong></td>
+			</tr>
+			
+		
+			
+				
+				
+				
+				
+				
+				
+					
+					
+				
+			
+			<tr onMouseOver="mouseOver(this)" onMouseOut="mouseOut(this)" align="center">
+			<td><span class="tah p10 gray03">2016.11.02 15:37</span></td>
+			<td class="title">
+				
+				
+				<a href="/item/board_read.nhn?code=028050&nid=54551394&st=&sw=&page=1" title="오늘 기술적반등이였네">오늘 기술적반등이였네
+				<span class="tah p9" style="color:#639933">[<b>4</b>]</span>
+				<img src="http://imgstock.naver.net/images5/new.gif" width="10" height="10"></a></td>
+			<td class="tc"><span class="p11 ">의견없음</span></td>
+			<td class="p11">
+				dbqk****
+				
+			</td>
+			<td><span class="tah p10 gray03">533</span></td>
+			
+			
+			
+			
+			<td><strong class="tah p10 red01">1</strong></td>
+			<td><strong class="tah p10 blue01">4</strong></td>
 			</tr>
 			
 		
@@ -2269,7 +2269,7 @@ jindo.$Fn(function() {
 				</td>
 
 	                <td class="pgRR">
-				<a href="/item/board.nhn?code=028050&amp;page=1376"  >맨뒤
+				<a href="/item/board.nhn?code=028050&amp;page=1371"  >맨뒤
 				<img src="http://static.naver.net/n/cmn/bu_pgarRR.gif" width="8" height="5" alt="" border="0">
 				</a>
 				</td>
@@ -2376,7 +2376,7 @@ jindo.$Fn(function() {
 									<a class="link_site" href="http://finance.naver.com/sise/sise_market_sum.nhn" class="link_site" onClick="clickcr(this, 'sop.19', '', '1', event)">시가총액순위</a>
 									
 								
-							</th><td>코스피 <em>108</em>위</td></tr>
+							</th><td>코스피 <em>106</em>위</td></tr>
 						
 						<tr>
 							<th scope="row">상장주식수</th>
@@ -2423,7 +2423,7 @@ jindo.$Fn(function() {
 							</tr>
 							<tr>
 								<th scope="row">외국인보유주식수(B)</th>
-								<td><em>12,875,891</em></td>
+								<td><em>12,846,006</em></td>
 							</tr>
 							<tr class="strong">
 								<th scope="row"><strong>외국인소진율(B/A)</strong><a href="javascript:togglePannel('helpPannel0');" onMouseOver="showPannel('helpPannel0');" onMouseOut="hidePannel('helpPannel0');"><img src="http://imgstock.naver.net/item_renewal/btn_help.gif" width="11" height="11" alt="외국인소진율(B/A) 상세설명"></a>
@@ -2435,7 +2435,7 @@ jindo.$Fn(function() {
 		                                 </div>
 		                            </div>
 								</th>
-								<td><em>6.57%</em></td>
+								<td><em>6.55%</em></td>
 							</tr>
 							</table>
 							</div>
@@ -2595,7 +2595,7 @@ jindo.$Fn(function() {
 								<td>
 									
 										
-										<em>-17.48</em>배
+										<em>-17.50</em>배
 										
 								</td>
 							</tr>
@@ -2605,7 +2605,7 @@ jindo.$Fn(function() {
 									
 									
 				<td class="f_down"><em>
-				-0.03%
+				-1.94%
 				</em></td>
 			
 								
@@ -2635,7 +2635,7 @@ jindo.$Fn(function() {
 				<td>
 				
 					
-					1,710
+					2,264
 				
 				</td>
 				<td>
@@ -2651,7 +2651,7 @@ jindo.$Fn(function() {
 				<td>
 				
 					
-					1,196
+					1,889
 				
 				</td>
 				<td>
@@ -2667,7 +2667,7 @@ jindo.$Fn(function() {
 				<td>
 				
 					
-					766
+					6,871
 				
 				</td>
 				<td>
@@ -2683,7 +2683,7 @@ jindo.$Fn(function() {
 				<td>
 				
 					
-					2,300
+					3,461
 				
 				</td>
 				<td>
@@ -2699,7 +2699,7 @@ jindo.$Fn(function() {
 				<td>
 				
 					
-					8,934
+					3,041
 				
 				</td>
 				<td>
@@ -2715,7 +2715,7 @@ jindo.$Fn(function() {
 				<td>
 				
 					
-					12,612
+					4,805
 				
 				</td>
 				<td>
@@ -2731,7 +2731,7 @@ jindo.$Fn(function() {
 				<td>
 				
 					
-					2,848
+					10,805
 				
 				</td>
 				<td>
@@ -2747,7 +2747,7 @@ jindo.$Fn(function() {
 				<td>
 				
 					
-					4,775
+					19,469
 				
 				</td>
 				<td>
@@ -2763,7 +2763,7 @@ jindo.$Fn(function() {
 				<td>
 				
 					
-					3,220
+					867
 				
 				</td>
 				<td>
@@ -2779,7 +2779,7 @@ jindo.$Fn(function() {
 				<td>
 				
 					
-					6,225
+					7,175
 				
 				</td>
 				<td>
@@ -2802,7 +2802,7 @@ jindo.$Fn(function() {
 				<td class="td_r">
 				
 					
-					12,398
+					576
 				
 				</td>
 			</tr>
@@ -2818,7 +2818,7 @@ jindo.$Fn(function() {
 				<td class="td_r">
 				
 					
-					16,888
+					18,885
 				
 				</td>
 				</tr>
@@ -2834,7 +2834,7 @@ jindo.$Fn(function() {
 				<td class="td_r">
 				
 					
-					6,307
+					13,426
 				
 				</td>
 				</tr>
@@ -2850,7 +2850,7 @@ jindo.$Fn(function() {
 				<td class="td_r">
 				
 					
-					12,986
+					10,694
 				
 				</td>
 				</tr>
@@ -2866,7 +2866,7 @@ jindo.$Fn(function() {
 				<td class="td_r">
 				
 					
-					21,431
+					25,363
 				
 				</td>
 				</tr>
@@ -2882,7 +2882,7 @@ jindo.$Fn(function() {
 				<td class="td_r">
 				
 					
-					31,796
+					30,228
 				
 				</td>
 				</tr>
@@ -2898,7 +2898,7 @@ jindo.$Fn(function() {
 				<td class="td_r">
 				
 					
-					10,894
+					21,328
 				
 				</td>
 				</tr>
@@ -2914,7 +2914,7 @@ jindo.$Fn(function() {
 				<td class="td_r">
 				
 					
-					11,173
+					20,685
 				
 				</td>
 				</tr>
@@ -2930,7 +2930,7 @@ jindo.$Fn(function() {
 				<td class="td_r">
 				
 					
-					6,994
+					20,052
 				
 				</td>
 				</tr>
@@ -2946,7 +2946,7 @@ jindo.$Fn(function() {
 				<td class="td_r">
 				
 					
-					18,068
+					25,208
 				
 				</td>
 				</tr>
@@ -2956,14 +2956,14 @@ jindo.$Fn(function() {
 				<td class="f_down">
 					
 						
-						44,586
+						60,647
 					
 				</td>
 				<td>잔량합계</td>
 				<td class="f_up">
 					
 						
-						148,935
+						186,445
 					
 				</td>
 			</tr>
@@ -3134,12 +3134,12 @@ jindo.$Fn(function() {
 		
 			
 			<tr>
-				<th scope="row" class="no1"><a href="/item/main.nhn?code=012450" target=_top onClick="clickcr(this, 'pss.2', '', '1', event);">한화테크윈</a></th>
-				<td>50,800</td>
+				<th scope="row" class="no1"><a href="/item/main.nhn?code=155660" target=_top onClick="clickcr(this, 'pss.2', '', '1', event);">DSR</a></th>
+				<td>7,020</td>
 				<td>
 					
-				<em class="f_down down"><span>하향</span>
-				13,000
+				<em class="f_up up_arrow"><span>상한가</span>
+				1,620
 				</em>
 			
 				</td>
@@ -3147,12 +3147,12 @@ jindo.$Fn(function() {
 		
 			
 			<tr>
-				<th scope="row" class="no2"><a href="/item/main.nhn?code=117930" target=_top onClick="clickcr(this, 'pss.2', '', '2', event);">한진해운</a></th>
-				<td>890</td>
+				<th scope="row" class="no2"><a href="/item/main.nhn?code=128940" target=_top onClick="clickcr(this, 'pss.2', '', '2', event);">한미약품</a></th>
+				<td>333,500</td>
 				<td>
 					
 				<em class="f_down down"><span>하향</span>
-				108
+				15,500
 				</em>
 			
 				</td>
@@ -3161,24 +3161,11 @@ jindo.$Fn(function() {
 			
 			<tr>
 				<th scope="row" class="no3"><a href="/item/main.nhn?code=003520" target=_top onClick="clickcr(this, 'pss.2', '', '3', event);">영진약품</a></th>
-				<td>9,350</td>
-				<td>
-					
-				<em class="f_up up"><span>상향</span>
-				600
-				</em>
-			
-				</td>
-			</tr>
-		
-			
-			<tr>
-				<th scope="row" class="no4"><a href="/item/main.nhn?code=047810" target=_top onClick="clickcr(this, 'pss.2', '', '4', event);">한국항공우주</a></th>
-				<td>63,000</td>
+				<td>8,900</td>
 				<td>
 					
 				<em class="f_down down"><span>하향</span>
-				1,800
+				760
 				</em>
 			
 				</td>
@@ -3186,12 +3173,25 @@ jindo.$Fn(function() {
 		
 			
 			<tr>
-				<th scope="row" class="no5"><a href="/item/main.nhn?code=001140" target=_top onClick="clickcr(this, 'pss.2', '', '5', event);">국보</a></th>
-				<td>30,700</td>
+				<th scope="row" class="no4"><a href="/item/main.nhn?code=122630" target=_top onClick="clickcr(this, 'pss.2', '', '4', event);">KODEX 레버리..</a></th>
+				<td>10,535</td>
+				<td>
+					
+				<em class="f_down down"><span>하향</span>
+				265
+				</em>
+			
+				</td>
+			</tr>
+		
+			
+			<tr>
+				<th scope="row" class="no5"><a href="/item/main.nhn?code=117930" target=_top onClick="clickcr(this, 'pss.2', '', '5', event);">한진해운</a></th>
+				<td>872</td>
 				<td>
 					
 				<em class="f_up up"><span>상향</span>
-				6,750
+				5
 				</em>
 			
 				</td>
@@ -3201,12 +3201,12 @@ jindo.$Fn(function() {
 				<tr><td colspan="3" class="line"></td></tr>
 			
 			<tr>
-				<th scope="row" class="no6"><a href="/item/main.nhn?code=128940" target=_top onClick="clickcr(this, 'pss.2', '', '6', event);">한미약품</a></th>
-				<td>357,500</td>
+				<th scope="row" class="no6"><a href="/item/main.nhn?code=096760" target=_top onClick="clickcr(this, 'pss.2', '', '6', event);">JW홀딩스</a></th>
+				<td>8,920</td>
 				<td>
 					
 				<em class="f_down down"><span>하향</span>
-				4,500
+				640
 				</em>
 			
 				</td>
@@ -3214,51 +3214,51 @@ jindo.$Fn(function() {
 		
 			
 			<tr>
-				<th scope="row" class="no7"><a href="/item/main.nhn?code=028260" target=_top onClick="clickcr(this, 'pss.2', '', '7', event);">삼성물산</a></th>
-				<td>157,000</td>
-				<td>
-					
-				<em class="f_down down"><span>하향</span>
-				4,500
-				</em>
-			
-				</td>
-			</tr>
-		
-			
-			<tr>
-				<th scope="row" class="no8"><a href="/item/main.nhn?code=069730" target=_top onClick="clickcr(this, 'pss.2', '', '8', event);">DSR제강</a></th>
-				<td>8,070</td>
-				<td>
-					
-				<em class="f_down down"><span>하향</span>
-				410
-				</em>
-			
-				</td>
-			</tr>
-		
-			
-			<tr>
-				<th scope="row" class="no9"><a href="/item/main.nhn?code=234080" target=_top onClick="clickcr(this, 'pss.2', '', '9', event);">JW생명과학</a></th>
-				<td>32,950</td>
-				<td>
-					
-				<em class="f_down down"><span>하향</span>
-				1,550
-				</em>
-			
-				</td>
-			</tr>
-		
-			
-			<tr>
-				<th scope="row" class="no10"><a href="/item/main.nhn?code=005930" target=_top onClick="clickcr(this, 'pss.2', '', '10', event);">삼성전자</a></th>
-				<td>1,649,000</td>
+				<th scope="row" class="no7"><a href="/item/main.nhn?code=069730" target=_top onClick="clickcr(this, 'pss.2', '', '7', event);">DSR제강</a></th>
+				<td>9,350</td>
 				<td>
 					
 				<em class="f_up up"><span>상향</span>
-				10,000
+				1,230
+				</em>
+			
+				</td>
+			</tr>
+		
+			
+			<tr>
+				<th scope="row" class="no8"><a href="/item/main.nhn?code=042670" target=_top onClick="clickcr(this, 'pss.2', '', '8', event);">두산인프라코..</a></th>
+				<td>7,180</td>
+				<td>
+					
+				<em class="f_up up"><span>상향</span>
+				200
+				</em>
+			
+				</td>
+			</tr>
+		
+			
+			<tr>
+				<th scope="row" class="no9"><a href="/item/main.nhn?code=002140" target=_top onClick="clickcr(this, 'pss.2', '', '9', event);">고려산업</a></th>
+				<td>6,240</td>
+				<td>
+					
+				<em class="f_up up"><span>상향</span>
+				70
+				</em>
+			
+				</td>
+			</tr>
+		
+			
+			<tr>
+				<th scope="row" class="no10"><a href="/item/main.nhn?code=234080" target=_top onClick="clickcr(this, 'pss.2', '', '10', event);">JW생명과학</a></th>
+				<td>27,950</td>
+				<td>
+					
+				<em class="f_down down"><span>하향</span>
+				3,250
 				</em>
 			
 				</td>
@@ -3280,55 +3280,55 @@ jindo.$Fn(function() {
 		
 			
 			<tr>
-				<th scope="row" class="no1"><a href="/item/main.nhn?code=064240" target=_top onClick="clickcr(this, 'pss.4', '', '1', event);">홈캐스트</a></th>
-				<td>24,100</td>
-				<td>
-				<em class="f_up up_arrow"><span>상한가</span>
-				5,550
-				</em>
-			</td>
-			</tr>
-		
-			
-			<tr>
-				<th scope="row" class="no2"><a href="/item/main.nhn?code=067630" target=_top onClick="clickcr(this, 'pss.4', '', '2', event);">에이치엘비생..</a></th>
-				<td>7,970</td>
-				<td>
-				<em class="f_up up"><span>상향</span>
-				1,540
-				</em>
-			</td>
-			</tr>
-		
-			
-			<tr>
-				<th scope="row" class="no3"><a href="/item/main.nhn?code=049120" target=_top onClick="clickcr(this, 'pss.4', '', '3', event);">파인디앤씨</a></th>
-				<td>4,630</td>
-				<td>
-				<em class="f_up up"><span>상향</span>
-				890
-				</em>
-			</td>
-			</tr>
-		
-			
-			<tr>
-				<th scope="row" class="no4"><a href="/item/main.nhn?code=096690" target=_top onClick="clickcr(this, 'pss.4', '', '4', event);">제이스테판</a></th>
-				<td>969</td>
-				<td>
-				<em class="f_up up"><span>상향</span>
-				170
-				</em>
-			</td>
-			</tr>
-		
-			
-			<tr>
-				<th scope="row" class="no5"><a href="/item/main.nhn?code=900290" target=_top onClick="clickcr(this, 'pss.4', '', '5', event);">GRT</a></th>
-				<td>5,200</td>
+				<th scope="row" class="no1"><a href="/item/main.nhn?code=068270" target=_top onClick="clickcr(this, 'pss.4', '', '1', event);">셀트리온</a></th>
+				<td>105,800</td>
 				<td>
 				<em class="f_down down"><span>하향</span>
-				450
+				300
+				</em>
+			</td>
+			</tr>
+		
+			
+			<tr>
+				<th scope="row" class="no2"><a href="/item/main.nhn?code=049180" target=_top onClick="clickcr(this, 'pss.4', '', '2', event);">셀루메드</a></th>
+				<td>2,000</td>
+				<td>
+				<em class="f_down down"><span>하향</span>
+				320
+				</em>
+			</td>
+			</tr>
+		
+			
+			<tr>
+				<th scope="row" class="no3"><a href="/item/main.nhn?code=016670" target=_top onClick="clickcr(this, 'pss.4', '', '3', event);">포비스티앤씨</a></th>
+				<td>3,000</td>
+				<td>
+				<em class="f_up up"><span>상향</span>
+				30
+				</em>
+			</td>
+			</tr>
+		
+			
+			<tr>
+				<th scope="row" class="no4"><a href="/item/main.nhn?code=109610" target=_top onClick="clickcr(this, 'pss.4', '', '4', event);">에스와이패널</a></th>
+				<td>32,800</td>
+				<td>
+				<em class="f_down down"><span>하향</span>
+				1,150
+				</em>
+			</td>
+			</tr>
+		
+			
+			<tr>
+				<th scope="row" class="no5"><a href="/item/main.nhn?code=101000" target=_top onClick="clickcr(this, 'pss.4', '', '5', event);">디엠씨</a></th>
+				<td>5,970</td>
+				<td>
+				<em class="f_down down"><span>하향</span>
+				350
 				</em>
 			</td>
 			</tr>
@@ -3337,55 +3337,55 @@ jindo.$Fn(function() {
 				<tr><td colspan="3" class="line"></td></tr>
 			
 			<tr>
-				<th scope="row" class="no6"><a href="/item/main.nhn?code=068270" target=_top onClick="clickcr(this, 'pss.4', '', '6', event);">셀트리온</a></th>
-				<td>106,700</td>
-				<td>
-				<em class="f_up up"><span>상향</span>
-				500
-				</em>
-			</td>
-			</tr>
-		
-			
-			<tr>
-				<th scope="row" class="no7"><a href="/item/main.nhn?code=020180" target=_top onClick="clickcr(this, 'pss.4', '', '7', event);">대신정보통신</a></th>
-				<td>2,625</td>
-				<td>
-				<em class="f_up up"><span>상향</span>
-				70
-				</em>
-			</td>
-			</tr>
-		
-			
-			<tr>
-				<th scope="row" class="no8"><a href="/item/main.nhn?code=950140" target=_top onClick="clickcr(this, 'pss.4', '', '8', event);">잉글우드랩(Re..</a></th>
-				<td>15,150</td>
+				<th scope="row" class="no6"><a href="/item/main.nhn?code=900100" target=_top onClick="clickcr(this, 'pss.4', '', '6', event);">뉴프라이드</a></th>
+				<td>3,190</td>
 				<td>
 				<em class="f_down down"><span>하향</span>
-				150
+				185
 				</em>
 			</td>
 			</tr>
 		
 			
 			<tr>
-				<th scope="row" class="no9"><a href="/item/main.nhn?code=109610" target=_top onClick="clickcr(this, 'pss.4', '', '9', event);">에스와이패널</a></th>
-				<td>32,900</td>
+				<th scope="row" class="no7"><a href="/item/main.nhn?code=201490" target=_top onClick="clickcr(this, 'pss.4', '', '7', event);">미투온</a></th>
+				<td>7,500</td>
 				<td>
-				<em class="f_down down"><span>하향</span>
-				4,500
+				<em class="f_up up_arrow"><span>상한가</span>
+				1,730
 				</em>
 			</td>
 			</tr>
 		
 			
 			<tr>
-				<th scope="row" class="no10"><a href="/item/main.nhn?code=065060" target=_top onClick="clickcr(this, 'pss.4', '', '10', event);">지엔코</a></th>
-				<td>4,935</td>
+				<th scope="row" class="no8"><a href="/item/main.nhn?code=200230" target=_top onClick="clickcr(this, 'pss.4', '', '8', event);">텔콘</a></th>
+				<td>4,625</td>
 				<td>
 				<em class="f_up up"><span>상향</span>
-				205
+				20
+				</em>
+			</td>
+			</tr>
+		
+			
+			<tr>
+				<th scope="row" class="no9"><a href="/item/main.nhn?code=187420" target=_top onClick="clickcr(this, 'pss.4', '', '9', event);">제노포커스</a></th>
+				<td>19,900</td>
+				<td>
+				<em class="f_down down"><span>하향</span>
+				650
+				</em>
+			</td>
+			</tr>
+		
+			
+			<tr>
+				<th scope="row" class="no10"><a href="/item/main.nhn?code=145020" target=_top onClick="clickcr(this, 'pss.4', '', '10', event);">휴젤</a></th>
+				<td>310,000</td>
+				<td>
+				<em class="f_down down"><span>하향</span>
+				25,700
 				</em>
 			</td>
 			</tr>
