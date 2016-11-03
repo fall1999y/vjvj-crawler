@@ -100,5 +100,5 @@ class CommonSpider(scrapy.Spider):
 
 
                 # 원본저장 (url의 내용 통째로 저장)
-                with open(os.path.join(self.base_source_path, 'result', 'temp', self.section + '_' + str(max_date).replace('\w', '') + '.txt'), 'wb') as f:
+                with open(os.path.join(self.base_source_path, 'result', 'temp', self.section + '_' + re.sub(r'\W', '', str(max_date)) + '.txt'), 'wb') as f:
                     f.write(response.body)
