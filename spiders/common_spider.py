@@ -2,15 +2,18 @@
 import scrapy
 import os
 import re
-import configparser
+from configparser import ConfigParser
 
 from vjvj_crawler.items import CommonCrawlerItem
 from datetime import datetime
 
-__author__ = 'smtm'
+__author__ = 'fall1999y'
 
 
 class CommonSpider(scrapy.Spider):
+    def parse(self, response):
+        pass
+
     name = "common_spider"
 
     # allowed_domains = ["naver.com"]
@@ -24,7 +27,7 @@ class CommonSpider(scrapy.Spider):
         # if not os.path.exists(self.base_source_path):
         self.base_source_path = os.path.abspath('.')
 
-        self.config = configparser.ConfigParser()
+        self.config = ConfigParser()
         # self.config = configparser.RawConfigParser()
         path_config = os.path.join(self.base_source_path, 'config', 'config.properties')
         self.config.read(path_config)
@@ -48,13 +51,14 @@ class CommonSpider(scrapy.Spider):
     def start_requests(self):
         for i in self.crawling_range:
             # % i 공백 주의
-            yield scrapy.Request(self.parsing_url % i, self.parse_clien)
+            yield scrapy.Request(self.parsing_url % i, self.parse_client)
 
-    def parse_clien(self, response):
+    def parse_client(self, response):
         # filename = os.getcwd() + '/vjvj_crawler/page.txt'
         # path_max_seq_store = os.path.join(self.base_source_path, 'max_article.txt')
 
-        compare_date = self.config.has_option(self.section, 'read_date') and str(self.config.get(self.section, 'read_date')) or None
+        compare_date = self.config.has_option(self.section, 'read_date') and str(self.config.get(self.section,
+                                                                                                 "read_date")) or None
 
         #
         # if os.path.isfile(path_max_seq_store):
@@ -98,7 +102,7 @@ class CommonSpider(scrapy.Spider):
                     #     # items = sorted(items, key=lambda item : item['date'])
                     #     # print(items)
 
-
                 # 원본저장 (url의 내용 통째로 저장)
-                with open(os.path.join(self.base_source_path, 'result', 'temp', self.section + '_' + re.sub(r'\W', '', str(max_date)) + '.txt'), 'wb') as f:
+                with open(os.path.join(self.base_source_path, 'result', 'temp',
+                                       self.section + '_' + re.sub(r'\W', '', str(max_date)) + '.txt'), 'wb') as f:
                     f.write(response.body)
