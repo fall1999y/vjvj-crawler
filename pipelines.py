@@ -27,6 +27,9 @@ class CommonCrawlerPipeline(object):
         # if os.path.isdir(os.path.join(os.path.abspath('.'), 'vjvj_crawler')):
         #     path_store = os.path.join(os.path.abspath("."), 'vjvj_crawler', 'result.json')
         # else:
+        if not os.path.exists(os.path.join(os.path.abspath("."), 'result')):
+            os.makedirs(os.path.join(os.path.abspath("."), 'result', 'temp'))
+
         path_store = os.path.join(os.path.abspath("."), 'result/'+spider.section+'.json')
         self.file = codecs.open(path_store, 'a', encoding='utf-8')
 

@@ -49,6 +49,7 @@ class CommonSpider(scrapy.Spider):
         self.items = []
 
     def start_requests(self):
+        # yield scrapy.Request(url, self.parse_client, method="POST", body=payload)
         for i in self.crawling_range:
             # % i 공백 주의
             yield scrapy.Request(self.parsing_url % i, self.parse_client)
