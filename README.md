@@ -28,11 +28,12 @@ config directory 의 config.cfg 에 크롤링할 정보 입력
 
 ```
 [섹션명1]
-키1=값
-키2=값
-키3=값
+parsing_url = crawling url (ex : http://...&page=__page__)
+limit_page = __PAGE__에 치환될 crawling page 제한
+regex_article = 게시물 영역 pattern
+regex_title = 게시물의 title pattern
+regex_seq = 게시물의 seq 가 될 부분의 pattern
+
 [섹션명2]
-키1=값            # 섹션이 다르면 키값 동일 구성가능
-키4=값
-키5=값
+형식 상동
 ```
