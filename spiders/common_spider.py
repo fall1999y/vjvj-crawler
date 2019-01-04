@@ -29,7 +29,7 @@ class CommonSpider(scrapy.Spider):
 
         self.config = ConfigParser()
         # self.config = configparser.RawConfigParser()
-        path_config = os.path.join(self.base_source_path, 'config', 'config.properties')
+        path_config = os.path.join(self.base_source_path, 'config', 'config.ini')
         self.config.read(path_config)
 
         # 'TARGET_INFO'
@@ -91,8 +91,8 @@ class CommonSpider(scrapy.Spider):
 
                 max_date = sorted_items[len(sorted_items) - 1]['date']
 
-                print(os.path.join(self.base_source_path, 'config', 'config.properties'))
-                with open(os.path.join(self.base_source_path, 'config', 'config.properties'), 'w+') as configfile:
+                print(os.path.join(self.base_source_path, 'config', 'config.ini'))
+                with open(os.path.join(self.base_source_path, 'config', 'config.ini'), 'w+') as configfile:
                     configfile.write("# __page__ 는 range(limit_page) 에 의해 치환됨\n")
                     self.config.set(self.section, 'read_date', max_date)
                     self.config.write(configfile)
